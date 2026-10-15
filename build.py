@@ -337,129 +337,164 @@ def source_rev():
 CSS = r"""
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  --bg:#ffffff;--bg-alt:#f6f6f7;--bg-elv:#ffffff;--bg-mute:#f1f1f2;
-  --divider:#e2e2e3;
-  --t1:rgba(60,60,67,1);--t2:rgba(60,60,67,.78);--t3:rgba(60,60,67,.56);
-  --brand-1:#3451b2;--brand-2:#3a5ccc;--brand-soft:rgba(100,108,255,.12);
-  --green-1:#18794e;--green-soft:rgba(16,185,129,.13);
-  --yellow-1:#915930;--yellow-soft:rgba(234,179,8,.15);
-  --red-1:#b8272c;--red-soft:rgba(244,63,94,.12);
-  --gray-1:#565a5f;--gray-soft:rgba(142,150,170,.15);
-  --mark:rgba(234,179,8,.34);
+  --bg:#fcfcfc;--bg-alt:#f7f7f7;--bg-elv:#ffffff;
+  --divider:#ececec;
+  --t1:#1f2125;--t2:#45484e;--t3:#86898f;
+  --brand-1:#0f7050;--brand-2:#0a5a40;--brand-soft:rgba(15,112,80,.09);
+  --yellow-1:#86662d;
+  --mark:rgba(214,180,90,.3);
+  --shadow-sm:0 1px 2px rgba(20,22,26,.08);--shadow-lg:0 6px 20px rgba(20,22,26,.12);
   --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  /* 字号阶梯：正文 15，往下 13.5 / 12.5 / 11，往上 16（说人话）/ 18（条目标题）/ 28（节标题） */
+  --fs-2xs:11px;--fs-xs:12.5px;--fs-sm:13.5px;--fs-base:15px;--fs-lead:16px;--fs-md:18px;--fs-lg:28px;
+  --fw-regular:400;--fw-medium:500;--fw-strong:600;
+  --lh-tight:1.35;--lh-body:1.75;
+  /* 版心：正文一栏约 75 个拉丁字符宽，左侧留一条页边挂节号和条目号 */
+  --measure:640px;--hang:48px;--gutter:40px;
   --bar:56px;--side:296px;
   --lbl:84px; /* 字段标签列宽：葡/英标签比中文两个字长，中文时收窄 */
 }
 html[lang^=zh]{--lbl:52px}
 [data-theme=dark]{
-  --bg:#1b1b1f;--bg-alt:#161618;--bg-elv:#202127;--bg-mute:#2b2b2f;
-  --divider:#2e2e32;
-  --t1:rgba(255,255,245,.88);--t2:rgba(235,235,245,.62);--t3:rgba(235,235,245,.4);
-  --brand-1:#a8b1ff;--brand-2:#c3c9ff;--brand-soft:rgba(100,108,255,.18);
-  --green-1:#3dd68c;--green-soft:rgba(16,185,129,.16);
-  --yellow-1:#f9b44e;--yellow-soft:rgba(234,179,8,.16);
-  --red-1:#f66f81;--red-soft:rgba(244,63,94,.16);
-  --gray-1:#a4a8ae;--gray-soft:rgba(142,150,170,.16);
-  --mark:rgba(234,179,8,.3);
+  --bg:#18191b;--bg-alt:#151618;--bg-elv:#1c1d20;
+  --divider:#2a2b2f;
+  --t1:#ededea;--t2:#bbbdc1;--t3:#7a7c82;
+  --brand-1:#5fcf9f;--brand-2:#8adfba;--brand-soft:rgba(95,207,159,.12);
+  --yellow-1:#d5b87d;
+  --mark:rgba(213,184,125,.26);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-lg:0 6px 20px rgba(0,0,0,.45);
 }
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 14px)}
-body{margin:0;background:var(--bg);color:var(--t1);font:15px/1.75 var(--font);
+body{margin:0;background:var(--bg);color:var(--t1);font:var(--fs-base)/var(--lh-body) var(--font);
   -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
 a{color:var(--brand-1);text-decoration:none}
 a:hover{color:var(--brand-2);text-decoration:underline;text-underline-offset:2px}
 mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
-strong{font-weight:600;color:var(--t1)}
+strong{font-weight:var(--fw-strong);color:var(--t1)}
+:focus-visible{outline:2px solid var(--brand-1);outline-offset:2px}
 
 /* min-height 用常量、不用 --bar：--bar 是 JS 实测回写的值，
    若拿它当 min-height，顶栏收起后会因为 min-height 还停在旧高度而缩不下去。 */
-.bar{position:sticky;top:0;z-index:30;display:flex;flex-wrap:wrap;align-items:center;gap:10px;
-  padding:0 18px;min-height:56px;background:var(--bg);border-bottom:1px solid var(--divider)}
-.bar h1{font-size:15px;font-weight:600;margin:0;white-space:nowrap;min-width:0}
-.bar h1 small{font-weight:400;font-size:12px;color:var(--t3);margin-left:8px}
+.bar{position:sticky;top:0;z-index:30;display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+  padding:0 20px;min-height:56px;border-bottom:1px solid var(--divider);
+  background:color-mix(in srgb,var(--bg) 86%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px)}
+.bar h1{font-size:var(--fs-base);font-weight:var(--fw-strong);letter-spacing:-.01em;margin:0;white-space:nowrap;min-width:0}
+.bar h1 small{font-weight:var(--fw-regular);font-size:var(--fs-xs);color:var(--t3);margin-left:10px;letter-spacing:0}
+/* 三格刻度：顶栏标志和条目里的性价比用同一个符号，格子逐级升高 */
+.logo,.ratio{display:inline-flex;gap:2px}
+.logo{align-items:flex-end;height:14px;margin-right:10px;vertical-align:-1px}
+.ratio{align-items:baseline}
+.logo i,.ratio i{width:4px;border-radius:1px;background:var(--brand-1)}
+.logo i:nth-child(1),.ratio i:nth-of-type(1){height:6px}
+.logo i:nth-child(2),.ratio i:nth-of-type(2){height:10px}
+.logo i:nth-child(3),.ratio i:nth-of-type(3){height:14px}
 .spacer{flex:1}
+.seg{display:flex;gap:2px;padding:2px;border-radius:9px;background:var(--bg-alt);box-shadow:inset 0 0 0 1px var(--divider)}
+.seg button{height:28px;padding:0 12px;border:0;border-radius:7px;background:none;color:var(--t2);
+  font:var(--fw-medium) var(--fs-xs)/1 var(--font);cursor:pointer;white-space:nowrap}
+.seg button:hover{color:var(--t1)}
+.seg button[aria-pressed=true]{background:var(--bg-elv);color:var(--t1);box-shadow:var(--shadow-sm),0 0 0 1px var(--divider)}
 .search{position:relative;flex:1 1 150px;max-width:300px}
-.search input{width:100%;height:34px;padding:0 30px 0 32px;border-radius:8px;border:1px solid var(--divider);
-  background:var(--bg-alt);color:var(--t1);font:inherit;font-size:13px}
-.search input:focus{outline:0;border-color:var(--brand-1);background:var(--bg-elv)}
+.search input{width:100%;height:34px;padding:0 30px 0 32px;border-radius:9px;border:1px solid var(--divider);
+  background:var(--bg-alt);color:var(--t1);font:inherit;font-size:var(--fs-sm)}
+.search input:focus{outline:0;border-color:var(--brand-1);background:var(--bg-elv);box-shadow:0 0 0 3px var(--brand-soft)}
 .search svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:15px;height:15px;
   fill:none;stroke:var(--t3);stroke-width:2;pointer-events:none}
 .search kbd{position:absolute;right:8px;top:50%;transform:translateY(-50%);font:500 10px/1 var(--font);
   color:var(--t3);border:1px solid var(--divider);border-radius:4px;padding:2px 4px;background:var(--bg-elv)}
-.btn{height:30px;padding:0 11px;border-radius:999px;border:1px solid var(--divider);background:var(--bg-elv);
-  color:var(--t2);font:500 12px/1 var(--font);cursor:pointer;transition:all .18s;white-space:nowrap}
-.btn:hover{border-color:var(--brand-2);color:var(--t1)}
-.btn[aria-pressed=true]{background:var(--brand-soft);border-color:var(--brand-1);color:var(--brand-1)}
-.count{font-size:12px;color:var(--t3);white-space:nowrap;font-variant-numeric:tabular-nums}
-.jump{display:none;height:30px;max-width:38vw;padding:0 6px;border-radius:8px;border:1px solid var(--divider);
-  background:var(--bg-elv);color:var(--t2);font:500 12px/1 var(--font)}
-.lang{height:30px;padding:0 6px;border-radius:999px;border:1px solid var(--divider);background:var(--bg-elv);
-  color:var(--t2);font:500 12px/1 var(--font);cursor:pointer}
-.lang:hover,.lang:focus{border-color:var(--brand-2);color:var(--t1);outline:0}
+.count{font-size:var(--fs-xs);color:var(--t3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.icon{display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:8px;
+  background:none;color:var(--t2);cursor:pointer}
+.icon svg{width:17px;height:17px}
+.icon circle{fill:none;stroke:currentColor;stroke-width:1.8}
+.icon path{fill:currentColor}
+.icon:hover,.lang:hover{background:var(--bg-alt);color:var(--t1)}
+.jump{display:none;height:32px;max-width:min(38vw,220px);padding:0 6px;border-radius:8px;border:1px solid var(--divider);
+  background:var(--bg-elv);color:var(--t2);font:var(--fw-medium) var(--fs-xs)/1 var(--font)}
+.lang{field-sizing:content;height:32px;padding:0 4px;border:0;border-radius:8px;background:none;
+  color:var(--t2);font:var(--fw-medium) var(--fs-xs)/1 var(--font);cursor:pointer}
 
 .shell{display:flex;align-items:flex-start}
 .toc{position:sticky;top:var(--bar);flex:none;width:var(--side);height:calc(100vh - var(--bar));
-  overflow-y:auto;padding:18px 14px 80px 18px;background:var(--bg-alt);border-right:1px solid var(--divider)}
-.toc .gt{font-size:13px;font-weight:600;margin:0 0 6px;color:var(--t1);display:flex;justify-content:space-between;align-items:baseline}
-.toc .gt small{font-weight:400;font-size:11px;color:var(--t3)}
-.toc .grp{padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--divider)}
+  overflow-y:auto;padding:28px 14px 80px 16px;border-right:1px solid var(--divider);
+  scrollbar-width:thin;scrollbar-color:var(--divider) transparent}
+.toc .gt{font-size:var(--fs-sm);font-weight:var(--fw-strong);margin:0 0 8px;padding:0 8px;color:var(--t1);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.toc .gt small{font-weight:var(--fw-regular);font-size:var(--fs-2xs);color:var(--t3);white-space:nowrap}
+.toc .grp{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--divider)}
 .toc .grp:last-child{border-bottom:0;margin-bottom:0}
-.toc a{display:flex;gap:6px;align-items:baseline;padding:3px 6px;border-radius:6px;font-size:12.5px;
-  line-height:1.5;color:var(--t2)}
-.toc a:hover{background:var(--bg-elv);color:var(--t1);text-decoration:none}
+.toc a{display:flex;gap:6px;align-items:baseline;padding:4px 8px;border-radius:6px;font-size:var(--fs-xs);
+  line-height:var(--lh-tight);color:var(--t2)}
+.toc a:hover{background:var(--bg-alt);color:var(--t1);text-decoration:none}
 .toc a.active{background:var(--brand-soft);color:var(--brand-1)}
 .toc a i{font-style:normal;color:var(--t3);font-variant-numeric:tabular-nums;flex:none;min-width:16px;text-align:right}
 .dot{width:6px;height:6px;border-radius:50%;flex:none;margin-top:6px}
-.d0{background:var(--brand-1)}.d1{background:var(--green-1)}.d2{background:var(--t3)}
+/* 目录圆点和条目里的三格刻度同一套含义：越实越值 */
+.d0{background:var(--brand-1)}.d1{background:var(--brand-1);opacity:.45}.d2{background:var(--t3);opacity:.6}
 
-main{flex:1;min-width:0;padding:26px 40px 140px;max-width:940px}
-section{margin-bottom:44px}
-.sec-h{display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:2px solid var(--divider);margin-bottom:6px}
-.sec-h h2{font-size:22px;font-weight:600;margin:0;letter-spacing:-.2px}
-.sec-h .meta{font-size:12px;color:var(--t3);font-variant-numeric:tabular-nums}
-.intro{color:var(--t2);font-size:14px;margin:12px 0 22px;padding-left:12px;border-left:2px solid var(--divider)}
+main{flex:1;min-width:0;max-width:calc(var(--hang) + var(--measure) + 2 * var(--gutter));margin:0 auto;
+  padding:48px var(--gutter) 140px}
+section{margin-bottom:96px}
+/* 节头和条目都是两栏：左栏页边放编号，右栏正文，所有文字对齐同一条左边线 */
+.sec-h{display:grid;grid-template-columns:var(--hang) minmax(0,1fr);align-items:baseline;margin-bottom:20px}
+.sn{grid-row:1;font:var(--fw-strong) var(--fs-lg)/var(--lh-tight) var(--font);color:var(--brand-1);
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.sec-h h2{grid-row:1;grid-column:2;margin:0;font-size:var(--fs-lg);font-weight:var(--fw-strong);
+  line-height:var(--lh-tight);letter-spacing:-.02em;text-wrap:balance}
+.sec-h .meta{grid-column:2;margin-top:4px;font-size:var(--fs-xs);color:var(--t3);font-variant-numeric:tabular-nums}
+.intro{margin:0 0 20px var(--hang);color:var(--t2);text-wrap:pretty}
+.topics{list-style:none;margin:0 0 40px var(--hang);padding:0;font-size:var(--fs-sm);line-height:1.7;
+  color:var(--t2);border-top:1px solid var(--divider)}
+.topics li{padding:10px 0}
+.topics li+li{border-top:1px solid var(--divider)}
+.topics strong{display:block;margin-bottom:2px}
 
-.card{background:var(--bg-elv);border:1px solid var(--divider);border-radius:12px;padding:16px 18px 14px;margin-bottom:12px}
-.chead{display:flex;gap:10px;align-items:flex-start}
-.num{flex:none;min-width:24px;height:24px;padding:0 6px;border-radius:7px;background:var(--bg-mute);color:var(--t3);
-  font:600 12px/24px var(--font);text-align:center;font-variant-numeric:tabular-nums}
-.chead h3{margin:0;font-size:16px;font-weight:600;line-height:1.5;letter-spacing:-.1px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px 34px}
-.badge{font:500 11px/1 var(--font);padding:4px 9px;border-radius:999px;border:1px solid transparent}
-.gA{background:var(--green-soft);color:var(--green-1);border-color:var(--green-soft)}
-.gB{background:var(--yellow-soft);color:var(--yellow-1);border-color:var(--yellow-soft)}
-.gC{background:var(--gray-soft);color:var(--gray-1);border-color:var(--gray-soft)}
-.r0{background:var(--brand-soft);color:var(--brand-1);border-color:var(--brand-soft)}
-.r1{background:var(--green-soft);color:var(--green-1);border-color:var(--green-soft)}
-.r2{background:var(--gray-soft);color:var(--gray-1);border-color:var(--gray-soft)}
-.tag{font:400 11px/1 var(--font);padding:4px 9px;border-radius:999px;background:var(--bg-mute);color:var(--t3)}
-
-.plain{margin:0 0 12px 34px;padding:10px 14px;background:var(--brand-soft);
-  border-left:3px solid var(--brand-1);border-radius:0 8px 8px 0;font-size:15px;line-height:1.8;color:var(--t1)}
-.fields{margin-left:34px}
-.f{display:grid;grid-template-columns:var(--lbl) 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--divider);
-  font-size:13.5px;line-height:1.75;color:var(--t2)}
-.f b{font-weight:500;color:var(--t3);font-size:12.5px;padding-top:2px}
+.card{display:grid;grid-template-columns:var(--hang) minmax(0,1fr);padding:32px 0;border-top:1px solid var(--divider)}
+.card>*{grid-column:2}
+.card>.num{grid-column:1;grid-row:1;align-self:baseline;font:var(--fw-medium) var(--fs-sm)/1 var(--font);
+  color:var(--t3);font-variant-numeric:tabular-nums}
+.card h3{grid-row:1;align-self:baseline;margin:0;font-size:var(--fs-md);font-weight:var(--fw-strong);
+  line-height:var(--lh-tight);letter-spacing:-.01em;text-wrap:balance}
+.sig{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:10px 0 14px}
+/* 证据等级：A 实心、B 描边、C 虚线，不靠颜色也分得清 */
+.grade{font:var(--fw-strong) var(--fs-2xs)/1 var(--font);padding:4px 8px;border-radius:4px;border:1px solid transparent}
+.gA{background:var(--t1);color:var(--bg)}
+.gB{border-color:var(--t2);color:var(--t1)}
+.gC{border-style:dashed;border-color:var(--t3);color:var(--t2)}
+.ratio{line-height:1;font-size:var(--fs-xs);font-weight:var(--fw-medium);color:var(--t2)}
+.ratio i:nth-of-type(3){margin-right:7px}
+.r1 i:nth-of-type(3),.r2 i:nth-of-type(n+2){background:var(--t3);opacity:.3}
+.plain{margin:0;font-size:var(--fs-lead);line-height:var(--lh-body);color:var(--t1);text-wrap:pretty}
+.facts{display:flex;flex-wrap:wrap;gap:4px 20px;margin:14px 0 0;font-size:var(--fs-xs)}
+.facts div{display:flex;gap:6px}
+.facts dt{color:var(--t3)}
+.facts dd{margin:0;color:var(--t1)}
+.fields{margin-top:16px}
+.f{display:grid;grid-template-columns:var(--lbl) minmax(0,1fr);gap:12px;padding:4px 0;
+  font-size:var(--fs-sm);line-height:1.7;color:var(--t2)}
+.f b{font-weight:var(--fw-medium);color:var(--t3);font-size:var(--fs-xs);padding-top:1px}
 .f.note b{color:var(--yellow-1)}
 .f>div{min-width:0;overflow-wrap:anywhere}
-.src{margin:10px 0 0 34px;border-top:1px solid var(--divider);padding-top:8px}
-.src summary{cursor:pointer;font-size:12.5px;color:var(--t3);list-style:none;user-select:none}
+.src{margin-top:12px}
+.src summary{cursor:pointer;font-size:var(--fs-xs);color:var(--t3);list-style:none;user-select:none}
 .src summary::-webkit-details-marker{display:none}
 .src summary::before{content:"▸ ";color:var(--t3)}
 .src[open] summary::before{content:"▾ "}
 .src summary:hover{color:var(--brand-1)}
-.src .sbody{font-size:12.5px;line-height:1.8;color:var(--t2);padding:8px 0 2px;word-break:break-word;overflow-wrap:anywhere}
+.src .sbody{font-size:var(--fs-xs);line-height:1.8;color:var(--t2);padding:8px 0 2px;word-break:break-word;overflow-wrap:anywhere}
 
-body.plain-only .fields,body.plain-only .src{display:none}
+body.plain-only .facts,body.plain-only .fields,body.plain-only .src{display:none}
 .hidden{display:none!important}
 
-.empty{color:var(--t3);font-size:14px;padding:40px 0;text-align:center}
-footer{color:var(--t3);font-size:12px;border-top:1px solid var(--divider);padding-top:14px;line-height:1.9}
+.empty{color:var(--t3);font-size:var(--fs-sm);padding:40px 0;text-align:center}
+footer{margin-left:var(--hang);color:var(--t3);font-size:var(--fs-xs);border-top:1px solid var(--divider);
+  padding-top:20px;line-height:1.9}
 footer a{color:var(--t2)}
 
-#top{position:fixed;right:16px;bottom:16px;z-index:40;width:42px;height:42px;border-radius:50%;
+#top{position:fixed;right:20px;bottom:20px;z-index:40;width:40px;height:40px;border-radius:10px;
   border:1px solid var(--divider);background:var(--bg-elv);color:var(--t2);cursor:pointer;
-  font:400 17px/1 var(--font);box-shadow:0 2px 12px rgba(0,0,0,.14);
+  font:400 16px/1 var(--font);box-shadow:var(--shadow-lg);
   opacity:0;pointer-events:none;transition:opacity .2s,color .18s}
 #top.show{opacity:1;pointer-events:auto}
 #top:hover{color:var(--brand-1);border-color:var(--brand-1)}
@@ -471,7 +506,8 @@ footer a{color:var(--t2)}
 @media (max-width:1080px){
   .toc{display:none}
   .jump{display:block}
-  main{padding:22px 22px 130px;max-width:none}
+  .search{max-width:none}
+  :root{--gutter:28px}
 }
 @media (max-width:820px){
   .bar{padding:8px 12px;gap:8px;min-height:0}
@@ -480,35 +516,29 @@ footer a{color:var(--t2)}
   .spacer{display:none}
   .jump{order:2}
   #theme{order:3}
-  #f-all{order:4}#f-a{order:5}#f-plain{order:6}
+  .seg{order:4}
   .count{order:7;margin-left:auto}
   .search{order:8;max-width:none;margin-top:2px}
   .search input{height:34px}
   .lang{order:8;margin-top:2px}
   .search kbd{display:none}
   /* 向下滚动后收成一行（标题+搜索+明暗），把竖向空间还给正文；滚回顶部再展开 */
-  body.compact .jump,body.compact .lang,body.compact #f-all,body.compact #f-a,
-  body.compact #f-plain,body.compact .count{display:none}
+  body.compact .jump,body.compact .lang,body.compact .seg,body.compact .count{display:none}
   body.compact .search{order:2;flex:1 1 120px;margin-top:0}
   body.compact #theme{order:3}
-  main{padding:16px 13px 110px}
-  .sec-h h2{font-size:19px}
-  .card{padding:14px 14px 12px;border-radius:10px;margin-bottom:10px}
-  .chead h3{font-size:15px}
-  .plain{font-size:14.5px;padding:9px 12px}
-  :root{--lbl:76px}
+  :root{--fs-lg:23px;--fs-md:17px;--fs-lead:15.5px;--gutter:16px;--hang:34px;--lbl:76px}
   html[lang^=zh]{--lbl:44px}
-  .f{font-size:13px;gap:8px}
-  .intro{font-size:13.5px;margin:10px 0 18px}
+  main{padding-top:28px}
+  section{margin-bottom:64px}
+  .card{padding:26px 0}
+  .f{gap:8px}
 }
 @media (max-width:520px){
   .bar h1 small{display:none}
-  .chips,.plain,.fields,.src{margin-left:0}
-  .num{min-width:22px;height:22px;font-size:11px;line-height:22px}
 }
 /* 320-380px 的窄屏：按钮和节号下拉都收紧，否则顶栏会被挤到多占一到两行 */
 @media (max-width:380px){
-  .btn{padding:0 8px;font-size:11px}
+  .seg button{padding:0 8px;font-size:var(--fs-2xs)}
   .bar h1{flex:1 1 90px;font-size:13px}
   .jump{max-width:32vw}
 }
@@ -527,16 +557,21 @@ def render_entry(e, sec_no, lang):
     f = e["fields"]
     grade = (f.get("证据等级") or "?").strip()[:1]
     ratio = ratio_of(t)
-    chips = []
     gcls = {"A": "gA", "B": "gB", "C": "gC"}.get(grade, "gC")
-    chips.append('<span class="badge %s">%s</span>' % (gcls, tr(lang, "grade", grade)))
+    sig = '<span class="grade %s">%s</span>' % (gcls, tr(lang, "grade", grade))
     if ratio:
-        chips.append('<span class="badge r%d">%s</span>' % (RATIO_ORDER[ratio], tr(lang, "ratio." + ratio)))
-    for k in ("口径", "钱", "时间", "毅力", "收益"):
+        # 三格刻度：亮几格 = 性价比档位，CSS 按 r0/r1/r2 点亮
+        sig += ('<span class="ratio r%d"><i></i><i></i><i></i>%s</span>'
+                % (RATIO_ORDER[ratio], tr(lang, "ratio." + ratio)))
+    facts = []
+    for k in ("钱", "时间", "毅力", "收益", "口径"):
         if t.get(k):
             key = "tag.%s.%s" % (k, t[k])
             # 上游新增了表里没有的取值时，按原文显示，不翻译
-            chips.append('<span class="tag">%s</span>' % (tr(lang, key) if key in STR else "%s %s" % (k, t[k])))
+            text = tr(lang, key) if key in STR else "%s %s" % (k, t[k])
+            # 葡/英是「标签: 值」（标签里可能有空格），中文是「标签 值」
+            label, value = re.split(r":\s*", text, 1) if ":" in text else text.split(" ", 1)
+            facts.append('<div><dt>%s</dt><dd>%s</dd></div>' % (label, value))
 
     rows = []
     for k in ("成本", "收益"):
@@ -553,12 +588,13 @@ def render_entry(e, sec_no, lang):
                     % (tr(lang, "src.n", n) if n else tr(lang, "src"), inline(src)))
 
     return ('<article class="card" id="s%d-%d" data-grade="%s" data-ratio="%s">'
-            '<div class="chead"><span class="num">%d</span><h3>%s</h3></div>'
-            '<div class="chips">%s</div>'
+            '<span class="num">%d</span><h3>%s</h3>'
+            '<div class="sig">%s</div>'
             '<p class="plain">%s</p>'
+            '<dl class="facts">%s</dl>'
             '<div class="fields">%s</div>%s</article>') % (
         sec_no, e["no"], grade, ratio or "-", e["no"], inline(e["title"]),
-        "".join(chips), inline(f.get("说人话", "")), "".join(rows), src_html)
+        sig, inline(f.get("说人话", "")), "".join(facts), "".join(rows), src_html)
 
 
 JS = r"""
@@ -714,6 +750,20 @@ if(jump) secs.forEach(s=>io.observe(s));
 """
 
 
+def render_intro(text):
+    """引言里「**分组名**：条目…」拆成一段导语加分组列表，一整段长文读不动。"""
+    if not text:
+        return ""
+    parts = re.split(r"<strong>([^<]+)</strong>\s*[:：]\s*", inline(text))
+    lead = parts[0].strip()
+    out = '<p class="intro">%s</p>' % lead if lead else ""
+    if len(parts) > 1:
+        out += '<ul class="topics">%s</ul>' % "".join(
+            '<li><strong>%s</strong>%s</li>' % (parts[i], parts[i + 1].strip())
+            for i in range(1, len(parts), 2))
+    return out
+
+
 def page_path(base, lang):
     """默认语言用 -o 指定的文件，其余语言放在它旁边的 <lang>.html。"""
     return base if lang == DEFAULT_LANG else base.with_name(lang + ".html")
@@ -744,20 +794,21 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
         count = tr(lang, "n.items", len(entries))
         sec_toc.append('<div class="grp"><div class="gt">%s<small>%s</small></div>%s</div>'
                        % (inline(title), count, "".join(links)))
+        # 节号挂在左侧页边，标题只留名字
+        m = re.match(r"\s*(\d+)\s*[.、．]\s*(.+)", title)
+        sec_no, sec_name = (m.group(1), m.group(2)) if m else (str(n), title)
         sec_html.append(
-            '<section id="sec%d"><div class="sec-h"><h2>%s</h2>'
+            '<section id="sec%d"><div class="sec-h"><span class="sn">%s</span><h2>%s</h2>'
             '<span class="meta">%s</span></div>%s%s</section>'
-            % (n, inline(title), count,
-               ('<p class="intro">%s</p>' % inline(intro_text)) if intro_text else "",
-               "".join(cards)))
+            % (n, sec_no, inline(sec_name), count, render_intro(intro_text), "".join(cards)))
         jump_opts.append('<option value="sec%d">%s</option>' % (n, html.escape(title)))
 
     scope = tr(lang, "scope." + SCOPE_KEY, SCOPE_ARG)
     head = ('<!DOCTYPE html><html lang="%s" data-theme="light"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
             '<meta name="color-scheme" content="light dark">'
-            '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">'
-            '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1f">'
+            '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfc">'
+            '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#18191b">'
             '<meta name="description" content="%s">'
             '<title>%s</title><style>%s</style></head><body>'
             % (LANGS[lang]["tag"],
@@ -768,22 +819,26 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
     lang_opts = "".join('<option value="%s"%s>%s</option>'
                         % (page_path(base, code).name, " selected" if code == lang else "", v["name"])
                         for code, v in LANGS.items())
-    bar = ('<header class="bar"><h1>%s<small>%s</small></h1>'
+    # 标志就是条目里那个三格性价比刻度；三个筛选互斥，做成一组分段按钮
+    bar = ('<header class="bar"><h1><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>'
+           '%s<small>%s</small></h1>'
            '<select class="jump" id="jump" aria-label="%s">%s</select>'
            '<div class="spacer"></div>'
-           '<button class="btn" id="f-all">%s</button>'
-           '<button class="btn" id="f-a">%s</button>'
-           '<button class="btn" id="f-plain">%s</button>'
+           '<div class="seg">'
+           '<button id="f-all">%s</button>'
+           '<button id="f-a">%s</button>'
+           '<button id="f-plain">%s</button></div>'
            '<div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>'
            '<path d="M20 20l-3.5-3.5"/></svg>'
            '<input id="q" type="search" placeholder="%s" autocomplete="off">'
            '<kbd>/</kbd></div>'
            '<span class="count" id="cnt">%s</span>'
-           '<button class="btn" id="theme">%s</button>'
+           '<button class="icon" id="theme" title="%s" aria-label="%s">'
+           '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z"/></svg></button>'
            '<select class="lang" id="lang" aria-label="%s" autocomplete="off">%s</select></header>' % (
                tr(lang, "title"), scope, tr(lang, "jump.aria"), "".join(jump_opts),
                tr(lang, "filter.all"), tr(lang, "filter.a"), tr(lang, "filter.plain"),
-               tr(lang, "search.ph"), tr(lang, "count", total, total), tr(lang, "theme"),
+               tr(lang, "search.ph"), tr(lang, "count", total, total), tr(lang, "theme"), tr(lang, "theme"),
                tr(lang, "lang.aria"), lang_opts))
 
     upstream_link = '<a href="%s" target="_blank" rel="noopener">eternity4719/HowToLiveBetter</a>' % UPSTREAM
