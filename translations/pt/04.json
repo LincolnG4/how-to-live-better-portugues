@@ -1,0 +1,302 @@
+{
+  "section": {
+    "src": {
+      "title": "4. 不要浪费时间",
+      "intro": "本节只算时间账。看的是每天、每周、每年能省回多少小时，或者一件事按时做完的比例能提高多少。这里不把时间换算成寿命，也不换算成钱。涉及钱的地方只给算法，不给结论。本节多数条目的证据是单独一项研究，或者是时间利用调查的总量统计，所以等级以 B、C 为主。"
+    },
+    "tr": {
+      "title": "4. Não desperdice tempo",
+      "intro": "Esta seção só faz a conta do tempo. Olha quantas horas por dia, por semana ou por ano dá para recuperar, ou quanto sobe a proporção de coisas feitas dentro do prazo. Aqui o tempo não é convertido em duração de vida nem em dinheiro. Onde há dinheiro envolvido, só se dá a forma de calcular, sem conclusão. Na maioria das dicas desta seção, a evidência é um único estudo ou estatísticas totais de pesquisas sobre uso do tempo, e por isso o nível é principalmente B e C."
+    }
+  },
+  "entries": [
+    {
+      "src": {
+        "title": "把「打算做」写成「几点、在哪、遇到什么就做什么」",
+        "说人话": "把「我要做这件事」改写成「周二早 8 点坐到书桌前就先写引言」。94 项检验合起来算，这么写的人把目标做成的比例明显更高，属于中到大的效果。改的只是一句话的写法，不花钱，也不费力气。",
+        "成本": "不花钱。每件事花 1 到 2 分钟，写一句「如果……就……」。比如「周二早 8 点坐到书桌前就先写引言」。",
+        "收益": "把 94 项独立检验合起来算，先把打算写成「如果……就……」的人，目标达成率更高。这种写法在心理学里叫实施意图。效果大小 d = 0.65，算中到大。管用的环节有三个：开始动手、被打扰的时候顶住、从注定做不成的事上撤出来。",
+        "备注": "这招只对你自己真想做的事有效。目标本身你就不想要，写再多句也没用。另外，这些研究找的多是学生，看的多是健康方面的习惯，搬到工作场景不一定同样管用。"
+      },
+      "tr": {
+        "title": "Troque o “pretendo fazer” por “a tal hora, em tal lugar, se acontecer tal coisa, faço tal coisa”",
+        "说人话": "Troque o “vou fazer isto” por “terça, às 8h da manhã, sentar à mesa e começar escrevendo a introdução”. Combinando 94 testes, quem escreve assim cumpre a meta com uma proporção nitidamente maior, um efeito de médio a grande. O que muda é só a redação de uma frase, sem gastar dinheiro nem esforço.",
+        "成本": "Não custa dinheiro. De 1 a 2 minutos por tarefa, escrevendo uma frase do tipo “se... então...”. Por exemplo: “terça, às 8h da manhã, sentar à mesa e começar escrevendo a introdução”.",
+        "收益": "Combinando 94 testes independentes, quem primeiro escreve a intenção no formato “se... então...” atinge mais as metas. Essa forma de escrever chama-se, na psicologia, intenção de implementação. O tamanho do efeito é d = 0,65, de médio a grande. Funciona em três etapas: começar a agir, resistir quando há distração e se retirar de coisas que estão fadadas ao fracasso.",
+        "备注": "Esse truque só funciona para o que você realmente quer fazer. Se você nem quer a meta, não adianta escrever quantas frases for. Além disso, esses estudos usaram sobretudo estudantes e olharam sobretudo hábitos de saúde, e levar isso para o trabalho pode não funcionar igual."
+      }
+    },
+    {
+      "src": {
+        "title": "开工前写下退出条件",
+        "说人话": "开工前先写好一句话：到某月某日还没达到某个指标就停。多项研究合起来算，这种写法确实能帮人从注定做不成的事上撤下来。省下的是你本来还要接着往里砸的全部时间。",
+        "成本": "不花钱。开工的时候花 5 分钟，写清「到某月某日没达到某个指标就停」。难在到了那天要认账，当着人停手有点丢面子。",
+        "收益": "把多项实施意图研究合起来算，事先定好的「如果……就……」，同样能帮人从注定做不成的事上撤出来。原文的说法是 disengagement from failing courses of action。省下的时间，就是你本来还会继续投进去的那些。",
+        "备注": "退出条件要在刚开工、情绪还冷静的时候定。事后再定会被已经投进去的成本带偏。判断时只看未来投入和未来回报，见第 3 条。另外，「肯撤出」只是多项研究汇总里的一个分项结论，没有人单独算过它能省下多少时间。"
+      },
+      "tr": {
+        "title": "Antes de começar, escreva a condição de saída",
+        "说人话": "Antes de começar, escreva uma frase: se até tal data eu não tiver atingido tal indicador, eu paro. Combinando vários estudos, escrever assim de fato ajuda a pessoa a sair de algo fadado ao fracasso. O que você economiza é todo o tempo que continuaria jogando ali dentro.",
+        "成本": "Não custa dinheiro. Na hora de começar, gaste 5 minutos escrevendo com clareza “se até tal data eu não tiver atingido tal indicador, paro”. O difícil é assumir a derrota no dia, e parar diante dos outros dá um pouco de vergonha.",
+        "收益": "Combinando vários estudos de intenção de implementação, o “se... então...” definido de antemão também ajuda a pessoa a se retirar de algo fadado ao fracasso. A expressão no original é “disengagement from failing courses of action”. O tempo economizado é aquele que você continuaria investindo.",
+        "备注": "A condição de saída deve ser definida logo no começo, com a cabeça fria. Se for definida depois, os custos já investidos distorcem o julgamento. Na hora de decidir, olhe só os investimentos futuros e os retornos futuros, veja a dica 3 desta seção. Além disso, “aceitar sair” é só uma conclusão parcial dentro de uma combinação de vários estudos, e ninguém calculou isoladamente quanto isso economiza de tempo."
+      }
+    },
+    {
+      "src": {
+        "title": "决定是否继续时，只看未来投入和未来回报，不看已投入多少",
+        "说人话": "已经投进去的钱和时间，会让人更想接着干下去。98 组数据合起来算，这个倾向稳定存在。所以判断要不要继续，只算往后还要投多少、还能拿回多少。已经花掉的那些，不要算进去。",
+        "成本": "不花钱。难在要接受一件事：之前投进去的时间已经没了，拿不回来。",
+        "收益": "已经投入的钱、精力和时间，会让人更想继续做下去。这在心理学里叫沉没成本效应。把 98 组数据合起来算，分析确认这种倾向稳定存在。避开这种倾向，就不会为了「不想浪费」继续往里投时间。",
+        "备注": "Arkes 和 Blumer 那项剧院实验是这样做的。俄亥俄大学剧院卖季票，随机给买票的人原价 15 美元、便宜 2 美元、便宜 7 美元三种价。前半季，原价那组平均看了 4.11 场，另两组是 3.32 和 3.29 场。后半季三组就没有明显差别了。Roth 等人发现，这种影响会随时间变淡，年纪大的人受影响更小。"
+      },
+      "tr": {
+        "title": "Ao decidir se continua, olhe só o investimento futuro e o retorno futuro, e não quanto já foi investido",
+        "说人话": "O dinheiro e o tempo já investidos fazem a pessoa querer continuar. Combinando 98 conjuntos de dados, essa tendência existe de forma estável. Por isso, para decidir se continua, conte só quanto ainda será preciso investir daqui para frente e quanto ainda dá para receber de volta. O que já foi gasto não entra na conta.",
+        "成本": "Não custa dinheiro. O difícil é aceitar que o tempo que já foi investido se foi e não volta.",
+        "收益": "O dinheiro, o esforço e o tempo já investidos fazem a pessoa querer continuar. Na psicologia, isso se chama efeito do custo irrecuperável. Combinando 98 conjuntos de dados, a análise confirmou que essa tendência existe de forma estável. Se você evita essa tendência, deixa de continuar pondo tempo em algo só por “não querer desperdiçar”.",
+        "备注": "O experimento do teatro de Arkes e Blumer foi assim. O teatro da Universidade de Ohio vendia assinatura de temporada e, de forma aleatória, deu a quem comprou três preços: o integral de 15 dólares, 2 dólares mais barato e 7 dólares mais barato. Na primeira metade da temporada, o grupo do preço integral assistiu em média a 4,11 espetáculos, e os outros dois a 3,32 e 3,29. Na segunda metade, os três grupos já não tinham diferença nítida. Roth e colegas descobriram que esse efeito vai se enfraquecendo com o tempo, e as pessoas mais velhas são menos afetadas."
+      }
+    },
+    {
+      "src": {
+        "title": "估工期时按过去同类任务的实际耗时估，不按计划推",
+        "说人话": "学生估自己 33.9 天写完论文，实际用了 55.5 天，只有 29.7% 的人按自己估的时间做完。另一组被要求先回想上次同类的事花了多久再估，按时完成的比例从 29.3% 升到 60.0%。",
+        "成本": "不花钱。估之前花几分钟，翻一下上次同类的事实际做了多久。",
+        "收益": "学生预计 33.9 天完成论文，实际用了 55.5 天。只有 29.7% 的人按自己的估计按时完成。研究者要求另一组人先把过去的经历和眼下这件事挂上钩，再去估。这一组按时完成的比例，从对照组的 29.3% 升到 60.0%。把工期往少了估的那种乐观，在这一组身上不再出现。",
+        "备注": "Buehler 那项只找了加拿大大学生，是单独一项研究，人也少，37 人和每组约 40 人。照同类项目的历史数据来估，这种做法叫参考类预测，工程上具体怎么做见 Flyvbjerg。Halkjelsvik 汇总多项研究后指出，估少比估多更常见，但差多少随任务和研究方法变化很大。"
+      },
+      "tr": {
+        "title": "Ao estimar prazos, estime pelo tempo real que tarefas parecidas do passado levaram, e não pelo plano",
+        "说人话": "Estudantes estimaram que escreveriam a tese em 33,9 dias, e na prática levaram 55,5, e só 29,7% terminaram no tempo que estimaram. Outro grupo, ao qual se pediu que primeiro lembrasse quanto tempo levou da última vez uma coisa parecida e só então estimasse, passou de 29,3% para 60,0% de proporção de quem terminou no prazo.",
+        "成本": "Não custa dinheiro. Antes de estimar, gaste alguns minutos olhando quanto tempo a última coisa parecida realmente levou.",
+        "收益": "Estudantes previram terminar a tese em 33,9 dias e na prática levaram 55,5. Só 29,7% terminaram no prazo que estimaram. Os pesquisadores pediram a outro grupo que primeiro ligasse experiências passadas à tarefa de agora e só depois estimasse. A proporção de quem terminou no prazo nesse grupo subiu de 29,3% no grupo de controle para 60,0%. O otimismo de estimar o prazo menor do que é deixou de aparecer nesse grupo.",
+        "备注": "O estudo de Buehler incluiu só estudantes universitários canadenses, é um estudo isolado e com pouca gente, 37 pessoas e cerca de 40 por grupo. Estimar a partir dos dados históricos de projetos parecidos chama-se previsão por classe de referência, e como se faz na engenharia está em Flyvbjerg. Halkjelsvik, ao combinar vários estudos, aponta que subestimar é mais comum do que superestimar, mas a diferença varia muito conforme a tarefa e o método do estudo."
+      }
+    },
+    {
+      "src": {
+        "title": "会前发议程，没议程的会不开；能站着开就站着开",
+        "说人话": "会前发了议程的会，参会者更容易觉得这个会有用。实验里，坐着开的会比站着开的长 34%，而两种开法做出的决定，好坏没有差别。",
+        "成本": "不花钱。组织者会前花 5 到 10 分钟写一份议程。站着开会要参会者配合。",
+        "收益": "两项调查分别有 958 人和 292 人。结果是：会前发了议程的会，参会者更容易觉得这个会有效果，这个关系在统计上站得住。另一项实验里 55 组坐着开会，56 组站着开会，坐着开的时长多 34%。两种开法做出的决定，质量没有差别。",
+        "备注": "站会那项实验做的是 5 人小组在实验室里的任务。长会和大型会议不能照搬这个结论。Leach 测的是参会者自己觉得效果如何，不是实际干出了多少活。"
+      },
+      "tr": {
+        "title": "Mande a pauta antes da reunião, não faça reunião sem pauta, e, se der para fazer em pé, faça em pé",
+        "说人话": "Em reuniões cuja pauta foi enviada antes, os participantes tendem mais a achar que a reunião foi útil. No experimento, as reuniões sentadas foram 34% mais longas do que as em pé, e as decisões tomadas pelos dois formatos não tiveram diferença de qualidade.",
+        "成本": "Não custa dinheiro. Quem organiza gasta de 5 a 10 minutos antes da reunião escrevendo uma pauta. Fazer reunião em pé exige a colaboração dos participantes.",
+        "收益": "Duas pesquisas tiveram 958 e 292 pessoas. O resultado: nas reuniões cuja pauta foi enviada antes, os participantes tendem mais a achar que a reunião teve efeito, e essa relação se sustenta estatisticamente. Em outro experimento, 55 grupos fizeram reunião sentados e 56 em pé, e as reuniões sentadas duraram 34% mais. A qualidade das decisões tomadas nos dois formatos não teve diferença.",
+        "备注": "O experimento das reuniões em pé foi uma tarefa de laboratório com grupos de 5 pessoas. Reuniões longas e grandes conferências não permitem copiar essa conclusão. Leach mediu o que os próprios participantes achavam do efeito, e não quanto trabalho realmente foi feito."
+      }
+    },
+    {
+      "src": {
+        "title": "砍会议数量，能用文字异步解决的不开会",
+        "说人话": "当天开的会越多，人越累，自己感觉手上的活也越多。砍掉一个会，省下的时间就是那个会本身的长度，一分不打折。",
+        "成本": "不花钱。要同事和上级配合。难在写清楚一段文字，比张嘴说一句费精力。",
+        "收益": "两项调查找的是每周工作 35 小时以上的员工，分别有 676 人和 304 人。开会占掉多少时间，对工作态度和幸福感的影响不是固定的，要看两件事：会开得好不好，这个岗位干活有多依赖别人。另一项研究让人连记一周日记，结果是当天开会次数越多，疲劳和自己感觉到的工作量越高。省下的时间，等于你砍掉的会议时长本身。",
+        "备注": "争议：Rogelberg 2006 发现，会议多少和幸福感之间不是一边倒。工作上高度依赖别人的岗位，会议多反而不算坏事。另外，没有研究把「改用文字异步沟通」和开会直接比过，这条是作者自己的推论。"
+      },
+      "tr": {
+        "title": "Corte o número de reuniões e não faça reunião do que dá para resolver por escrito, de forma assíncrona",
+        "说人话": "Quanto mais reuniões no dia, mais cansada a pessoa fica e mais trabalho ela sente ter nas mãos. Cortar uma reunião economiza o tempo daquela reunião, sem desconto de um minuto sequer.",
+        "成本": "Não custa dinheiro. Exige a colaboração de colegas e chefes. O difícil é que escrever um texto claro dá mais trabalho do que dizer uma frase em voz alta.",
+        "收益": "Duas pesquisas com funcionários que trabalham 35 horas ou mais por semana, com 676 e 304 pessoas. O efeito do tempo ocupado por reuniões sobre a atitude no trabalho e o bem-estar não é fixo, e depende de duas coisas: se as reuniões são bem conduzidas e quanto o cargo depende dos outros para trabalhar. Em outro estudo, as pessoas fizeram um diário por uma semana seguida, e quanto mais reuniões no dia, maiores eram o cansaço e a carga de trabalho que sentiam. O tempo economizado é igual à duração das reuniões que você cortou.",
+        "备注": "Controvérsia: Rogelberg 2006 descobriu que a relação entre quantidade de reuniões e bem-estar não é unilateral. Em cargos muito dependentes dos outros no trabalho, muitas reuniões até não são ruins. Além disso, nenhum estudo comparou diretamente “passar a se comunicar por escrito de forma assíncrona” com fazer reunião, e esta dica é inferência do próprio autor."
+      }
+    },
+    {
+      "src": {
+        "title": "把大任务拆成子任务再估时、再开工",
+        "说人话": "人估工期的时候，不会自动把任务拆开一件件算。先把子任务列出来再估，就能少估短一截。拆开之后，每一小步都能马上动手，也就不那么容易拖。",
+        "成本": "不花钱。拆分本身花 5 到 15 分钟。",
+        "收益": "人们估工期时，不会自己把一件有好几头的任务拆成几块。比如写文献综述、写讨论、整理参考文献，这本来就是几件事。先把子任务列出来再估，能少犯把工期估短的毛病，这个毛病叫规划谬误。拆开之后，每一小步都成了一个可以立刻开始的动作，拖延也跟着变少。研究里最能预示拖延的因素，包括对这件事的厌恶感，以及任务本身被往后推。",
+        "备注": "拆到什么程度合适：以「每个子任务能在一次坐下来的时间里做完」为准，拆得过细本身也耗时间。另外，Kruger 和 Evans 那项只从摘要核实到方向，具体百分比没核到原文。"
+      },
+      "tr": {
+        "title": "Divida a tarefa grande em subtarefas antes de estimar o tempo e de começar",
+        "说人话": "Quando as pessoas estimam um prazo, não dividem a tarefa automaticamente para contar uma a uma. Se você listar primeiro as subtarefas e só depois estimar, subestima um pouco menos. Depois de dividida, cada pequeno passo pode ser começado na hora, e fica menos fácil adiar.",
+        "成本": "Não custa dinheiro. A divisão em si leva de 5 a 15 minutos.",
+        "收益": "Ao estimar um prazo, as pessoas não dividem sozinhas uma tarefa de várias frentes em partes. Por exemplo, escrever uma revisão de literatura, escrever a discussão e organizar as referências já são, de saída, coisas diferentes. Listar primeiro as subtarefas e só depois estimar reduz o erro de estimar o prazo menor do que é, que se chama falácia do planejamento. Depois da divisão, cada pequeno passo vira uma ação que pode começar imediatamente, e a procrastinação diminui junto. Nos estudos, os fatores que mais antecipam a procrastinação incluem a aversão à tarefa e o fato de a própria tarefa ser empurrada para frente.",
+        "备注": "Até onde dividir: o critério é que “cada subtarefa possa ser concluída em uma sentada”, e dividir demais também consome tempo. Além disso, o estudo de Kruger e Evans foi verificado só a partir do resumo quanto à direção, e a porcentagem exata não foi conferida no original."
+      }
+    },
+    {
+      "src": {
+        "title": "给没有外部截止的事自己定一个日期",
+        "说人话": "有别人定的截止日期时，80.6% 的学生能在那之前做完。按自己预计的时间做完的，只有 38.7%。什么时候做完，几乎跟着截止日期走，和自己估的关系不大。所以没有截止日期的事，自己给它定一个，并且认账。",
+        "成本": "不花钱。难在定了就要认，到了那天不当回事就等于没定。",
+        "收益": "有外部截止日期的学生，80.6% 在截止前完成。而在自己预计的时间内完成的，只有 38.7%。什么时候做完，几乎跟着截止日期走，相关系数 r = 0.82，这个数越接近 1 说明跟得越紧。和自己的预计只有很弱的关系。",
+        "备注": "把自己定的日期告诉别人，它就更接近别人定的那一种。研究验证的是别人定的截止日期管用。自己给自己定的那种，比如时间盒、番茄钟，没人直接测过，这里是照着推的。"
+      },
+      "tr": {
+        "title": "Defina você mesmo uma data para o que não tem prazo externo",
+        "说人话": "Quando há um prazo definido por outra pessoa, 80,6% dos estudantes terminam antes dele. Os que terminaram no tempo que eles mesmos previam foram só 38,7%. O momento de terminar acompanha quase só o prazo, e tem pouca relação com a própria estimativa. Por isso, para o que não tem prazo, defina um você mesmo e assuma o compromisso.",
+        "成本": "Não custa dinheiro. O difícil é que, se você definiu, tem de cumprir, e, se no dia não levar a sério, é como se não tivesse definido.",
+        "收益": "Entre os estudantes com prazo externo, 80,6% terminaram antes do prazo. Já os que terminaram dentro do tempo que eles mesmos previam foram só 38,7%. O momento de terminar acompanha quase só o prazo, com coeficiente de correlação r = 0,82, e quanto mais perto de 1, mais de perto ele acompanha. Com a própria previsão há só uma relação fraca.",
+        "备注": "Se você contar a outras pessoas a data que definiu, ela fica mais parecida com a definida por outro. O que o estudo comprovou foi que o prazo definido por outros funciona. Os que a pessoa define para si, como time boxing ou pomodoro, ninguém mediu diretamente, e aqui é extrapolado."
+      }
+    },
+    {
+      "src": {
+        "title": "把拖延当成在躲开难受，不要当成不够努力",
+        "说人话": "这件事让人多难受、觉不觉得自己做得成、容不容易被眼前的东西带走、自控强不强，和拖延关系最强。神经质、爱寻求刺激这类性格，和拖延只有很弱的关联。所以可以先把任务改得没那么难受、把第一步改小，别光靠骂自己一顿再硬上。",
+        "成本": "不花钱。改的只是判断方向：先问这件事哪里让你难受，再想办法。",
+        "收益": "一份汇总了 691 个相关系数的荟萃分析发现，和拖延关系强而稳定的有几样：任务让人厌恶的程度、离截止还有多远、自我效能感（觉得自己做得成）、冲动性，以及尽责性和它下面的自控、易分心、条理性、成就动机。而神经质、叛逆、寻求刺激和拖延只有很弱的关联。作者用时间动机理论来解释这组结果：一件事现在的吸引力，随着回报变远而快速变小。",
+        "备注": "收益量级记「中」，因为这些研究只指出方向，没有量过能省下多少小时。具体动作在本节第 1 条（写成「几点、在哪、遇到什么就做什么」）、第 7 条（把大任务拆成子任务）、第 8 条（给没有外部截止的事定一个日期）。这些是相关研究的汇总，看不出谁导致谁。"
+      },
+      "tr": {
+        "title": "Encare a procrastinação como fugir do que incomoda, e não como falta de esforço",
+        "说人话": "O quanto a tarefa incomoda, se você acha que consegue fazê-la, se é fácil se deixar levar pelo que está na sua frente e quão forte é o seu autocontrole são o que tem mais relação com a procrastinação. Traços de personalidade como neuroticismo e busca de sensações têm só uma relação muito fraca com ela. Por isso, dá para começar tornando a tarefa menos incômoda e o primeiro passo menor, em vez de só se xingar e forçar a barra.",
+        "成本": "Não custa dinheiro. O que muda é só a direção do julgamento: primeiro pergunte o que nesta tarefa incomoda você, e depois pense em como lidar.",
+        "收益": "Uma meta-análise que reuniu 691 coeficientes de correlação encontrou, com relação forte e estável com a procrastinação, algumas coisas: o grau de aversão à tarefa, a distância até o prazo, a autoeficácia (achar que você consegue fazer), a impulsividade e a conscienciosidade com suas partes, que são autocontrole, distração fácil, organização e motivação para realizar. Já o neuroticismo, a rebeldia e a busca de sensações têm só uma relação muito fraca com a procrastinação. Os autores explicam esse conjunto de resultados com a teoria da motivação temporal: o apelo de uma coisa agora diminui rapidamente conforme a recompensa fica mais distante.",
+        "备注": "O tamanho do benefício foi classificado como “médio” porque esses estudos só indicam a direção e não mediram quantas horas dá para economizar. As ações concretas estão na dica 1 desta seção (escreva “a tal hora, em tal lugar, se acontecer tal coisa, faço tal coisa”), na dica 7 (divida a tarefa grande em subtarefas) e na dica 8 (defina uma data para o que não tem prazo externo). São combinações de estudos de correlação, que não mostram quem causa quem."
+      }
+    },
+    {
+      "src": {
+        "title": "把要用的东西摆到手边，把不想碰的挪远，别指望当场忍住",
+        "说人话": "东西离得远一点，人就少拿一点。把同样的零食放远，吃下去的量明显下降，属于中等大小的效果。少摆几个选项，拿的人也明显变少。这类办法不用你当场忍，几分钟就能布置好。",
+        "成本": "不花钱，一次几分钟。把手机放到另一个房间，把书和电脑摊在桌上。",
+        "收益": "一份纳入 24 项随机试验的 Cochrane 综述。把食物放得更远，吃掉的量下降，标准化均数差 −0.60（95% CI −0.84 到 −0.36，这是可信范围；12 项研究、1098 人，低确定性证据），属于中等效应。把可选项减少，选择该食物的下降更明显，标准化均数差 −1.13（95% CI −1.90 到 −0.37，3 项研究、154 人，低确定性证据）。回归分析显示：放得越远、可选项越单一，效果越强。",
+        "备注": "定 B 级的理由：这份综述收进来的 24 项研究全部是食物，酒和烟一项都没有；14 项在实验室做，全部来自高收入国家。所以「挪远就少碰」搬到手机和游戏上属于顺推，没有直接试验。把手机放到视线之外这一件事有人直接测过，见第 3 节第 1 条（关掉非必要通知，工作时把手机放到视线之外）。"
+      },
+      "tr": {
+        "title": "Deixe à mão o que você vai usar e afaste o que não quer tocar, em vez de contar com se segurar na hora",
+        "说人话": "Quanto mais longe a coisa está, menos a pessoa pega. Pondo o mesmo petisco mais longe, a quantidade comida cai de forma nítida, um efeito de tamanho médio. Pondo menos opções, bem menos gente pega também. Esse tipo de medida não exige que você se segure na hora e dá para arrumar em alguns minutos.",
+        "成本": "Não custa dinheiro, e leva alguns minutos de uma vez. Leve o celular para outro cômodo e deixe o livro e o computador abertos sobre a mesa.",
+        "收益": "Uma revisão da Cochrane com 24 ensaios randomizados. Pôr a comida mais longe reduz a quantidade consumida, com diferença média padronizada de −0,60 (IC 95% de −0,84 a −0,36, a faixa plausível; 12 estudos, 1.098 pessoas, evidência de baixa certeza), um efeito médio. Reduzir o número de opções diminui ainda mais a escolha daquele alimento, com diferença média padronizada de −1,13 (IC 95% de −1,90 a −0,37, 3 estudos, 154 pessoas, evidência de baixa certeza). A análise de regressão mostra: quanto mais longe e quanto mais única a opção, mais forte o efeito.",
+        "备注": "Motivo do nível B: os 24 estudos incluídos na revisão são todos sobre comida, e nenhum sobre álcool ou cigarro. 14 foram feitos em laboratório e todos vêm de países de renda alta. Por isso, levar o “afastou, tocou menos” para o celular e os jogos é uma extrapolação, sem ensaio direto. Deixar o celular fora do campo de visão foi medido diretamente por alguém, veja a dica 1 da seção 3 (desligue as notificações não essenciais e, ao trabalhar, deixe o celular fora do campo de visão)."
+      }
+    },
+    {
+      "src": {
+        "title": "想让自己做到就把钱押上，但先问自己肯不肯押",
+        "说人话": "想逼自己做到，可以做到了就领奖金，也可以先交押金、做到才退还再加奖。两种都肯参加的人里，交押金的做到的多出 13 个百分点。但肯交押金的只有 13.7%，肯拿奖金的有 90%，所以押金只对肯押的人有用。",
+        "成本": "押金式的方案要先拿出一笔自己的钱，做不到就没收。试验里押的是 150 美元。",
+        "收益": "美国一项 2538 人的随机试验，把员工和他们的亲友随机分到四种激励方案或常规照护。奖励型（做到给约 800 美元）的接受率 90.0%，押金型（先交 150 美元，另加 650 美元奖励）13.7%。六个月的持续戒烟率：四种激励方案在 9.4% 到 16.0% 之间，常规照护 6.0%。奖励型 15.7%，押金型 10.2%。但在只算「两种都肯参加」的那 13.7% 的人里，押金型的六个月戒烟率比奖励型高 13.2 个百分点（95% CI 3.1 到 22.8，这是可信范围）。",
+        "备注": "这个试验测的是戒烟，搬到写论文、健身这类事上属于顺推，所以收益量级记「中」。选方案时先看自己会不会真的用它，而不是先看哪种更有效。多数人不肯接受的办法，效果再强，对这些人也没有用。所以先挑你肯接受的那种，押小一点也比不押强。戒烟本身怎么戒见第 2 节第 3 条（戒烟药）。"
+      },
+      "tr": {
+        "title": "Para se obrigar a cumprir, ponha dinheiro em jogo, mas antes pergunte a si mesmo se você topa pôr",
+        "说人话": "Para se forçar a cumprir, dá para receber um bônus ao cumprir, ou também pagar antes um depósito que só é devolvido, mais um prêmio, se você cumprir. Entre quem topava os dois, quem pagou o depósito cumpriu 13 pontos percentuais a mais. Mas só 13,7% toparam pagar o depósito, enquanto 90% toparam receber o bônus, e por isso o depósito só serve para quem topa pôr o dinheiro.",
+        "成本": "Os planos de depósito exigem tirar antes uma quantia do próprio bolso, que é confiscada se você não cumprir. No ensaio, o valor em jogo era de 150 dólares.",
+        "收益": "Um ensaio randomizado nos EUA com 2.538 pessoas dividiu aleatoriamente funcionários e seus parentes e amigos entre quatro planos de incentivo ou o cuidado habitual. A aceitação do tipo recompensa (cerca de 800 dólares se cumprir) foi de 90,0%, e a do tipo depósito (pagar antes 150 dólares, mais 650 dólares de prêmio) foi de 13,7%. A taxa de abstinência do cigarro sustentada por seis meses: nos quatro planos de incentivo ficou entre 9,4% e 16,0%, e no cuidado habitual, 6,0%. Tipo recompensa, 15,7%, tipo depósito, 10,2%. Mas, entre os 13,7% que toparam “os dois”, a taxa de abstinência de seis meses do tipo depósito foi 13,2 pontos percentuais maior que a do tipo recompensa (IC 95% de 3,1 a 22,8, a faixa plausível).",
+        "备注": "Este ensaio mediu parar de fumar, e levar isso para escrever tese ou fazer academia é extrapolação, e por isso o tamanho do benefício foi classificado como “médio”. Ao escolher o plano, veja primeiro se você realmente vai usá-lo, e não primeiro qual é mais eficaz. Um método que a maioria das pessoas não aceita, por mais forte que seja o efeito, não serve para elas. Por isso, escolha primeiro o que você aceita, e pôr em jogo um valor pequeno é melhor do que não pôr nada. Sobre como parar de fumar em si, veja a dica 3 da seção 2 (remédios para parar de fumar)."
+      }
+    },
+    {
+      "src": {
+        "title": "新习惯按月算，不要按「21 天」算",
+        "说人话": "「21 天养成一个习惯」没有依据。一项跟踪 12 周的研究算下来，一个动作变得不用想就做，快的 18 天，慢的要 254 天。两三周还没变轻松是正常的。中间漏掉一天，也不会把进度清零。",
+        "成本": "不花钱。要的是在同一个场景下每天重复同一个动作，持续几个月。",
+        "收益": "96 名志愿者各挑一个吃、喝或者活动方面的动作，在固定场景下（比如「早饭后」）每天做，持续 12 周，每天给自己的自动化程度打分。82 人的数据够用来分析，模型在 62 人身上拟合成功。达到各自自动化上限 95% 所需的天数，范围是 18 天到 254 天。研究还发现，漏掉一次执行机会对习惯养成过程没有实质影响。",
+        "备注": "只有这一项研究，96 人，做的都是简单动作（比如饭后吃一份水果）。复杂的事要多久，比如每周跑三次、每天写作，没人测过。所以两周后还很费劲，不能当成失败的证据。要让重复真的发生，把动作绑在一个固定场景上，见本节第 1 条（写成「几点、在哪、遇到什么就做什么」）。"
+      },
+      "tr": {
+        "title": "Conte os hábitos novos em meses, e não em “21 dias”",
+        "说人话": "O “21 dias para formar um hábito” não tem base. Em um estudo que acompanhou 12 semanas, o tempo para uma ação passar a ser feita sem pensar foi de 18 dias, no mais rápido, a 254, no mais lento. É normal que depois de duas ou três semanas ainda não tenha ficado fácil. Perder um dia no meio também não zera o progresso.",
+        "成本": "Não custa dinheiro. O que se precisa é repetir todo dia a mesma ação na mesma situação, por vários meses.",
+        "收益": "96 voluntários escolheram, cada um, uma ação ligada a comer, beber ou atividade, fizeram-na todo dia numa situação fixa (por exemplo, “depois do café da manhã”) por 12 semanas, e deram a si mesmos todo dia uma nota de automatização. Os dados de 82 pessoas bastaram para a análise, e o modelo se ajustou com sucesso em 62. O número de dias necessário para chegar a 95% do teto de automatização de cada um variou de 18 a 254 dias. O estudo também descobriu que perder uma oportunidade de executar não teve efeito real no processo de formação do hábito.",
+        "备注": "É um estudo só, com 96 pessoas, e todas fizeram ações simples (como comer uma fruta depois da refeição). Quanto tempo leva uma coisa complexa, como correr três vezes por semana ou escrever todo dia, ninguém mediu. Por isso, continuar custando muito depois de duas semanas não pode ser tomado como prova de fracasso. Para a repetição realmente acontecer, amarre a ação a uma situação fixa, veja a dica 1 desta seção (escreva “a tal hora, em tal lugar, se acontecer tal coisa, faço tal coisa”)."
+      }
+    },
+    {
+      "src": {
+        "title": "拖延已经影响生活的，用有随机试验支持的自助材料，不用非找治疗师",
+        "说人话": "拖延严重到让人痛苦，是能改善的。照着认知行为自助材料练十周，有人带着做和完全自己做，都明显比什么都不做好。有人带和没人带看不出差别，所以自己照着做也有效。",
+        "成本": "一本自助书几十元，有的免费。要投入十周左右，每周读一节、做一次练习。",
+        "收益": "150 人随机分成三组：有治疗师指导的自助、无指导的自助、等待名单对照。十周后，纯拖延量表上的组间效应量，有指导组 d = 0.70（95% CI 0.29–1.10，这是可信范围），无指导组 d = 0.50（0.10–0.90）；非理性拖延量表上分别是 0.81（0.40–1.22）和 0.69（0.29–1.09）。达到临床意义改善的比例：有指导组 31.3% 到 40.0%，无指导组 24.0% 到 36.0%。两组在任何一项结果上都没有显著差别。",
+        "备注": "受试者是瑞典成年人，用的是瑞典语材料，中文里没有现成的同一套，所以收益量级记「中」。材料里的成分就是常见那几样：行为激活、行为实验、刺激控制、关于动机和工作方法的讲解。刺激控制那一样在本节第 10 条（把不想碰的挪远）。拖延同时伴着明显的情绪低落或者焦虑，先按第 3 节第 18 条（动起来、晒太阳、按时睡、找人说、打 12356）来。"
+      },
+      "tr": {
+        "title": "Se a procrastinação já afeta a sua vida, use material de autoajuda apoiado em ensaios randomizados, sem precisar procurar um terapeuta",
+        "说人话": "A procrastinação, quando é tão forte que faz sofrer, pode melhorar. Seguindo um material de autoajuda cognitivo-comportamental por dez semanas, tanto com acompanhamento quanto totalmente sozinho, a pessoa fica nitidamente melhor do que sem fazer nada. Com ou sem acompanhamento não se vê diferença, e por isso fazer sozinho seguindo o material também funciona.",
+        "成本": "Um livro de autoajuda custa algumas dezenas de yuans, e alguns são gratuitos. É preciso investir cerca de dez semanas, lendo uma parte e fazendo um exercício por semana.",
+        "收益": "150 pessoas foram divididas aleatoriamente em três grupos: autoajuda com orientação de terapeuta, autoajuda sem orientação e controle em lista de espera. Após dez semanas, o tamanho do efeito entre grupos na escala de procrastinação pura foi d = 0,70 no grupo com orientação (IC 95% 0,29–1,10, a faixa plausível) e d = 0,50 no sem orientação (0,10–0,90). Na escala de procrastinação irracional, foram 0,81 (0,40–1,22) e 0,69 (0,29–1,09). A proporção com melhora de significado clínico: grupo com orientação, de 31,3% a 40,0%, grupo sem orientação, de 24,0% a 36,0%. Os dois grupos não tiveram diferença significativa em nenhum dos resultados.",
+        "备注": "Os participantes eram adultos suecos, o material era em sueco, e em chinês não existe esse mesmo conjunto pronto, e por isso o tamanho do benefício foi classificado como “médio”. Os componentes do material são os comuns: ativação comportamental, experimentos comportamentais, controle de estímulos e explicações sobre motivação e métodos de trabalho. O controle de estímulos está na dica 10 desta seção (afaste o que você não quer tocar). Se a procrastinação vier acompanhada de desânimo ou ansiedade acentuados, siga primeiro a dica 18 da seção 3 (mexa-se, pegue sol, durma na hora, converse com alguém, ligue para o 12356)."
+      }
+    },
+    {
+      "src": {
+        "title": "用自己的时薪决定哪些家务外包",
+        "说人话": "中国人平均每天花 1 小时 17 分做家务。当天真动手做的那部分人，花 1 小时 59 分。花钱买时间的人，生活满意度更高。同样一笔钱，花在买时间上比买东西，当下更让人开心。",
+        "成本": "要花一笔外包的钱，多少看你买的是什么服务。另外要先花一次时间，把自己的时薪算清楚。",
+        "收益": "中国居民做家务每天平均 1 小时 17 分钟。只算做了家务的人，平均 1 小时 59 分钟。这是 2024 年的调查，覆盖 3.85 万户、10.7 万人。另一项研究取了四个国家 6271 人的样本，花钱买时间的人生活满意度更高。研究者还在真实生活里做了实验：同一笔钱，花在买时间上比买实物带来更高的当下幸福感。",
+        "备注": "先算时薪，算法是一个月税后收入 ÷ 一个月实际工作小时。再看这项家务外包要多少钱。外包单价低于你的时薪，而且省下的时间你确实会用在挣钱或者休息上，就外包。每个人的时薪和外包价都不同，结论要自己算。另外，Whillans 测的是花钱买时间之后人开不开心，不是省下了多少小时。"
+      },
+      "tr": {
+        "title": "Use o seu valor por hora para decidir quais tarefas domésticas terceirizar",
+        "说人话": "Os chineses gastam em média 1 hora e 17 minutos por dia com tarefas domésticas. Entre quem realmente fez algo no dia, são 1 hora e 59 minutos. Quem gasta dinheiro para comprar tempo tem mais satisfação com a vida. Com o mesmo dinheiro, gastar em comprar tempo deixa a pessoa mais feliz no momento do que comprar coisas.",
+        "成本": "Há o gasto de terceirizar, que depende do serviço que você compra. Além disso, é preciso gastar uma vez algum tempo para calcular com clareza o seu valor por hora.",
+        "收益": "Os moradores da China gastam em média 1 hora e 17 minutos por dia com tarefas domésticas. Contando só quem fez tarefas domésticas, a média é de 1 hora e 59 minutos. É uma pesquisa de 2024, que cobriu 38,5 mil domicílios e 107 mil pessoas. Outro estudo usou uma amostra de 6.271 pessoas em quatro países, e quem gasta dinheiro para comprar tempo tem mais satisfação com a vida. Os pesquisadores fizeram também um experimento na vida real: com o mesmo dinheiro, gastar em comprar tempo traz mais felicidade no momento do que comprar um objeto.",
+        "备注": "Primeiro calcule o seu valor por hora: a renda mensal líquida de impostos ÷ as horas realmente trabalhadas no mês. Depois veja quanto custa terceirizar aquela tarefa doméstica. Se o preço da terceirização for menor que o seu valor por hora e você realmente for usar o tempo economizado para ganhar dinheiro ou descansar, terceirize. O valor por hora e o preço da terceirização são diferentes para cada pessoa, e a conclusão você mesmo precisa calcular. Além disso, Whillans mediu se a pessoa fica feliz depois de gastar dinheiro para comprar tempo, e não quantas horas foram economizadas."
+      }
+    },
+    {
+      "src": {
+        "title": "给短视频和无目的刷屏设硬上限",
+        "说人话": "2024 年中国人平均每天上网 5 小时 37 分，当天真上了网的人是 6 小时 3 分。2018 年按同样算法还只有 2 小时 42 分。这是本节里数字最大的一项。每天砍掉一小时，一年就多出 365 小时。",
+        "成本": "不花钱。动作只要几分钟：关掉推送，删掉应用，或者给应用设一个每天的时间上限。难在管住手，忍住不点开。",
+        "收益": "中国居民上网每天平均 5 小时 37 分钟。只算当天真上了网的人，平均 6 小时 3 分钟。当天用过网的人占 92.9%。这些是 2024 年的数字。2018 年按同样算法只有 2 小时 42 分钟。这是本节里数字最大的一项。每天砍掉其中一小时，等于每年多出 365 小时。另据中国互联网络信息中心，到 2025 年 6 月，网民平均每周上网 30.6 小时，比半年前多 1.9 小时。短视频用户有 10.68 亿人，占网民的 95.1%。",
+        "备注": "上网时间里包含工作、学习和社交，不全是浪费。定成 C 级，是因为没有研究算过「限制之后省回多少、这些时间又用到了哪里」，手上只有总量统计。其中「刷别人过得怎么样」这一类，有随机试验测过省回多少、情绪变了多少，见第 3 节第 20 条。"
+      },
+      "tr": {
+        "title": "Ponha um limite rígido para vídeos curtos e para rolar a tela sem objetivo",
+        "说人话": "Em 2024, os chineses ficaram em média 5 horas e 37 minutos por dia na internet, e quem realmente entrou na internet naquele dia, 6 horas e 3 minutos. Em 2018, pelo mesmo cálculo, eram só 2 horas e 42 minutos. Este é o maior número desta seção. Cortando uma hora por dia, sobram 365 horas a mais por ano.",
+        "成本": "Não custa dinheiro. A ação leva só alguns minutos: desligar as notificações, apagar o aplicativo ou pôr no aplicativo um limite diário de tempo. O difícil é controlar a mão e se segurar para não abrir.",
+        "收益": "Os moradores da China ficam na internet em média 5 horas e 37 minutos por dia. Contando só quem realmente entrou na internet naquele dia, a média é de 6 horas e 3 minutos. Quem usou a internet naquele dia foi 92,9%. Esses são números de 2024. Em 2018, pelo mesmo cálculo, eram só 2 horas e 42 minutos. Este é o maior número desta seção. Cortando uma hora por dia, isso dá 365 horas a mais por ano. Segundo o Centro de Informações da Rede da Internet da China, em junho de 2025 os internautas ficavam em média 30,6 horas por semana na internet, 1,9 hora a mais do que meio ano antes. Os usuários de vídeos curtos somam 1,068 bilhão, 95,1% dos internautas.",
+        "备注": "O tempo na internet inclui trabalho, estudo e vida social, e nem tudo é desperdício. O nível C se deve a que nenhum estudo calculou “quanto se recupera depois de limitar e para onde esse tempo foi”, e só se têm estatísticas totais. Dentro disso, a categoria “ficar vendo como os outros estão vivendo” foi medida em ensaios randomizados quanto ao tempo recuperado e à mudança de humor, veja a dica 20 da seção 3."
+      }
+    },
+    {
+      "src": {
+        "title": "不看电视和滚动新闻，需要的信息定时集中看",
+        "说人话": "美国 15 岁以上的人每天看 2.6 小时电视，占掉全部闲暇时间的一半。2018 年中国人平均每天看 1 小时 40 分，75 到 84 岁的老人看 3 小时 16 分。把要看的信息改成定时集中看，能省下的就在这一块里。",
+        "成本": "不花钱。难在改掉随手打开的习惯，还可能错过一些即时消息。",
+        "收益": "美国 15 岁以上的人每天看电视 2.6 小时。他们全部休闲时间是 5.2 小时，看电视占掉一半。这是 2025 年的数字。中国居民看电视每天平均 1 小时 40 分钟，75 到 84 岁的人 3 小时 16 分钟。这是 2018 年的数字。",
+        "备注": "手上只有总量统计。没有研究算过，少看电视和新闻之后，省下的时间被用到了哪里。「集中看」这个做法是作者经验。"
+      },
+      "tr": {
+        "title": "Não assista à TV nem fique rolando notícias, e veja as informações de que precisa em horários concentrados",
+        "说人话": "Nos EUA, quem tem 15 anos ou mais assiste à TV 2,6 horas por dia, metade de todo o seu tempo livre. Em 2018, os chineses assistiam em média 1 hora e 40 minutos por dia, e os idosos de 75 a 84 anos, 3 horas e 16 minutos. Se você passar a ver as informações de que precisa em horários concentrados, o que dá para economizar está dentro desse bloco.",
+        "成本": "Não custa dinheiro. O difícil é largar o hábito de abrir a toda hora, e você ainda pode perder algumas notícias do momento.",
+        "收益": "Nos EUA, quem tem 15 anos ou mais assiste à TV 2,6 horas por dia. Todo o tempo de lazer deles é de 5,2 horas, e a TV ocupa a metade. É um número de 2025. Os moradores da China assistem à TV em média 1 hora e 40 minutos por dia, e quem tem de 75 a 84 anos, 3 horas e 16 minutos. É um número de 2018.",
+        "备注": "Só se têm estatísticas totais. Nenhum estudo calculou para onde foi o tempo economizado depois de ver menos TV e notícias. A prática de “ver de forma concentrada” é experiência do autor."
+      }
+    },
+    {
+      "src": {
+        "title": "花一次时间学常用软件的键盘快捷键和自动化",
+        "说人话": "多数用惯了 Word 的人，还是在点工具栏图标。分组对比的实验里，快捷键比菜单和图标都快。学这一次是一次性花费，之后每天每次操作都在回本。做同一类工作越久，赚回来越多。",
+        "成本": "不花钱。要一次性投入几小时到几十小时去学。难在刚上手那阵子比用鼠标还慢。",
+        "收益": "研究看了 251 名有经验的 Word 用户，多数人很少用更快的快捷键，还是以点图标工具栏为主。分组对比的实验确认，菜单、图标、快捷键这三种方式里，快捷键最快。省回的时间随每天操作次数一点点累积。长期做同一类工作的人，收益最大。",
+        "备注": "只学你每天要用到十次以上的操作，学得太全是另一种浪费。另外，那项效率实验只有 6 名参与者，摘要也没有给出每次操作节省的秒数。"
+      },
+      "tr": {
+        "title": "Gaste uma vez algum tempo para aprender os atalhos de teclado e a automação dos programas de uso frequente",
+        "说人话": "A maioria das pessoas acostumadas com o Word continua clicando nos ícones da barra de ferramentas. Em experimentos com grupos comparados, os atalhos de teclado foram mais rápidos do que o menu e os ícones. Aprender isso é um gasto único, e depois cada operação de cada dia vai pagando de volta. Quanto mais tempo você faz o mesmo tipo de trabalho, mais recupera.",
+        "成本": "Não custa dinheiro. É preciso investir de uma vez de algumas horas a algumas dezenas de horas para aprender. O difícil é que, no começo, fica mais lento do que usar o mouse.",
+        "收益": "O estudo observou 251 usuários experientes do Word, e a maioria raramente usava os atalhos mais rápidos e ainda se apoiava principalmente em clicar na barra de ícones. O experimento com grupos comparados confirmou que, entre as três formas, menu, ícone e atalho de teclado, o atalho é o mais rápido. O tempo recuperado vai se acumulando aos poucos com o número de operações por dia. Quem faz o mesmo tipo de trabalho por muito tempo tem o maior ganho.",
+        "备注": "Aprenda só as operações que você usa mais de dez vezes por dia, porque aprender tudo é outro tipo de desperdício. Além disso, aquele experimento de eficiência teve só 6 participantes, e o resumo também não informa quantos segundos se economizam por operação."
+      }
+    },
+    {
+      "src": {
+        "title": "选住处时把通勤时长放在前面，缩短单程通勤",
+        "说人话": "德国的跟踪数据里，通勤越长的人，自己觉得过得越不好。这笔损失并没有在工资或者住房上被补回来。单程少 30 分钟，一周就省出 5 小时。",
+        "成本": "成本高。可能要付更高的房租，或者换一套更小的房子。搬家本身也要花时间。",
+        "收益": "中国居民每天花在交通上平均 50 分钟。只算当天有出行的人，是 1 小时 2 分钟。这是 2024 年的数字。德国长期跟踪同一批人的数据显示，通勤越长的人主观幸福感（自己觉得过得好不好）稳定地更低。而且这笔损失没有在收入或住房上得到补偿。把多项研究梳理到一起的综述也确认，通勤时间越长，人对通勤越不满意，这一点和用什么交通方式无关。单程少 30 分钟，每周约省 5 小时。",
+        "备注": "争议：Chatterjee 等人汇总多项研究后指出，通勤长短和整体生活满意度之间还看不出稳定的关系。他们认为，人们大体上能用更好的工作或住房，把长通勤的损失换回来。还要注意，交通活动的统计算的是所有出行，不只是通勤。另外能错峰上下班的话，同样一段路也能跑得更短。"
+      },
+      "tr": {
+        "title": "Ao escolher onde morar, ponha o tempo de deslocamento em primeiro lugar e reduza o trajeto de ida",
+        "说人话": "Nos dados alemães acompanhados ao longo do tempo, quanto mais longo o deslocamento, pior a pessoa acha que está a sua vida. Essa perda não foi compensada em salário nem em moradia. Trinta minutos a menos por trajeto de ida são 5 horas poupadas por semana.",
+        "成本": "O custo é alto. Pode ser preciso pagar um aluguel mais alto ou trocar por uma casa menor. A própria mudança também leva tempo.",
+        "收益": "Os moradores da China gastam em média 50 minutos por dia com transporte. Contando só quem saiu naquele dia, são 1 hora e 2 minutos. São números de 2024. Dados da Alemanha, que acompanharam as mesmas pessoas por muito tempo, mostram que quanto mais longo o deslocamento, de forma estável menor é o bem-estar subjetivo (o quanto a pessoa acha que está bem). E essa perda não foi compensada em renda ou moradia. Uma revisão que reuniu vários estudos também confirmou que quanto mais longo o tempo de deslocamento, mais insatisfeita a pessoa fica com ele, e isso independe do meio de transporte. Trinta minutos a menos por trajeto de ida economizam cerca de 5 horas por semana.",
+        "备注": "Controvérsia: Chatterjee e colegas, ao combinar vários estudos, apontam que ainda não se vê relação estável entre a duração do deslocamento e a satisfação geral com a vida. Eles acham que, em geral, as pessoas conseguem recuperar a perda de um deslocamento longo com um emprego ou uma moradia melhor. Note também que as estatísticas de atividade de transporte contam todos os deslocamentos, e não só o trajeto para o trabalho. Além disso, se for possível ir e voltar fora do horário de pico, o mesmo trecho também pode ser percorrido em menos tempo."
+      }
+    }
+  ]
+}
