@@ -23,7 +23,8 @@ This repository is not a fork of the book and does not change the original conte
 ## Translation status
 
 - The **interface** is translated: Português (default), English and 中文, chosen from the
-  dropdown in the top right corner. Your choice is remembered in the browser.
+  dropdown in the top right corner. Each language is its own page
+  (`index.html`, `en.html`, `zh.html`) and the dropdown links between them.
 - The **book text** (the tips, section titles and table of contents) is still the
   original Chinese. Translating it into Portuguese and English is the next step.
 

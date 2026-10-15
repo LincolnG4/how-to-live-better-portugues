@@ -79,7 +79,7 @@ COST_W = {
 RATIO_ORDER = {"极高": 0, "高": 1, "一般": 2}
 
 # 界面文案：key -> (zh, pt, en)，{0} {1}… 是占位。只翻译界面，书的正文保持原文。
-# 同一张表既用来渲染默认语言的 HTML，也整表嵌进页面给下拉切换用。
+# 每种语言渲染成独立的一页（见 main）；下拉框是在这几页之间跳转。
 STR = {
     "title": ("高性价比人生指南", "Guia de Vida de Alto Custo-Benefício", "The High Value-for-Money Life Guide"),
     "scope.all": ("全书 {0} 节", "Livro completo, {0} seções", "Full book, {0} sections"),
@@ -158,20 +158,9 @@ def _fill(s, args):
     return re.sub(r"\{(\d+)\}", lambda m: str(args[int(m.group(1))]), s)
 
 
-def _data_args(args):
-    return ' data-a="%s"' % html.escape(json.dumps(args, ensure_ascii=False), quote=True) if args else ""
-
-
-def i(key, *args, tag="span", attrs=""):
-    """渲染默认语言的文本，并打上 data-i18n，切换语言时前端按同一个 key 重写内容。"""
-    return '<%s%s data-i18n="%s"%s>%s</%s>' % (
-        tag, " " + attrs if attrs else "", key, _data_args(args), _fill(I18N[DEFAULT_LANG][key], args), tag)
-
-
-def ia(attr, key, *args):
-    """同 i()，但翻译的是标签属性（placeholder / aria-label / title / content）。"""
-    return '%s="%s" data-i18n-%s="%s"%s' % (
-        attr, html.escape(_fill(I18N[DEFAULT_LANG][key], args), quote=True), attr, key, _data_args(args))
+def tr(lang, key, *args):
+    """取某语言的界面文案，{0} {1}… 用 args 填。"""
+    return _fill(I18N[lang][key], args)
 
 
 def find_file(n):
@@ -466,36 +455,35 @@ footer a{color:var(--t2)}
 """
 
 
-def render_entry(e, sec_no):
+def render_entry(e, sec_no, lang):
     t = parse_tags(e["tags_raw"])
     f = e["fields"]
     grade = (f.get("证据等级") or "?").strip()[:1]
     ratio = ratio_of(t)
     chips = []
     gcls = {"A": "gA", "B": "gB", "C": "gC"}.get(grade, "gC")
-    chips.append(i("grade", grade, attrs='class="badge %s"' % gcls))
+    chips.append('<span class="badge %s">%s</span>' % (gcls, tr(lang, "grade", grade)))
     if ratio:
-        chips.append(i("ratio." + ratio, attrs='class="badge r%d"' % RATIO_ORDER[ratio]))
+        chips.append('<span class="badge r%d">%s</span>' % (RATIO_ORDER[ratio], tr(lang, "ratio." + ratio)))
     for k in ("口径", "钱", "时间", "毅力", "收益"):
         if t.get(k):
             key = "tag.%s.%s" % (k, t[k])
             # 上游新增了表里没有的取值时，按原文显示，不翻译
-            chips.append(i(key, attrs='class="tag"') if key in STR
-                         else '<span class="tag">%s %s</span>' % (k, t[k]))
+            chips.append('<span class="tag">%s</span>' % (tr(lang, key) if key in STR else "%s %s" % (k, t[k])))
 
     rows = []
     for k in ("成本", "收益"):
         if f.get(k):
-            rows.append('<div class="f">%s<div>%s</div></div>' % (i("field." + k, tag="b"), inline(f[k])))
+            rows.append('<div class="f"><b>%s</b><div>%s</div></div>' % (tr(lang, "field." + k), inline(f[k])))
     if f.get("备注"):
-        rows.append('<div class="f note">%s<div>%s</div></div>' % (i("field.备注", tag="b"), inline(f["备注"])))
+        rows.append('<div class="f note"><b>%s</b><div>%s</div></div>' % (tr(lang, "field.备注"), inline(f["备注"])))
 
     src = f.get("来源", "")
     n = link_count(src)
     src_html = ""
     if src:
-        summary = i("src.n", n, tag="summary") if n else i("src", tag="summary")
-        src_html = '<details class="src">%s<div class="sbody">%s</div></details>' % (summary, inline(src))
+        src_html = ('<details class="src"><summary>%s</summary><div class="sbody">%s</div></details>'
+                    % (tr(lang, "src.n", n) if n else tr(lang, "src"), inline(src)))
 
     return ('<article class="card" id="s%d-%d" data-grade="%s" data-ratio="%s">'
             '<div class="chead"><span class="num">%d</span><h3>%s</h3></div>'
@@ -520,28 +508,6 @@ const themeBtn=document.getElementById('theme');
 const topBtn=document.getElementById('top');
 const langSel=document.getElementById('lang');
 let grade=null, plainOnly=false;
-
-/* 界面语言：HTML 里已经是 DEFAULT_LANG 的文本，切换时按 data-i18n 的 key 重写。
-   data-a 是占位参数；缺翻译的 key 回退到 zh 原文。 */
-let lang=DEFAULT_LANG;
-function tr(key,args){
-  const s=I18N[lang][key]!==undefined?I18N[lang][key]:I18N.zh[key];
-  return s.replace(/\{(\d+)\}/g,(m,i)=>args[i]);
-}
-function setLang(l){
-  lang=l;
-  document.documentElement.lang=LANGS[l].tag;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    el.innerHTML=tr(el.dataset.i18n,JSON.parse(el.dataset.a||'[]'));
-  });
-  ['placeholder','aria-label','title','content'].forEach(a=>{
-    document.querySelectorAll('[data-i18n-'+a+']').forEach(el=>{
-      el.setAttribute(a,tr(el.getAttribute('data-i18n-'+a),JSON.parse(el.dataset.a||'[]')));
-    });
-  });
-  apply();  /* 重算「x / y 条」并重新高亮搜索词 */
-  syncBar();  /* 文案长度变了，顶栏换行数可能变 */
-}
 
 /* 顶栏高度会随换行变化，交给 JS 实测，锚点跳转才不会被顶栏盖住 */
 function syncBar(){
@@ -601,7 +567,7 @@ function apply(){
     }
   });
   document.getElementById('empty').classList.toggle('hidden',shown>0);
-  cnt.textContent=tr('count',[shown,cards.length]);
+  cnt.textContent=COUNT_TPL.replace('{0}',shown).replace('{1}',cards.length);
   if(term) markAll(document.querySelector('main'),term);
   document.querySelectorAll('.toc a').forEach(a=>{
     const el=document.getElementById(a.getAttribute('href').slice(1));
@@ -634,15 +600,8 @@ themeBtn.onclick=()=>{
   document.documentElement.setAttribute('data-theme',cur);
   try{localStorage.setItem('hltb-theme',cur);}catch(e){}
 };
-langSel.onchange=()=>{
-  setLang(langSel.value);
-  try{localStorage.setItem('hltb-lang',lang);}catch(e){}
-};
-try{
-  const l=localStorage.getItem('hltb-lang');
-  if(l&&LANGS[l]&&l!==DEFAULT_LANG) setLang(l);
-}catch(e){}
-langSel.value=lang;  /* 浏览器刷新时可能恢复旧的下拉值，以实际语言为准 */
+/* 每种语言是独立的一页：下拉框的 value 就是目标页的文件名，带上 #锚点 保持阅读位置 */
+langSel.onchange=()=>{location.href=langSel.value+location.hash;};
 try{
   const t=localStorage.getItem('hltb-theme');
   if(t) document.documentElement.setAttribute('data-theme',t);
@@ -688,114 +647,128 @@ if(jump) secs.forEach(s=>io.observe(s));
 """
 
 
-def main():
+def page_path(base, lang):
+    """默认语言用 -o 指定的文件，其余语言放在它旁边的 <lang>.html。"""
+    return base if lang == DEFAULT_LANG else base.with_name(lang + ".html")
+
+
+def render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date):
     sec_toc = []
     sec_html = []
     jump_opts = []
-    total = 0
-    grade_cnt = {"A": 0, "B": 0, "C": 0}
-    link_total = 0
 
-    for n in SECTIONS:
-        p = find_file(n)
-        title, intro, entries = parse(p)
+    for n, title, intro, entries in parsed:
         cards = []
         links = []
         for e in entries:
-            g = (e["fields"].get("证据等级") or "?").strip()[:1]
-            if g in grade_cnt:
-                grade_cnt[g] += 1
-            total += 1
-            link_total += link_count(e["fields"].get("来源", "")) + link_count(e["fields"].get("备注", ""))
-            cards.append(render_entry(e, n))
+            cards.append(render_entry(e, n, lang))
             r = ratio_of(parse_tags(e["tags_raw"]))
             short = e["title"] if len(e["title"]) <= 34 else e["title"][:33] + "…"
             links.append('<a href="#s%d-%d" title="%s"><span class="dot d%d"></span>'
                          '<i>%d</i><span>%s</span></a>'
                          % (n, e["no"], html.escape(e["title"], quote=True),
                             RATIO_ORDER.get(r, 2), e["no"], html.escape(short)))
-        sec_toc.append('<div class="grp"><div class="gt">%s%s</div>%s</div>'
-                       % (inline(title), i("n.items", len(entries), tag="small"), "".join(links)))
+        count = tr(lang, "n.items", len(entries))
+        sec_toc.append('<div class="grp"><div class="gt">%s<small>%s</small></div>%s</div>'
+                       % (inline(title), count, "".join(links)))
         sec_html.append(
             '<section id="sec%d"><div class="sec-h"><h2>%s</h2>'
-            '%s</div>%s%s</section>'
-            % (n, inline(title), i("n.items", len(entries), attrs='class="meta"'),
+            '<span class="meta">%s</span></div>%s%s</section>'
+            % (n, inline(title), count,
                ('<p class="intro">%s</p>' % inline(" ".join(intro))) if intro else "",
                "".join(cards)))
         jump_opts.append('<option value="sec%d">%s</option>' % (n, html.escape(title)))
 
-    rev, rev_date = source_rev()
-
-    scope_key = "scope." + SCOPE_KEY
+    scope = tr(lang, "scope." + SCOPE_KEY, SCOPE_ARG)
     head = ('<!DOCTYPE html><html lang="%s" data-theme="light"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
             '<meta name="color-scheme" content="light dark">'
             '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">'
             '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1f">'
-            '<meta name="description" %s>%s<style>%s</style></head><body>'
-            % (LANGS[DEFAULT_LANG]["tag"], ia("content", "doc.desc." + SCOPE_KEY, SCOPE_ARG, total),
-               i("doc.title." + SCOPE_KEY, SCOPE_ARG, tag="title"), CSS))
+            '<meta name="description" content="%s">'
+            '<title>%s</title><style>%s</style></head><body>'
+            % (LANGS[lang]["tag"],
+               html.escape(tr(lang, "doc.desc." + SCOPE_KEY, SCOPE_ARG, total), quote=True),
+               html.escape(tr(lang, "doc.title." + SCOPE_KEY, SCOPE_ARG)), CSS))
 
-    lang_opts = "".join('<option value="%s">%s</option>' % (code, v["name"]) for code, v in LANGS.items())
-    bar = ('<header class="bar"><h1>%s%s</h1>'
-           '<select class="jump" id="jump" %s>%s</select>'
+    # 语言下拉：value 是目标语言那一页的文件名；autocomplete=off 防止浏览器回退时还原成旧选项
+    lang_opts = "".join('<option value="%s"%s>%s</option>'
+                        % (page_path(base, code).name, " selected" if code == lang else "", v["name"])
+                        for code, v in LANGS.items())
+    bar = ('<header class="bar"><h1>%s<small>%s</small></h1>'
+           '<select class="jump" id="jump" aria-label="%s">%s</select>'
            '<div class="spacer"></div>'
-           '%s%s%s'
+           '<button class="btn" id="f-all">%s</button>'
+           '<button class="btn" id="f-a">%s</button>'
+           '<button class="btn" id="f-plain">%s</button>'
            '<div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>'
            '<path d="M20 20l-3.5-3.5"/></svg>'
-           '<input id="q" type="search" %s autocomplete="off">'
+           '<input id="q" type="search" placeholder="%s" autocomplete="off">'
            '<kbd>/</kbd></div>'
-           '%s%s'
-           '<select class="lang" id="lang" %s>%s</select></header>' % (
-               i("title"), i(scope_key, SCOPE_ARG, tag="small"),
-               ia("aria-label", "jump.aria"), "".join(jump_opts),
-               i("filter.all", tag="button", attrs='class="btn" id="f-all"'),
-               i("filter.a", tag="button", attrs='class="btn" id="f-a"'),
-               i("filter.plain", tag="button", attrs='class="btn" id="f-plain"'),
-               ia("placeholder", "search.ph"),
-               i("count", total, total, attrs='class="count" id="cnt"'),
-               i("theme", tag="button", attrs='class="btn" id="theme"'),
-               ia("aria-label", "lang.aria"), lang_opts))
+           '<span class="count" id="cnt">%s</span>'
+           '<button class="btn" id="theme">%s</button>'
+           '<select class="lang" id="lang" aria-label="%s" autocomplete="off">%s</select></header>' % (
+               tr(lang, "title"), scope, tr(lang, "jump.aria"), "".join(jump_opts),
+               tr(lang, "filter.all"), tr(lang, "filter.a"), tr(lang, "filter.plain"),
+               tr(lang, "search.ph"), tr(lang, "count", total, total), tr(lang, "theme"),
+               tr(lang, "lang.aria"), lang_opts))
 
     upstream_link = '<a href="%s" target="_blank" rel="noopener">eternity4719/HowToLiveBetter</a>' % UPSTREAM
     if rev:
         rev_html = '<span style="font-family:var(--mono)">%s</span>' % rev
-        footer_1 = i("footer.1.rev", upstream_link, rev_html, rev_date)
+        footer_1 = tr(lang, "footer.1.rev", upstream_link, rev_html, rev_date)
     else:
-        footer_1 = i("footer.1", upstream_link)
+        footer_1 = tr(lang, "footer.1", upstream_link)
 
     footer = ('<footer>%s<br>%s<br>%s</footer>' % (
         footer_1,
-        i("footer.2", total, grade_cnt["A"], grade_cnt["B"], grade_cnt["C"], link_total),
-        i("footer.3")))
+        tr(lang, "footer.2", total, grade_cnt["A"], grade_cnt["B"], grade_cnt["C"], link_total),
+        tr(lang, "footer.3")))
 
     shell = ('<div class="shell"><aside class="toc">%s</aside><main>%s'
-             '%s%s'
+             '<div class="empty hidden" id="empty">%s</div>%s'
              '</main></div>'
-             '<button id="top" %s %s>↑</button>'
-             % ("".join(sec_toc), "".join(sec_html), i("empty", tag="div", attrs='class="empty hidden" id="empty"'),
-                footer, ia("title", "top"), ia("aria-label", "top")))
+             '<button id="top" title="%s" aria-label="%s">↑</button>'
+             % ("".join(sec_toc), "".join(sec_html), tr(lang, "empty"), footer,
+                tr(lang, "top"), tr(lang, "top")))
 
-    # 语言表整张嵌进页面（"</" 转义，避免字符串里出现 </script> 提前结束脚本）
-    i18n_js = "const DEFAULT_LANG=%s,LANGS=%s,I18N=%s;" % (
-        json.dumps(DEFAULT_LANG), json.dumps(LANGS, ensure_ascii=False),
-        json.dumps(I18N, ensure_ascii=False).replace("</", "<\\/"))
+    # 搜索结果计数的句式随页面语言；"</" 转义，避免字符串里出现 </script> 提前结束脚本
+    count_js = "const COUNT_TPL=%s;" % json.dumps(tr(lang, "count", "{0}", "{1}"), ensure_ascii=False).replace("</", "<\\/")
 
     # 注意：JS 字符串只含脚本体，<script> 开合标签在这里拼。
     # 之前漏了开标签，导致整段 JS 被当纯文本渲染在页面底部、脚本从未执行。
-    out = head + bar + shell + "<script>" + i18n_js + JS + "</script></body></html>"
+    return head + bar + shell + "<script>" + count_js + JS + "</script></body></html>"
+
+
+def main():
+    parsed = [(n,) + parse(find_file(n)) for n in SECTIONS]
+    total = 0
+    grade_cnt = {"A": 0, "B": 0, "C": 0}
+    link_total = 0
+    for _, _, _, entries in parsed:
+        for e in entries:
+            g = (e["fields"].get("证据等级") or "?").strip()[:1]
+            if g in grade_cnt:
+                grade_cnt[g] += 1
+            total += 1
+            link_total += link_count(e["fields"].get("来源", "")) + link_count(e["fields"].get("备注", ""))
+
+    rev, rev_date = source_rev()
 
     if ARGS.out:
-        name = Path(ARGS.out)
-        if not name.is_absolute():
-            name = HERE / name
+        base = Path(ARGS.out)
+        if not base.is_absolute():
+            base = HERE / base
     else:
-        name = HERE / ("高性价比人生指南_%s.html" % "_".join("第%d节" % n for n in SECTIONS))
+        base = HERE / ("高性价比人生指南_%s.html" % "_".join("第%d节" % n for n in SECTIONS))
 
-    name.write_text(out, encoding="utf-8")
+    for lang in LANGS:
+        out = render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date)
+        name = page_path(base, lang)
+        name.write_text(out, encoding="utf-8")
+        print("输出：%s  (%d 字节)" % (name, len(out.encode("utf-8"))))
     print("范围 %s ｜ 节数 %d ｜ 条目 %d ｜ A %d B %d C %d ｜ 外链 %d"
           % (SCOPE, len(SECTIONS), total, grade_cnt["A"], grade_cnt["B"], grade_cnt["C"], link_total))
-    print("输出：%s  (%d 字节)" % (name, len(out.encode("utf-8"))))
 
 
 if __name__ == "__main__":

@@ -23,7 +23,8 @@ Este repositório não é um fork do livro e não altera o conteúdo original.
 ## Estado da tradução
 
 - A **interface** está traduzida: Português (padrão), English e 中文, escolhidos no
-  menu suspenso no canto superior direito. A escolha fica salva no navegador.
+  menu suspenso no canto superior direito. Cada idioma é uma página própria
+  (`index.html`, `en.html`, `zh.html`) e o menu leva de uma para outra.
 - O **texto do livro** (as dicas, os títulos das seções e o índice) ainda está no
   original em chinês. Traduzi-lo para português e inglês é a próxima etapa.
 
