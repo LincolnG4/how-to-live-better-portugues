@@ -116,8 +116,31 @@ STR = {
     "jump.aria": ("跳转到某一节", "Ir para uma seção", "Jump to a section"),
     "lang.aria": ("语言", "Idioma", "Language"),
     "empty": ("没有匹配的条目", "Nenhuma dica encontrada", "No matching tips"),
+    "empty.hint": ("换个词试试，或者切回「全部」。", "Tente outra palavra ou volte para Todas.", "Try another word, or switch back to All."),
     "top": ("回到顶部", "Voltar ao topo", "Back to top"),
     "grade": ("{0} 级", "Evidência {0}", "Evidence {0}"),
+    # 证据等级说明：取自上游 README「证据分级」一节
+    "grade.help": ("这个等级是什么意思？", "O que significa este nível?", "What does this grade mean?"),
+    "grade.help.title": ("证据等级", "Nível de evidência", "Evidence grade"),
+    "grade.help.A": (
+        "有具体数字可查，出处是荟萃分析、跟踪很多人很多年的大型队列，或者随机分组的试验，能说出降了多少。",
+        "Há números concretos e verificáveis, vindos de meta-análises, de grandes estudos que acompanham muitas pessoas por anos ou de ensaios randomizados. Dá para dizer quanto o risco cai.",
+        "Concrete, checkable numbers from meta-analyses, large cohorts followed for years, or randomized trials. It can say how much the risk drops."),
+    "grade.help.B": (
+        "有研究支持，但说不出确切数字；或者只有小样本、单独一项研究撑着。",
+        "Há estudos que apoiam, mas sem um número preciso; ou só um estudo pequeno ou isolado.",
+        "Backed by research, but without a precise number; or resting on a single or small study."),
+    "grade.help.C": (
+        "作者自己的经验，或者大家公认的做法，没有直接的研究文献。",
+        "Experiência do autor ou prática amplamente aceita, sem estudos diretos.",
+        "The author's experience or widely accepted practice, with no direct studies."),
+    "grade.help.note": (
+        "A 级不等于一定是因果：收益栏写着「随机分成两组」的是试验，写着「只记录、不分组」的只是观察。",
+        "Evidência A não garante causa e efeito. O campo Benefício diz se as pessoas foram sorteadas em grupos (um ensaio) ou só acompanhadas (um estudo observacional).",
+        "Grade A does not guarantee cause and effect. The Benefit field says whether people were randomly split into groups (a trial) or only followed (an observational study)."),
+    "close": ("关闭", "Fechar", "Close"),
+    "toc": ("目录", "Índice", "Contents"),
+    "next": ("下一节", "Próxima seção", "Next section"),
     "ratio.极高": ("性价比 极高", "Custo-benefício altíssimo", "Value for money: excellent"),
     "ratio.高": ("性价比 高", "Custo-benefício alto", "Value for money: high"),
     "ratio.一般": ("性价比 一般", "Custo-benefício regular", "Value for money: average"),
@@ -147,6 +170,10 @@ STR = {
         "",
         "{0} de {1} dicas já estão traduzidas para o português. A tradução é automática e pode conter erros, então confira o original em chinês; as demais dicas continuam em chinês.",
         "{0} of {1} tips are translated into English. The translation is machine-generated and may contain errors, so check the Chinese original; the remaining tips are still in Chinese."),
+    "footer.tr.all": (
+        "",
+        "Todas as {0} dicas já estão traduzidas para o português. A tradução é automática e pode conter erros, então confira o original em chinês.",
+        "All {0} tips are translated into English. The translation is machine-generated and may contain errors, so check the Chinese original."),
     "footer.3": (
         "单文件自包含，不引用任何外部资源（正文中的文献链接除外），可离线阅读。由 build.py 生成。",
         "Arquivo único e autossuficiente: não carrega nenhum recurso externo (exceto os links de fontes no texto) e funciona offline. Gerado por build.py.",
@@ -344,6 +371,7 @@ CSS = r"""
   --yellow-1:#86662d;
   --mark:rgba(214,180,90,.3);
   --shadow-sm:0 1px 2px rgba(20,22,26,.08);--shadow-lg:0 6px 20px rgba(20,22,26,.12);
+  --info:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6.5'/%3E%3Cpath d='M8 7.2v4M8 4.6v.1'/%3E%3C/svg%3E");
   --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   /* 字号阶梯：正文 15，往下 13.5 / 12.5 / 11，往上 16（说人话）/ 18（条目标题）/ 28（节标题） */
@@ -420,10 +448,33 @@ strong{font-weight:var(--fw-strong);color:var(--t1)}
 .toc{position:sticky;top:var(--bar);flex:none;width:var(--side);height:calc(100vh - var(--bar));
   overflow-y:auto;padding:28px 14px 80px 16px;border-right:1px solid var(--divider);
   scrollbar-width:thin;scrollbar-color:var(--divider) transparent}
-.toc .gt{font-size:var(--fs-sm);font-weight:var(--fw-strong);margin:0 0 8px;padding:0 8px;color:var(--t1);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.toc .gt small{font-weight:var(--fw-regular);font-size:var(--fs-2xs);color:var(--t3);white-space:nowrap}
-.toc .grp{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--divider)}
-.toc .grp:last-child{border-bottom:0;margin-bottom:0}
+.toc .grp{border-bottom:1px solid var(--divider)}
+.toc .grp:last-of-type{border-bottom:0}
+/* 折叠的节头：左边标题是跳转链接，右边条数和箭头点了才展开 */
+.toc .gt{display:flex;align-items:flex-start;gap:8px;padding:9px 8px;list-style:none;cursor:pointer;border-radius:6px}
+.toc .gt::-webkit-details-marker{display:none}
+.toc .gt:hover{background:var(--bg-alt)}
+.toc .gt a{flex:1;min-width:0;display:block;padding:0;font-size:var(--fs-sm);font-weight:var(--fw-medium);color:var(--t1)}
+.toc .gt a:hover{background:none;color:var(--brand-1)}
+.toc .grp.current>.gt a{font-weight:var(--fw-strong);color:var(--brand-1)}
+.toc .gt small{flex:none;padding-top:2px;font-size:var(--fs-2xs);color:var(--t3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.toc .gt::after{content:"";flex:none;width:5px;height:5px;margin:7px 2px 0;
+  border:solid var(--t3);border-width:0 1.5px 1.5px 0;transform:rotate(-45deg);transition:transform .15s}
+.toc .grp[open]>.gt::after{transform:translateY(-2px) rotate(45deg)}
+.toc .links{padding:2px 0 12px}
+/* 侧栏开关：宽屏收起；窄屏（≤1080，见下方媒体查询）是抽屉 */
+html.toc-off .toc{display:none}
+.scrim{display:none}
+#toc-btn svg{fill:none;stroke:currentColor;stroke-width:1.8}
+#toc-btn path{fill:none}
+
+.next{display:block;margin:8px 0 0 var(--hang);padding:24px 0 0;border-top:1px solid var(--divider);
+  font-size:var(--fs-md);font-weight:var(--fw-strong);line-height:var(--lh-tight);color:var(--t1)}
+.next small{display:block;margin-bottom:4px;font-size:var(--fs-xs);font-weight:var(--fw-regular);color:var(--t3)}
+.next::after{content:"";display:inline-block;width:7px;height:7px;margin-left:10px;vertical-align:2px;
+  border:solid currentColor;border-width:1.8px 1.8px 0 0;transform:rotate(45deg);transition:transform .15s}
+.next:hover{color:var(--brand-1);text-decoration:none}
+.next:hover::after{transform:translateX(3px) rotate(45deg)}
 .toc a{display:flex;gap:6px;align-items:baseline;padding:4px 8px;border-radius:6px;font-size:var(--fs-xs);
   line-height:var(--lh-tight);color:var(--t2)}
 .toc a:hover{background:var(--bg-alt);color:var(--t1);text-decoration:none}
@@ -458,10 +509,27 @@ section{margin-bottom:96px}
   line-height:var(--lh-tight);letter-spacing:-.01em;text-wrap:balance}
 .sig{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:10px 0 14px}
 /* 证据等级：A 实心、B 描边、C 虚线，不靠颜色也分得清 */
-.grade{font:var(--fw-strong) var(--fs-2xs)/1 var(--font);padding:4px 8px;border-radius:4px;border:1px solid transparent}
+.grade{font:var(--fw-strong) var(--fs-2xs)/1 var(--font);padding:4px 8px;border-radius:4px;border:1px solid transparent;background:none}
 .gA{background:var(--t1);color:var(--bg)}
 .gB{border-color:var(--t2);color:var(--t1)}
 .gC{border-style:dashed;border-color:var(--t3);color:var(--t2)}
+/* 徽章是按钮：带一个 ⓘ，点开 #g-help 说明卡；图标用 mask 画，765 条不必各带一份 SVG */
+button.grade{display:inline-flex;align-items:center;gap:5px;padding-right:6px;cursor:pointer}
+button.grade::after{content:"";width:12px;height:12px;background:currentColor;opacity:.75;
+  -webkit-mask:var(--info) center/contain no-repeat;mask:var(--info) center/contain no-repeat}
+button.grade:hover::after{opacity:1}
+button.gB:hover,button.gC:hover{border-color:var(--t1);color:var(--t1)}
+.help{width:min(420px,calc(100vw - 32px));padding:22px 24px 20px;border:1px solid var(--divider);border-radius:12px;
+  background:var(--bg-elv);color:var(--t1);box-shadow:var(--shadow-lg)}
+.help::backdrop{background:rgba(10,12,14,.28)}
+.help h4{margin:0 0 14px;font-size:var(--fs-base);font-weight:var(--fw-strong)}
+.help .close{position:absolute;top:12px;right:12px;font-size:20px;line-height:1}
+.help dl{margin:0}
+.help dl div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;align-items:baseline;padding:8px 0}
+.help dl div+div{border-top:1px solid var(--divider)}
+.help dt .grade{display:inline-block;min-width:22px;text-align:center}
+.help dd{margin:0;font-size:var(--fs-sm);line-height:1.6;color:var(--t2)}
+.help p{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--divider);font-size:var(--fs-xs);line-height:1.6;color:var(--t3)}
 .ratio{line-height:1;font-size:var(--fs-xs);font-weight:var(--fw-medium);color:var(--t2)}
 .ratio i:nth-of-type(3){margin-right:7px}
 .r1 i:nth-of-type(3),.r2 i:nth-of-type(n+2){background:var(--t3);opacity:.3}
@@ -479,15 +547,23 @@ section{margin-bottom:96px}
 .src{margin-top:12px}
 .src summary{cursor:pointer;font-size:var(--fs-xs);color:var(--t3);list-style:none;user-select:none}
 .src summary::-webkit-details-marker{display:none}
-.src summary::before{content:"▸ ";color:var(--t3)}
-.src[open] summary::before{content:"▾ "}
+.src summary{display:inline-flex;align-items:center;gap:8px}
+.src summary::before{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1.5px 1.5px 0;
+  transform:rotate(-45deg);transition:transform .15s}
+.src[open] summary::before{transform:translateY(-2px) rotate(45deg)}
 .src summary:hover{color:var(--brand-1)}
 .src .sbody{font-size:var(--fs-xs);line-height:1.8;color:var(--t2);padding:8px 0 2px;word-break:break-word;overflow-wrap:anywhere}
 
 body.plain-only .facts,body.plain-only .fields,body.plain-only .src{display:none}
 .hidden{display:none!important}
 
-.empty{color:var(--t3);font-size:var(--fs-sm);padding:40px 0;text-align:center}
+.empty{margin-left:var(--hang);padding:72px 0 96px;text-align:center;color:var(--t3);font-size:var(--fs-sm)}
+.empty p{margin:0}
+.empty p:first-child{margin-bottom:6px;color:var(--t1);font-size:var(--fs-md);font-weight:var(--fw-strong)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
 footer{margin-left:var(--hang);color:var(--t3);font-size:var(--fs-xs);border-top:1px solid var(--divider);
   padding-top:20px;line-height:1.9}
 footer a{color:var(--t2)}
@@ -507,6 +583,9 @@ footer a{color:var(--t2)}
   .toc{display:none}
   .jump{display:block}
   .search{max-width:none}
+  html.toc-on .toc{display:block;position:fixed;top:var(--bar);bottom:0;left:0;z-index:35;height:auto;
+    width:min(320px,86vw);background:var(--bg);box-shadow:var(--shadow-lg)}
+  html.toc-on .scrim{display:block;position:fixed;inset:var(--bar) 0 0 0;z-index:34;background:rgba(10,12,14,.28)}
   :root{--gutter:28px}
 }
 @media (max-width:820px){
@@ -558,7 +637,9 @@ def render_entry(e, sec_no, lang):
     grade = (f.get("证据等级") or "?").strip()[:1]
     ratio = ratio_of(t)
     gcls = {"A": "gA", "B": "gB", "C": "gC"}.get(grade, "gC")
-    sig = '<span class="grade %s">%s</span>' % (gcls, tr(lang, "grade", grade))
+    # 点等级徽章弹出全页共用的一张说明卡（#g-help，见 render_page）
+    sig = ('<button class="grade %s" popovertarget="g-help" title="%s">%s</button>'
+           % (gcls, tr(lang, "grade.help"), tr(lang, "grade", grade)))
     if ratio:
         # 三格刻度：亮几格 = 性价比档位，CSS 按 r0/r1/r2 点亮
         sig += ('<span class="ratio r%d"><i></i><i></i><i></i>%s</span>'
@@ -597,6 +678,20 @@ def render_entry(e, sec_no, lang):
         sig, inline(f.get("说人话", "")), "".join(facts), "".join(rows), src_html)
 
 
+# 标签页图标：顶栏同款三格刻度
+FAVICON = ("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230f7050'>"
+           "<rect x='1.5' y='9' width='3.5' height='5.5' rx='.8'/><rect x='6.25' y='5.5' width='3.5' height='9' rx='.8'/>"
+           "<rect x='11' y='1.5' width='3.5' height='13' rx='.8'/></svg>")
+
+# 主题要在 <head> 里、页面画出来之前定好；放在 body 末尾的话，暗色用户会先闪一下白屏
+THEME_JS = r"""try{
+  const t=localStorage.getItem('hltb-theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.setAttribute('data-theme','dark');
+  if(localStorage.getItem('hltb-toc')==='off') document.documentElement.classList.add('toc-off');
+}catch(e){}"""
+
 JS = r"""
 const cards=[...document.querySelectorAll('.card')];
 const secs=[...document.querySelectorAll('section')];
@@ -610,7 +705,39 @@ const fP=document.getElementById('f-plain');
 const themeBtn=document.getElementById('theme');
 const topBtn=document.getElementById('top');
 const langSel=document.getElementById('lang');
-let grade=null, plainOnly=false;
+const toc=document.getElementById('toc');
+const tocBtn=document.getElementById('toc-btn');
+const grps=[...document.querySelectorAll('.toc .grp')];
+const root=document.documentElement;
+const narrow=window.matchMedia('(max-width:1080px)');
+let grade=null, plainOnly=false, openGrp=null;
+
+/* 目录跟着阅读位置走：展开正在读的那一节、收起上一节，并把它滚进目录可视区 */
+function follow(id){
+  const g=grps.find(x=>x.dataset.sec===id);
+  if(!g||g===openGrp) return;
+  if(openGrp){openGrp.classList.remove('current'); if(!q.value.trim()) openGrp.open=false;}
+  g.open=true; g.classList.add('current'); openGrp=g;
+  const r=g.getBoundingClientRect(), t=toc.getBoundingClientRect();
+  if(r.top<t.top||r.top>t.bottom-160) toc.scrollTo({top:g.offsetTop-24});
+}
+
+/* 目录开关：宽屏是显示/隐藏侧栏（记住选择），窄屏是滑出抽屉 */
+function tocShown(){return narrow.matches?root.classList.contains('toc-on'):!root.classList.contains('toc-off');}
+function syncTocBtn(){tocBtn.setAttribute('aria-expanded',String(tocShown()));}
+tocBtn.onclick=()=>{
+  if(narrow.matches) root.classList.toggle('toc-on');
+  else{
+    const off=root.classList.toggle('toc-off');
+    try{localStorage.setItem('hltb-toc',off?'off':'on');}catch(e){}
+  }
+  syncTocBtn();
+};
+function closeDrawer(){root.classList.remove('toc-on');syncTocBtn();}
+document.querySelector('.scrim').onclick=closeDrawer;
+toc.addEventListener('click',e=>{if(narrow.matches&&e.target.closest('a')) closeDrawer();});
+narrow.addEventListener('change',syncTocBtn);
+syncTocBtn();
 
 /* 顶栏高度会随换行变化，交给 JS 实测，锚点跳转才不会被顶栏盖住 */
 function syncBar(){
@@ -676,6 +803,13 @@ function apply(){
     const el=document.getElementById(a.getAttribute('href').slice(1));
     a.classList.toggle('hidden',!el||el.classList.contains('hidden'));
   });
+  // 搜索时把有结果的节全展开；清空后只留正在读的那一节
+  grps.forEach(g=>{
+    g.classList.toggle('hidden',!g.querySelector('.links a:not(.hidden)'));
+    g.open=term?true:(g===openGrp);
+  });
+  // 筛选或搜索时有些节被藏起来，「下一节」可能指向空处，先收起
+  document.querySelectorAll('.next').forEach(n=>n.classList.toggle('hidden',!!(term||grade)));
 }
 let timer=null;
 q.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(apply,90);});
@@ -705,17 +839,12 @@ themeBtn.onclick=()=>{
 };
 /* 每种语言是独立的一页：下拉框的 value 就是目标页的文件名，带上 #锚点 保持阅读位置 */
 langSel.onchange=()=>{location.href=langSel.value+location.hash;};
-try{
-  const t=localStorage.getItem('hltb-theme');
-  if(t) document.documentElement.setAttribute('data-theme',t);
-  else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.setAttribute('data-theme','dark');
-}catch(e){}
 document.addEventListener('keydown',e=>{
   if(e.key==='/'&&document.activeElement!==q&&!/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)){
     e.preventDefault();q.focus();
   }
   if(e.key==='Escape'&&document.activeElement===q){q.value='';apply();q.blur();}
+  else if(e.key==='Escape'&&root.classList.contains('toc-on')) closeDrawer();
 });
 topBtn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 /* 滚动状态：① 顶栏收起（手机）② 回到顶部按钮出现。
@@ -736,17 +865,21 @@ addEventListener('resize',syncBar);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(syncBar);
 syncBar();
 
-const links=[...document.querySelectorAll('.toc a')];
+const links=[...document.querySelectorAll('.toc .links a')];
 const io=new IntersectionObserver(es=>{
   es.forEach(e=>{ if(e.isIntersecting){
-    if(e.target.classList.contains('card'))
+    if(e.target.classList.contains('card')){
       links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
-    else if(jump && e.target.tagName==='SECTION')
-      jump.value=e.target.id;
+      follow(e.target.closest('section').id);
+    }
+    else if(e.target.tagName==='SECTION'){
+      follow(e.target.id);
+      if(jump) jump.value=e.target.id;
+    }
   }});
 },{rootMargin:'-70px 0px -75% 0px'});
 cards.forEach(c=>io.observe(c));
-if(jump) secs.forEach(s=>io.observe(s));
+secs.forEach(s=>io.observe(s));
 """
 
 
@@ -773,6 +906,7 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
     translated = 0
     sec_toc = []
     sec_html = []
+    sec_next = []
     jump_opts = []
 
     for n, title, intro, entries in parsed:
@@ -792,16 +926,24 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
                          % (n, e["no"], html.escape(e["title"], quote=True),
                             RATIO_ORDER.get(r, 2), e["no"], html.escape(short)))
         count = tr(lang, "n.items", len(entries))
-        sec_toc.append('<div class="grp"><div class="gt">%s<small>%s</small></div>%s</div>'
-                       % (inline(title), count, "".join(links)))
+        # 目录每节可折叠：标题本身是跳转链接，点右侧箭头才展开；读到哪节由 JS 自动展开哪节
+        sec_toc.append('<details class="grp" data-sec="sec%d"><summary class="gt"><a href="#sec%d">%s</a>'
+                       '<small>%s</small></summary><div class="links">%s</div></details>'
+                       % (n, n, inline(title), count, "".join(links)))
         # 节号挂在左侧页边，标题只留名字
         m = re.match(r"\s*(\d+)\s*[.、．]\s*(.+)", title)
         sec_no, sec_name = (m.group(1), m.group(2)) if m else (str(n), title)
+        # 不带 </section>：下面循环结束后再补「下一节」链接
         sec_html.append(
             '<section id="sec%d"><div class="sec-h"><span class="sn">%s</span><h2>%s</h2>'
-            '<span class="meta">%s</span></div>%s%s</section>'
+            '<span class="meta">%s</span></div>%s%s'
             % (n, sec_no, inline(sec_name), count, render_intro(intro_text), "".join(cards)))
+        sec_next.append('<a class="next" href="#sec%d"><small>%s</small>%s</a>' % (n, tr(lang, "next"), inline(title)))
         jump_opts.append('<option value="sec%d">%s</option>' % (n, html.escape(title)))
+
+    # 每节末尾指向下一节，最后一节没有
+    sec_html = [h + (sec_next[i + 1] if i + 1 < len(sec_next) else "") + "</section>"
+                for i, h in enumerate(sec_html)]
 
     scope = tr(lang, "scope." + SCOPE_KEY, SCOPE_ARG)
     head = ('<!DOCTYPE html><html lang="%s" data-theme="light"><head><meta charset="utf-8">'
@@ -810,17 +952,21 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
             '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfc">'
             '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#18191b">'
             '<meta name="description" content="%s">'
-            '<title>%s</title><style>%s</style></head><body>'
+            '<link rel="icon" href="%s">'
+            '<title>%s</title><style>%s</style><script>%s</script></head><body>'
             % (LANGS[lang]["tag"],
                html.escape(tr(lang, "doc.desc." + SCOPE_KEY, SCOPE_ARG, total), quote=True),
-               html.escape(tr(lang, "doc.title." + SCOPE_KEY, SCOPE_ARG)), CSS))
+               FAVICON, html.escape(tr(lang, "doc.title." + SCOPE_KEY, SCOPE_ARG)), CSS, THEME_JS))
 
     # 语言下拉：value 是目标语言那一页的文件名；autocomplete=off 防止浏览器回退时还原成旧选项
     lang_opts = "".join('<option value="%s"%s>%s</option>'
                         % (page_path(base, code).name, " selected" if code == lang else "", v["name"])
                         for code, v in LANGS.items())
     # 标志就是条目里那个三格性价比刻度；三个筛选互斥，做成一组分段按钮
-    bar = ('<header class="bar"><h1><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>'
+    bar = ('<header class="bar">'
+           '<button class="icon" id="toc-btn" title="%s" aria-label="%s" aria-expanded="true">'
+           '<svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M9.5 4.5v15"/></svg></button>'
+           '<h1><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>'
            '%s<small>%s</small></h1>'
            '<select class="jump" id="jump" aria-label="%s">%s</select>'
            '<div class="spacer"></div>'
@@ -836,6 +982,7 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
            '<button class="icon" id="theme" title="%s" aria-label="%s">'
            '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z"/></svg></button>'
            '<select class="lang" id="lang" aria-label="%s" autocomplete="off">%s</select></header>' % (
+               tr(lang, "toc"), tr(lang, "toc"),
                tr(lang, "title"), scope, tr(lang, "jump.aria"), "".join(jump_opts),
                tr(lang, "filter.all"), tr(lang, "filter.a"), tr(lang, "filter.plain"),
                tr(lang, "search.ph"), tr(lang, "count", total, total), tr(lang, "theme"), tr(lang, "theme"),
@@ -851,16 +998,26 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
     notes = [footer_1,
              tr(lang, "footer.2", total, grade_cnt["A"], grade_cnt["B"], grade_cnt["C"], link_total)]
     if lang != SOURCE_LANG:
-        notes.append(tr(lang, "footer.tr.some", translated, total) if translated else tr(lang, "footer.tr.none"))
+        notes.append(
+            tr(lang, "footer.tr.all", total) if translated == total
+            else tr(lang, "footer.tr.some", translated, total) if translated
+            else tr(lang, "footer.tr.none"))
     notes.append(tr(lang, "footer.3"))
     footer = "<footer>%s</footer>" % "<br>".join(notes)
 
-    shell = ('<div class="shell"><aside class="toc">%s</aside><main>%s'
-             '<div class="empty hidden" id="empty">%s</div>%s'
+    shell = ('<div class="shell"><aside class="toc" id="toc">%s</aside><div class="scrim"></div><main>%s'
+             '<div class="empty hidden" id="empty"><p>%s</p><p>%s</p></div>%s'
              '</main></div>'
              '<button id="top" title="%s" aria-label="%s">↑</button>'
-             % ("".join(sec_toc), "".join(sec_html), tr(lang, "empty"), footer,
+             % ("".join(sec_toc), "".join(sec_html), tr(lang, "empty"), tr(lang, "empty.hint"), footer,
                 tr(lang, "top"), tr(lang, "top")))
+    shell += ('<div id="g-help" class="help" popover><h4>%s</h4>'
+              '<button class="icon close" popovertarget="g-help" popovertargetaction="hide" aria-label="%s">×</button>'
+              '<dl>%s</dl><p>%s</p></div>'
+              % (tr(lang, "grade.help.title"), tr(lang, "close"),
+                 "".join('<div><dt><span class="grade g%s">%s</span></dt><dd>%s</dd></div>'
+                         % (g, g, tr(lang, "grade.help." + g)) for g in "ABC"),
+                 tr(lang, "grade.help.note")))
 
     # 搜索结果计数的句式随页面语言；"</" 转义，避免字符串里出现 </script> 提前结束脚本
     count_js = "const COUNT_TPL=%s;" % json.dumps(tr(lang, "count", "{0}", "{1}"), ensure_ascii=False).replace("</", "<\\/")
