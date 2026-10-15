@@ -25,8 +25,11 @@ Este repositório não é um fork do livro e não altera o conteúdo original.
 - A **interface** está traduzida: Português (padrão), English e 中文, escolhidos no
   menu suspenso no canto superior direito. Cada idioma é uma página própria
   (`index.html`, `en.html`, `zh.html`) e o menu leva de uma para outra.
-- O **texto do livro** (as dicas, os títulos das seções e o índice) ainda está no
-  original em chinês. Traduzi-lo para português e inglês é a próxima etapa.
+- O **texto do livro** está sendo traduzido, seção por seção. Por enquanto só a **seção 1**
+  ("Não morrer cedo", 48 dicas) está em português; o resto continua no original em chinês,
+  e o rodapé da página mostra quantas dicas já estão traduzidas. A tradução é automática
+  (feita com IA) e pode conter erros: confira o original, principalmente em temas de saúde.
+  A tradução para inglês ainda não começou.
 
 ## Recursos da página
 
@@ -63,6 +66,25 @@ Os textos da interface (nos três idiomas) ficam na tabela `STR` de `build.py`.
 A contagem de dicas, a classificação A/B/C e as três faixas de custo-benefício seguem o
 mesmo critério de `tools/sync-stats.ps1` e do `index.html` do repositório do livro, então o
 resultado pode ser conferido item a item com os selos do original.
+
+## Traduzir o conteúdo
+
+As traduções ficam em `translations/<idioma>/NN.json` (por exemplo `translations/pt/01.json`),
+um arquivo por seção. Cada item guarda o texto original em chinês (`src`) ao lado da
+tradução (`tr`), então a revisão é lado a lado. Se o livro original mudar um item, o
+texto original deixa de bater, a tradução antiga não é mostrada e a página volta ao chinês
+até o item ser traduzido de novo.
+
+```bash
+# itens ainda sem tradução na seção 2 (o texto original já vem preenchido)
+python build.py 2 --todo pt --repo /tmp/upstream
+
+# confere a tradução com o original: números, links, campos faltando, texto original alterado
+python build.py 1 --check pt --repo /tmp/upstream
+```
+
+O `--check` só avisa e não altera nada. Avisos de "números a mais ou a menos" nem sempre
+são erros (por exemplo, "四成" vira "40%"), mas vale olhar um a um.
 
 ## Atualização automática
 

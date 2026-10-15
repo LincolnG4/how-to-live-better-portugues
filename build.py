@@ -22,6 +22,8 @@ import os
 import re
 import subprocess
 import sys
+import textwrap
+from decimal import Decimal
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -32,6 +34,10 @@ def parse_args():
     ap.add_argument("sections", nargs="*", help="节号；或 all 表示全部节")
     ap.add_argument("-o", "--out", default=None, help="输出文件名（默认按节号自动命名）")
     ap.add_argument("--repo", default=None, help="上游仓库目录（默认 D:\\Agent\\HowToLiveBetter）")
+    ap.add_argument("--check", metavar="LANG", default=None,
+                    help="对照原文检查所给节的 LANG 译文（数字、链接、字段、原文是否已变），只提示不改动，不生成页面")
+    ap.add_argument("--todo", metavar="LANG", default=None,
+                    help="只打印某一节（须只给一个节号）里还没有 LANG 译文的条目骨架（JSON），不生成页面")
     return ap.parse_args()
 
 
@@ -39,6 +45,14 @@ ARGS = parse_args()
 REPO = Path(ARGS.repo or os.environ.get("HLTB_REPO") or r"D:\Agent\HowToLiveBetter")
 
 UPSTREAM = "https://github.com/eternity4719/HowToLiveBetter"
+
+# 正文译文：translations/<lang>/NN.json，见 load_translations。zh 是原文，没有译文目录。
+TRANSLATIONS_DIR = HERE / "translations"
+SOURCE_LANG = "zh"
+TRANSLATABLE = ("说人话", "成本", "收益", "备注")  # 条目里要翻译的字段（另加标题）；来源是文献，不翻
+# 目录里条目标题的最大字符数：中文一个字信息量大，拉丁文字的标题天然长得多
+TOC_TITLE_MAX_CJK = 34
+TOC_TITLE_MAX_LATIN = 60
 
 
 def avail_sections():
@@ -122,8 +136,17 @@ STR = {
         "Data source: {0} (Unlicense, public domain), data as of {1} ({2})."),
     "footer.2": (
         "「说人话」「收益」等栏目为原文摘录，未作改写；本页共 {0} 条，A 级 {1} 条、B 级 {2} 条、C 级 {3} 条，含 {4} 条文献外链。",
-        "Só a interface está traduzida: o texto das dicas, inclusive os campos “说人话” (linguagem simples) e “收益” (benefício), é o original em chinês, sem reescrita. Esta página tem {0} dicas: {1} com evidência A, {2} com B e {3} com C, e {4} links externos para as fontes.",
-        "Only the interface is translated: the text of the tips, including the “说人话” (plain talk) and “收益” (benefit) fields, is the original Chinese, unedited. This page has {0} tips: {1} with evidence A, {2} with B and {3} with C, plus {4} external links to sources."),
+        "Esta página tem {0} dicas: {1} com evidência A, {2} com B e {3} com C, e {4} links externos para as fontes.",
+        "This page has {0} tips: {1} with evidence A, {2} with B and {3} with C, plus {4} external links to sources."),
+    # 译文进度（zh 是原文，不显示这两句）
+    "footer.tr.none": (
+        "",
+        "O texto das dicas ainda está no original em chinês: só a interface foi traduzida.",
+        "The text of the tips is still the original Chinese: only the interface is translated."),
+    "footer.tr.some": (
+        "",
+        "{0} de {1} dicas já estão traduzidas para o português. A tradução é automática e pode conter erros, então confira o original em chinês; as demais dicas continuam em chinês.",
+        "{0} of {1} tips are translated into English. The translation is machine-generated and may contain errors, so check the Chinese original; the remaining tips are still in Chinese."),
     "footer.3": (
         "单文件自包含，不引用任何外部资源（正文中的文献链接除外），可离线阅读。由 build.py 生成。",
         "Arquivo único e autossuficiente: não carrega nenhum recurso externo (exceto os links de fontes no texto) e funciona offline. Gerado por build.py.",
@@ -161,6 +184,50 @@ def _fill(s, args):
 def tr(lang, key, *args):
     """取某语言的界面文案，{0} {1}… 用 args 填。"""
     return _fill(I18N[lang][key], args)
+
+
+def toc_title(title):
+    """目录里的短标题。含中日韩字（原文，或还没译的回退）按字数截；拉丁文字按词截，不把词切断。"""
+    if re.search(r"[\u4e00-\u9fff]", title):
+        return title if len(title) <= TOC_TITLE_MAX_CJK else title[:TOC_TITLE_MAX_CJK - 1] + "…"
+    return textwrap.shorten(title, TOC_TITLE_MAX_LATIN, placeholder="…")
+
+
+def src_key(src):
+    """原文字段 -> 查译文的 key。原文有任何改动，key 就变了，旧译文自然对不上、回退到中文。"""
+    return json.dumps(src, sort_keys=True, ensure_ascii=False)
+
+
+def entry_src(e):
+    return {"title": e["title"], **{k: e["fields"][k] for k in TRANSLATABLE if k in e["fields"]}}
+
+
+def section_src(title, intro):
+    return {"title": title, "intro": " ".join(intro)}
+
+
+def load_translations(lang):
+    """translations/<lang>/*.json -> {src_key: 译文字段}。
+
+    文件格式：{"section": {"src": {title, intro}, "tr": {...}},
+              "entries": [{"src": {title, 说人话, 成本, ...}, "tr": {...}}, ...]}
+    src 是当时翻译所依据的中文原文，既用来匹配、也方便并排审校；tr 缺的字段回退到中文。
+    """
+    out = {}
+    for p in sorted((TRANSLATIONS_DIR / lang).glob("*.json")):
+        data = json.loads(p.read_text(encoding="utf-8"))
+        for item in ([data["section"]] if "section" in data else []) + data.get("entries", []):
+            out[src_key(item["src"])] = item["tr"]
+    return out
+
+
+def localize(e, trans):
+    """返回 (换上译文的条目, 是否有译文)。没有译文或字段缺失就保留中文。"""
+    t = trans.get(src_key(entry_src(e)))
+    if not t:
+        return e, False
+    fields = {**e["fields"], **{k: t[k] for k in TRANSLATABLE if t.get(k)}}
+    return {**e, "title": t.get("title") or e["title"], "fields": fields}, True
 
 
 def find_file(n):
@@ -652,18 +719,24 @@ def page_path(base, lang):
     return base if lang == DEFAULT_LANG else base.with_name(lang + ".html")
 
 
-def render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date):
+def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, rev_date):
+    translated = 0
     sec_toc = []
     sec_html = []
     jump_opts = []
 
     for n, title, intro, entries in parsed:
+        st = trans.get(src_key(section_src(title, intro)), {})
+        title = st.get("title") or title
+        intro_text = st.get("intro") or " ".join(intro)
         cards = []
         links = []
         for e in entries:
+            e, hit = localize(e, trans)
+            translated += hit
             cards.append(render_entry(e, n, lang))
             r = ratio_of(parse_tags(e["tags_raw"]))
-            short = e["title"] if len(e["title"]) <= 34 else e["title"][:33] + "…"
+            short = toc_title(e["title"])
             links.append('<a href="#s%d-%d" title="%s"><span class="dot d%d"></span>'
                          '<i>%d</i><span>%s</span></a>'
                          % (n, e["no"], html.escape(e["title"], quote=True),
@@ -675,7 +748,7 @@ def render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date)
             '<section id="sec%d"><div class="sec-h"><h2>%s</h2>'
             '<span class="meta">%s</span></div>%s%s</section>'
             % (n, inline(title), count,
-               ('<p class="intro">%s</p>' % inline(" ".join(intro))) if intro else "",
+               ('<p class="intro">%s</p>' % inline(intro_text)) if intro_text else "",
                "".join(cards)))
         jump_opts.append('<option value="sec%d">%s</option>' % (n, html.escape(title)))
 
@@ -720,10 +793,12 @@ def render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date)
     else:
         footer_1 = tr(lang, "footer.1", upstream_link)
 
-    footer = ('<footer>%s<br>%s<br>%s</footer>' % (
-        footer_1,
-        tr(lang, "footer.2", total, grade_cnt["A"], grade_cnt["B"], grade_cnt["C"], link_total),
-        tr(lang, "footer.3")))
+    notes = [footer_1,
+             tr(lang, "footer.2", total, grade_cnt["A"], grade_cnt["B"], grade_cnt["C"], link_total)]
+    if lang != SOURCE_LANG:
+        notes.append(tr(lang, "footer.tr.some", translated, total) if translated else tr(lang, "footer.tr.none"))
+    notes.append(tr(lang, "footer.3"))
+    footer = "<footer>%s</footer>" % "<br>".join(notes)
 
     shell = ('<div class="shell"><aside class="toc">%s</aside><main>%s'
              '<div class="empty hidden" id="empty">%s</div>%s'
@@ -740,8 +815,97 @@ def render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date)
     return head + bar + shell + "<script>" + count_js + JS + "</script></body></html>"
 
 
+# 各语言的数字写法 (千分位, 小数点)；原文（中文）按英文写法读
+NUM_FORMAT = {"pt": (".", ","), "en": (",", "."), "zh": (",", ".")}
+# 原文里「数字+单位」在译文里可能换算成别的数：10 万 -> 100 mil / 100.000，170 万 -> 1,7 milhão
+UNIT_EQUIV = {"千": (1000, 1), "万": (10 ** 4, 10, Decimal("0.01")), "亿": (10 ** 8, 100, Decimal("0.1"))}
+
+
+def number_forms(text, lang):
+    """文中每个数：[(值, {值, 单位换算后的值…}), ...]，后者是各自可接受的写法。千分位去掉、小数点统一。"""
+    thou, dec = NUM_FORMAT[lang]
+    grouped = r"\d{1,3}(?:%s\d{3})+(?:%s\d+)?" % (re.escape(thou), re.escape(dec))
+    out = []
+    for m in re.finditer(r"\d+(?:[.,]\d+)*", text):
+        t = m.group(0)
+        try:
+            v = Decimal((t.replace(thou, "") if re.fullmatch(grouped, t) else t).replace(dec, "."))
+        except ArithmeticError:  # 1.2.3 这类版本号之类，不当数字比
+            continue
+        unit = text[m.end():m.end() + 2].lstrip()[:1]
+        out.append((v, {v, *(v * Decimal(f) for f in UNIT_EQUIV.get(unit, ()))}))
+    return out
+
+
+def check_translations(lang, parsed):
+    """对照原文检查译文，只提示不改动：数字/链接/加粗标记有没有丢或多出来、字段是否齐全、
+    原文是否已被上游改过（改过的译文不会显示）。数字不一致不一定是错（如 17.4 -> 17,4 已自动归一），请人工判断。"""
+    flagged = 0
+    for n, title, intro, entries in parsed:
+        path = TRANSLATIONS_DIR / lang / ("%02d.json" % n)
+        if not path.exists():
+            print("第 %d 节：没有 %s" % (n, path.relative_to(HERE)))
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        items = ([data["section"]] if "section" in data else []) + data.get("entries", [])
+        current = {src_key(section_src(title, intro))} | {src_key(entry_src(e)) for e in entries}
+        have = {src_key(it["src"]) for it in items}
+        for it in items:
+            src, tr_ = it["src"], it["tr"]
+            msgs = []
+            if src_key(src) not in current:
+                msgs.append("原文已变，这条译文不会显示")
+            for k, v in src.items():
+                if not v:
+                    continue
+                t = tr_.get(k)
+                if not t:
+                    msgs.append("%s: 缺译文" % k)
+                    continue
+                found = {x for _, forms in number_forms(t, lang) for x in forms}
+                wanted = number_forms(v, "zh")
+                miss = [x for x, forms in wanted if not forms & found]
+                extra = found - {x for _, forms in wanted for x in forms}
+                if miss:
+                    msgs.append("%s: 数字缺 %s" % (k, sorted(miss)))
+                if extra:
+                    msgs.append("%s: 多出数字 %s" % (k, sorted(extra)))
+                urls = re.findall(r"https?://[^\s)），。；]+", v)
+                if [u for u in urls if u not in t]:
+                    msgs.append("%s: 链接缺 %s" % (k, [u for u in urls if u not in t]))
+                if v.count("**") != t.count("**"):
+                    msgs.append("%s: ** 加粗标记数量不同" % k)
+            msgs += ["%s: 多余字段" % k for k in tr_ if k not in src]
+            if msgs:
+                flagged += 1
+                print("第 %d 节 · %s：" % (n, src["title"][:30]))
+                for m in msgs:
+                    print("    " + m)
+        done = sum(src_key(entry_src(e)) in have for e in entries)
+        print("第 %d 节：%d / %d 条有译文，%d 条有提示" % (n, done, len(entries), flagged))
+
+
+def print_todo(lang, parsed):
+    """打印某一节里还没有译文的条目骨架（src 已填、tr 为空），译完存成 translations/<lang>/NN.json。"""
+    if len(parsed) != 1:
+        raise SystemExit("--todo 一次只处理一节，请只给一个节号")
+    _, title, intro, entries = parsed[0]
+    trans = load_translations(lang)
+    todo = {}
+    if src_key(section_src(title, intro)) not in trans:
+        todo["section"] = {"src": section_src(title, intro), "tr": {}}
+    todo["entries"] = [{"src": entry_src(e), "tr": {}} for e in entries if src_key(entry_src(e)) not in trans]
+    print(json.dumps(todo, ensure_ascii=False, indent=2))
+
+
 def main():
     parsed = [(n,) + parse(find_file(n)) for n in SECTIONS]
+    if ARGS.todo:
+        print_todo(ARGS.todo, parsed)
+        return
+    if ARGS.check:
+        check_translations(ARGS.check, parsed)
+        return
     total = 0
     grade_cnt = {"A": 0, "B": 0, "C": 0}
     link_total = 0
@@ -763,7 +927,8 @@ def main():
         base = HERE / ("高性价比人生指南_%s.html" % "_".join("第%d节" % n for n in SECTIONS))
 
     for lang in LANGS:
-        out = render_page(lang, base, parsed, total, grade_cnt, link_total, rev, rev_date)
+        trans = {} if lang == SOURCE_LANG else load_translations(lang)
+        out = render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, rev_date)
         name = page_path(base, lang)
         name.write_text(out, encoding="utf-8")
         print("输出：%s  (%d 字节)" % (name, len(out.encode("utf-8"))))

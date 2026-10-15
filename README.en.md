@@ -25,8 +25,11 @@ This repository is not a fork of the book and does not change the original conte
 - The **interface** is translated: Português (default), English and 中文, chosen from the
   dropdown in the top right corner. Each language is its own page
   (`index.html`, `en.html`, `zh.html`) and the dropdown links between them.
-- The **book text** (the tips, section titles and table of contents) is still the
-  original Chinese. Translating it into Portuguese and English is the next step.
+- The **book text** is being translated section by section. So far only **section 1**
+  ("Don't die early", 48 tips) is in Portuguese; the rest is still the original Chinese,
+  and the page footer shows how many tips are already translated. The translation is
+  machine-generated (AI) and may contain errors: check the original, especially for
+  health topics. The English translation has not started yet.
 
 ## Page features
 
@@ -63,6 +66,25 @@ The interface strings (in all three languages) live in the `STR` table in `build
 Tip counts, A/B/C grading and the three value-for-money tiers follow the same rules as
 `tools/sync-stats.ps1` and `index.html` in the book repository, so the output can be
 checked item by item against the original badges.
+
+## Translating the content
+
+Translations live in `translations/<language>/NN.json` (for example `translations/pt/01.json`),
+one file per section. Each item keeps the original Chinese text (`src`) next to its
+translation (`tr`), so review is side by side. If the upstream book changes an item, the
+original text no longer matches, the old translation is not shown, and the page falls
+back to Chinese until the item is translated again.
+
+```bash
+# items in section 2 that still have no translation (the original text is pre-filled)
+python build.py 2 --todo pt --repo /tmp/upstream
+
+# check the translation against the original: numbers, links, missing fields, changed source
+python build.py 1 --check pt --repo /tmp/upstream
+```
+
+`--check` only warns and never changes anything. "Extra or missing numbers" warnings are
+not always errors (for example, "四成" becomes "40%"), but each one is worth a look.
 
 ## Automatic updates
 
