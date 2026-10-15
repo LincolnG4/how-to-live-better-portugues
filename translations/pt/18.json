@@ -1,0 +1,126 @@
+{
+  "section": {
+    "src": {
+      "title": "18. 养孩子划不划算",
+      "intro": "这一节算的是钱和时间两笔账。和第 10 节算结婚账一样，这里只把账拆开给你看，不替你下结论。已经怀孕、要照流程一步步办事的，看第 27 节。"
+    },
+    "tr": {
+      "title": "18. Compensa ter filhos?",
+      "intro": "Esta seção faz as contas de dinheiro e de tempo. Como a seção 10, que calcula o casamento, aqui só se separam as contas para você ver, sem tirar conclusão por você. Para quem já está grávida e vai seguindo o procedimento passo a passo, veja a seção 27."
+    }
+  },
+  "entries": [
+    {
+      "src": {
+        "title": "先把能领的算进来：国家育儿补贴每孩每年 3600 元，发到 3 岁；个税专项附加扣除每孩每月 2000 元",
+        "说人话": "不满 3 岁的孩子每年能领 3600 元育儿补贴，不用交税。2025 年以前出生的按剩下的月数折算。另外从孩子出生到全日制上学结束，每个孩子每月能从父母的应税收入里减掉 2000 元。由一方全扣，税率 3% 的一年少交 720 元，10% 的少交 2400 元。",
+        "成本": "不花钱。补贴去孩子户口所在地申请，跑一趟就办完。个税扣除在手机「个人所得税」App 上填，也可以交给单位填",
+        "收益": "中共中央办公厅、国务院办公厅印发的方案规定：从 2025 年 1 月 1 日起，给 3 周岁以下的婴幼儿发补贴，发到满 3 周岁，标准是「每孩每年 3600 元」。2025 年 1 月 1 日之前出生、还不满 3 周岁的，按应补贴的月数折算。由孩子的父母一方或者其他监护人去申领。这笔补贴「免征个人所得税」。认定低保这类救助的时候，它「不计入家庭或个人收入」。3600 元是「国家基础标准」，「地方提标部分所需资金由地方财政自行承担」。方案还规定「县级以下政府不得自行出台育儿补贴政策或标准」，省级或市级政府要出台其他育儿补贴政策或者提标的，报上一级主管部门备案。个税那边，国务院 2022 年设了 3 岁以下婴幼儿照护扣除。2023 年又把它和子女教育扣除一起提高，从 2023 年 1 月 1 日起都是每个孩子每月 2000 元。子女教育扣除管孩子满 3 岁到上小学前这段，也管全日制学历教育，从小学一直到博士。父母「可以选择由其中一方按扣除标准的100%扣除，也可以选择由双方分别按扣除标准的50%扣除」，选定后一年内不能改。自算例子：一个孩子一年扣 2000 元乘 12 个月，共 24000 元。由一方全扣，这个人税率在 3% 档的少交 720 元，在 10% 档的少交 2400 元。两人各扣一半，每人扣 12000 元，3% 档少交 360 元，10% 档少交 1200 元。税率档按全年应纳税所得额算：不超过 36000 元的是 3%，超过 36000 元到 144000 元的部分是 10%",
+        "备注": "这是全国统一的基础标准。方案允许省级、市级政府提高标准或者另出育儿补贴政策，县级以下政府不能自己出。本地有没有加、怎么领，看本省的实施方案。三年加起来 10800 元，在养孩子的开支里只是很小的一块，别把它当成生不生的依据。个税扣除没在平时填上的，年底汇算时还能补，见第 5 节第 2 条（个税汇算）。全年应纳税所得额本来就是零的人，扣了也不会少交。扣完跨了档的，少交的钱落在两档算出的数之间。父母都交税的，让税率档高的那一方全扣，家里少交得更多"
+      },
+      "tr": {
+        "title": "Primeiro some o que já dá para receber: o subsídio nacional de criação de filhos de 3.600 yuans por criança por ano, pago até os 3 anos; a dedução adicional especial do imposto de renda de 2.000 yuans por criança por mês",
+        "说人话": "Uma criança com menos de 3 anos pode receber 3.600 yuans por ano de subsídio de criação, sem pagar imposto. Quem nasceu antes de 2025 recebe proporcional aos meses restantes. Além disso, do nascimento até o fim do ensino em tempo integral, cada criança permite abater 2.000 yuans por mês da renda tributável dos pais. Se um só deduz tudo, quem está na alíquota de 3% paga 720 yuans a menos por ano, e quem está na de 10%, 2.400 yuans a menos.",
+        "成本": "Não custa dinheiro. O subsídio se pede no local do registro de residência da criança, e se resolve numa ida. A dedução do imposto de renda se preenche no aplicativo “个人所得税” do celular, ou se entrega ao empregador para preencher",
+        "收益": "O plano divulgado pelo Escritório Geral do Comitê Central do Partido Comunista e pelo Escritório Geral do Conselho de Estado prevê: a partir de 1º de janeiro de 2025, paga-se subsídio a bebês e crianças de menos de 3 anos completos, até completarem 3 anos, no valor de “3.600 yuans por criança por ano”. Quem nasceu antes de 1º de janeiro de 2025 e ainda não tem 3 anos recebe proporcionalmente aos meses a que tem direito. Um dos pais da criança ou outro responsável faz o pedido. Esse subsídio é “isento de imposto de renda de pessoa física”. Ao reconhecer assistência como o benefício de subsistência mínima, “não entra na renda da família nem da pessoa”. Os 3.600 yuans são o “padrão básico nacional”, e “os recursos necessários à parte elevada localmente são arcados pelas finanças locais”. O plano também prevê que “governos abaixo do nível de condado não podem criar por conta própria política ou padrão de subsídio de criação de filhos”, e que governos provinciais ou municipais que quiserem criar outra política de subsídio ou elevar o padrão devem registrar no órgão superior competente. No imposto de renda, o Conselho de Estado criou em 2022 a dedução de cuidados com bebês e crianças de menos de 3 anos. Em 2023 ela foi elevada junto com a dedução de educação dos filhos, e desde 1º de janeiro de 2023 as duas são de 2.000 yuans por criança por mês. A dedução de educação dos filhos cobre o período dos 3 anos completos até antes do ensino fundamental, e também o ensino de formação em tempo integral, do fundamental ao doutorado. Os pais “podem escolher que um deles deduza 100% do padrão de dedução, ou que os dois deduzam cada um 50% do padrão”, e depois de escolhido, não se pode mudar durante um ano. Exemplo calculado pelo autor: uma criança dá em um ano 2.000 yuans vezes 12 meses, total de 24.000 yuans. Se um só deduz tudo, quem está na faixa de 3% paga 720 yuans a menos, e quem está na de 10%, 2.400 yuans a menos. Se cada um deduz metade, cada um deduz 12.000 yuans, e na faixa de 3% paga 360 yuans a menos e na de 10%, 1.200 yuans a menos. A faixa de alíquota se calcula pela renda tributável do ano inteiro: até 36.000 yuans, 3%, e a parte acima de 36.000 até 144.000 yuans, 10%",
+        "备注": "Este é o padrão básico uniforme nacional. O plano permite que governos provinciais e municipais elevem o padrão ou criem outra política de subsídio, e governos abaixo do nível de condado não podem criar por conta própria. Se o seu local acrescentou algo e como pedir, veja o plano de implementação da sua província. Os três anos somados dão 10.800 yuans, apenas uma parte pequena nas despesas de criar um filho, e não o tome como base para decidir ter ou não. A dedução do imposto de renda que não foi preenchida durante o ano ainda pode ser acrescentada no acerto anual, veja a dica 2 da seção 5 (acerto do imposto de renda). Quem tem renda tributável anual igual a zero não paga menos por deduzir. Se depois de deduzir se muda de faixa, o que se deixa de pagar fica entre os dois valores calculados nas duas faixas. Quando os dois pais pagam imposto, deixar o de faixa mais alta deduzir tudo faz a família pagar menos imposto"
+      }
+    },
+    {
+      "src": {
+        "title": "产假 98 天，生育津贴由生育保险基金按单位上年度职工月平均工资发；男方的陪产假和夫妻俩的育儿假按本省条例休",
+        "说人话": "生孩子至少有 98 天产假，难产、多胞胎再加，期间由生育保险基金发生育津贴。单位没给你上生育保险的，由单位自己发。男方的陪产假和夫妻俩的育儿假看本省条例。北京是陪产假 15 天，孩子 3 岁前每人每年 5 个工作日育儿假。",
+        "成本": "不花钱。由单位去申报，你自己不用跑",
+        "收益": "产假天数由国务院规定。「女职工生育享受 98 天产假，其中产前可以休假 15 天；难产的，增加产假 15 天；生育多胞胎的，每多生育 1 个婴儿，增加产假 15 天。」产假期间拿的钱叫生育津贴。已经参加生育保险的，「按照用人单位上年度职工月平均工资的标准由生育保险基金支付」。没参保的，由用人单位按你产假前的工资标准发给你。男方的陪产假、夫妻俩的育儿假由各省的人口与计划生育条例定。北京：女方另加延长生育假 60 日，男方陪产假 15 日。子女满 3 周岁前，夫妻「每人每年享受五个工作日的育儿假」，休假期间工资不得降低。上海：女方另加生育假 60 天，男方配偶陪产假 10 天。子女年满 3 周岁前「双方每年可以享受育儿假各五天」，工资按正常出勤应得的发。广东：女方奖励假 80 日，男方陪产假 15 日。子女 3 周岁以内，父母每年各 10 日育儿假，假期内照发工资。四川 2025 年版：女方延长生育假 90 日，男方护理假 30 日。子女 3 周岁以下，夫妻每年各 10 个工作日育儿假，休假期间视为出勤。国务院办公厅 2024 年要求各地保障「产假、生育奖励假、陪产假、育儿假等生育假期落实到位」",
+        "备注": "98 天是国家定的最低标准。上面四个省的条例都另加了 60 到 90 天的生育奖励假，加起来是 158 到 188 天。别的省加多少，要查本省条例。奖励假这段时间的工资由哪一方出，各省规定不一样。查本省的规定，去国家法律法规数据库（flk.npc.gov.cn）搜「省名加人口与计划生育条例」，看标着「有效」的那一版。陪产假在有的省叫护理假，育儿假有的按工作日算、有的按自然天算。上面四个省的天数按截至 2026 年 10 月的条例写，以后可能修订。"
+      },
+      "tr": {
+        "title": "A licença-maternidade é de 98 dias, e o auxílio-maternidade é pago pelo fundo de seguro-maternidade com base no salário médio mensal dos empregados do ano anterior do empregador; a licença-paternidade e a licença para cuidar dos filhos do casal seguem o regulamento da província",
+        "说人话": "Ao ter um filho há pelo menos 98 dias de licença-maternidade, com acréscimo em parto difícil e em gêmeos, e nesse período o fundo de seguro-maternidade paga o auxílio-maternidade. Se o empregador não fez para você o seguro-maternidade, ele mesmo paga. A licença-paternidade e a licença para cuidar dos filhos do casal dependem do regulamento da província. Em Pequim, a licença-paternidade é de 15 dias, e até os 3 anos da criança cada um tem 5 dias úteis por ano de licença para cuidar dos filhos.",
+        "成本": "Não custa dinheiro. É o empregador que faz a declaração, e você não precisa ir a lugar nenhum",
+        "收益": "Os dias de licença-maternidade são fixados pelo Conselho de Estado. “A trabalhadora que tem filho tem 98 dias de licença-maternidade, dos quais 15 dias podem ser tirados antes do parto; em caso de parto difícil, acrescentam-se 15 dias; em caso de gêmeos ou mais, para cada bebê a mais acrescentam-se 15 dias.” O dinheiro recebido durante a licença-maternidade se chama auxílio-maternidade. Quem já participa do seguro-maternidade recebe “pelo padrão do salário médio mensal dos empregados do empregador no ano anterior, pago pelo fundo de seguro-maternidade”. Quem não participa recebe do empregador pelo padrão do salário antes da licença. A licença-paternidade do pai e a licença para cuidar dos filhos do casal são fixadas pelos regulamentos de população e planejamento familiar de cada província. Pequim: além disso, licença-maternidade estendida de 60 dias para a mulher, e licença-paternidade de 15 dias para o homem. Até os 3 anos completos da criança, o casal “tem cada um cinco dias úteis por ano de licença para cuidar dos filhos”, sem redução de salário durante a licença. Xangai: além disso, licença-maternidade de 60 dias para a mulher, e licença-paternidade de 10 dias para o cônjuge do homem. Até os 3 anos completos da criança, “os dois podem ter cada um cinco dias por ano de licença para cuidar dos filhos”, e o salário é pago como se estivesse trabalhando normalmente. Guangdong: licença de incentivo de 80 dias para a mulher, licença-paternidade de 15 dias para o homem. Até os 3 anos da criança, pai e mãe têm cada um 10 dias por ano de licença para cuidar dos filhos, com salário pago durante a licença. Sichuan, versão de 2025: licença-maternidade estendida de 90 dias para a mulher, licença de cuidados de 30 dias para o homem. Com a criança de menos de 3 anos, o casal tem cada um 10 dias úteis por ano de licença para cuidar dos filhos, e o período conta como presença. O Escritório Geral do Conselho de Estado exigiu em 2024 que cada lugar assegure “o cumprimento efetivo das licenças de parto, como licença-maternidade, licença de incentivo, licença-paternidade e licença para cuidar dos filhos”",
+        "备注": "Os 98 dias são o padrão mínimo nacional. Os regulamentos das quatro províncias acima acrescentaram de 60 a 90 dias de licença de incentivo, e somados dão de 158 a 188 dias. Quanto outras províncias acrescentam, é preciso consultar o regulamento local. Quem paga o salário do período da licença de incentivo, cada província regula de modo diferente. Para consultar a norma da sua província, busque na base nacional de leis e regulamentos (flk.npc.gov.cn) “nome da província mais regulamento de população e planejamento familiar” e veja a versão marcada como “em vigor”. A licença-paternidade em algumas províncias se chama licença de cuidados, e a licença para cuidar dos filhos em algumas se conta em dias úteis e em outras em dias corridos. Os dias das quatro províncias acima seguem o regulamento até outubro de 2026, e podem ser revistos depois."
+      }
+    },
+    {
+      "src": {
+        "title": "知道这条：不得因怀孕、生育、哺乳降工资或者辞退",
+        "说人话": "单位因为你怀孕、生孩子、喂奶，给你降工资或者把你辞了，都是违法的。孩子不满一周岁的，你每天有 1 小时喂奶时间，单位也不能安排你加班和上夜班，违反的按每人 1000 到 5000 元罚款。索赔怎么走见第 19 节。",
+        "成本": "不花钱",
+        "收益": "国务院规定：「用人单位不得因女职工怀孕、生育、哺乳降低其工资、予以辞退、与其解除劳动或者聘用合同。」这三段时间里单位不能给你减钱，也不能把你辞退或者解约。哺乳未满 1 周岁婴儿的，每天有 1 小时哺乳时间。单位也不得安排你延长劳动时间，不得安排夜班。哺乳期加班、上夜班这类违规，按每人 1000 元以上 5000 元以下罚款。降工资、辞退这一项，这份规定没有配罚款，被违法辞退的走劳动仲裁要求恢复或者赔偿",
+        "备注": "真的被违法辞退了，索赔路径见第 19 节。取证的重点是调岗、降薪的书面通知和聊天记录，这两样要留好"
+      },
+      "tr": {
+        "title": "Saiba disto: não se pode reduzir o salário nem demitir por gravidez, parto ou amamentação",
+        "说人话": "Se o empregador reduz seu salário ou demite você por causa de gravidez, parto ou amamentação, isso é ilegal. Se a criança tem menos de um ano, você tem 1 hora por dia para amamentar, e o empregador também não pode mandar você fazer hora extra nem trabalhar à noite, e quem descumpre é multado de 1.000 a 5.000 yuans por pessoa. Como pedir indenização, veja a seção 19.",
+        "成本": "Não custa dinheiro",
+        "收益": "O Conselho de Estado prevê: “o empregador não pode, por gravidez, parto ou amamentação da trabalhadora, reduzir seu salário, demiti-la ou rescindir o contrato de trabalho ou de contratação com ela.” Nesses três períodos o empregador não pode reduzir seu dinheiro, nem demiti-la ou rescindir. A trabalhadora que amamenta um bebê de menos de 1 ano tem 1 hora por dia de tempo de amamentação. O empregador também não pode mandar você prolongar a jornada nem trabalhar à noite. Infrações como hora extra e trabalho noturno durante a amamentação são multadas de 1.000 a 5.000 yuans por pessoa. Para redução de salário e demissão, esta norma não prevê multa, e quem foi demitida ilegalmente recorre à arbitragem trabalhista para pedir reintegração ou indenização",
+        "备注": "Se de fato foi demitida ilegalmente, o caminho do pedido de indenização está na seção 19. O ponto principal das provas são os avisos por escrito de mudança de função e de redução de salário e as conversas por mensagem, e essas duas coisas devem ser guardadas"
+      }
+    },
+    {
+      "src": {
+        "title": "养孩子的时间账按「谁的时间被占掉」算，不按「辛不辛苦」算",
+        "说人话": "把每天看孩子的小时数、夜里被吵醒的次数，都折算成时间。再乘上干这些活的那个人的时薪。算出来的数，一般远远大于奶粉尿布钱。所以分工最好在生之前就谈好。",
+        "成本": "不花钱，花的是时间。孩子 3 岁前基本是全天被占住。难在天天如此，没法咬牙几天就过去",
+        "收益": "把每天照看孩子的时间、夜里被吵醒的次数，都折算成小时。再乘以干这些活的那个人的时薪。得到的数字通常远大于奶粉尿布钱。照看、做饭、夜里起夜这些活虽然没人付钱，也照这样记进成本。算法和第 10 节算家务的那套一样。先谈好分工，再决定生不生",
+        "备注": "数字不必算得很准。有用的是两个人在生之前对着同一张表谈分工，免得生完再吵。生完孩子回去上班，单位给你调岗、降薪的，怎么表态见第 19 节第 23 条（不同意调岗降薪）"
+      },
+      "tr": {
+        "title": "A conta de tempo de criar filhos se faz por “o tempo de quem é tomado”, e não por “o quanto é cansativo”",
+        "说人话": "Converta em tempo as horas por dia que se passa cuidando da criança e as vezes em que se acorda de noite. Depois multiplique pelo valor da hora de quem faz esse trabalho. O número que sai em geral é muito maior do que o dinheiro de leite em pó e fraldas. Por isso, a divisão de tarefas é melhor combinada antes de ter o filho.",
+        "成本": "Não custa dinheiro, o que se gasta é tempo. Até os 3 anos da criança, o tempo fica praticamente ocupado o dia todo. O difícil é que é todo dia, e não dá para se segurar alguns dias e passar",
+        "收益": "Converta em horas o tempo diário de cuidar da criança e as vezes em que se acorda à noite. Depois multiplique pelo valor da hora de quem faz esse trabalho. O número obtido costuma ser muito maior do que o dinheiro de leite em pó e fraldas. Cuidar, cozinhar e levantar à noite, embora ninguém pague, entram assim no custo. O método é o mesmo do cálculo do trabalho doméstico da seção 10. Primeiro combine a divisão de tarefas, e depois decida se tem filho",
+        "备注": "Não é preciso calcular o número com muita exatidão. O que serve é os dois, antes de ter o filho, conversarem sobre a divisão de tarefas olhando a mesma tabela, para não brigar depois do parto. Se, ao voltar ao trabalho depois do parto, o empregador mudar sua função ou reduzir seu salário, como se posicionar está na dica 23 da seção 19 (não concordar com mudança de função e redução de salário)"
+      }
+    },
+    {
+      "src": {
+        "title": "钱账分三段算：0 到 3 岁、义务教育、义务教育之后",
+        "说人话": "0 到 3 岁的钱，主要花在怎么带上：自己带、老人带，还是请人带。小学到初中这段，主要花在住房和课外。再往后，主要花在升学这条路上。三段的花法完全不同，混在一起只会算出一个吓人的总数。",
+        "成本": "花多少钱没有固定数，城市不同、带法不同，差得很远。难在要静下心来把三段账分开算，不能凭感觉拍一个数",
+        "收益": "0 到 3 岁的大头是照料方式：自己带、老人带还是请人带。义务教育阶段（小学到初中）的大头是住房和课外支出。这之后的大头是升学路径。这三段钱花在哪完全不同，混在一起算，只会得到一个吓人的总数",
+        "备注": "先把育儿补贴、生育津贴、医保报销这些确定能拿到的钱算进来，再看还差多少。别拿网上流传的「养大一个孩子要多少万」做决定，那类数字口径不明，你不知道它算了哪些、又漏了哪些"
+      },
+      "tr": {
+        "title": "A conta de dinheiro se faz em três fases: de 0 a 3 anos, ensino obrigatório e depois do ensino obrigatório",
+        "说人话": "O dinheiro de 0 a 3 anos vai principalmente em como a criança é cuidada: por você, pelos avós ou por alguém contratado. Do fundamental ao fim do ensino obrigatório, vai principalmente em moradia e atividades extras. Depois, vai principalmente no caminho de ingresso nos estudos. Os gastos das três fases são totalmente diferentes, e misturá-los só dá um total assustador.",
+        "成本": "Quanto se gasta não tem valor fixo, e varia muito conforme a cidade e a forma de criar. O difícil é parar e calmamente separar as contas das três fases, sem chutar um número por sensação",
+        "收益": "O maior item de 0 a 3 anos é a forma de cuidado: por você, pelos avós ou por alguém contratado. O maior item da fase do ensino obrigatório (do fundamental ao ensino médio básico) é moradia e despesas extras. O maior item depois disso é o caminho de ingresso nos estudos. Onde o dinheiro vai nessas três fases é totalmente diferente, e somá-los só dá um total assustador",
+        "备注": "Primeiro some o que é certo receber, como subsídio de criação, auxílio-maternidade e reembolso do seguro de saúde, e depois veja quanto ainda falta. Não tome decisão com base em “criar um filho custa tantos milhares de yuans” que circula na internet: esses números têm critério pouco claro, e você não sabe o que eles contaram e o que deixaram de fora"
+      }
+    },
+    {
+      "src": {
+        "title": "为长辈生、为婚姻生、为养老生，各记一笔账",
+        "说人话": "别人希望你生，这可以算你的一个考虑因素。但时间和钱是记在你自己账上的。「养儿防老」要单独算一笔，因为它赌的是二十年后另一个人的经济能力和意愿。把不生的后果也写下来，两边对照。",
+        "成本": "不花钱，花的是一次认真的谈话。难在要把话说开，不绕过去",
+        "收益": "思路和第 10 节一样。别人的期待可以算你的一个考虑因素。但成本要记在你自己的账上，不记在他们账上。「养儿防老」尤其要单独算一笔，因为它假定的是二十年后另一个人的经济能力和意愿",
+        "备注": "把「不生的后果」也写下来，和「生的后果」放在一起对照着看。只写一边的账，不叫算账"
+      },
+      "tr": {
+        "title": "Ter filho pelos mais velhos, pelo casamento ou pela aposentadoria: faça uma conta para cada",
+        "说人话": "Os outros desejarem que você tenha filho pode contar como um fator para você considerar. Mas o tempo e o dinheiro ficam registrados na sua conta. “Criar filho para a velhice” precisa de uma conta à parte, porque aposta na capacidade econômica e na vontade de outra pessoa daqui a vinte anos. Escreva também as consequências de não ter, e compare os dois lados.",
+        "成本": "Não custa dinheiro, o que se gasta é uma conversa séria. O difícil é falar abertamente, sem contornar",
+        "收益": "O raciocínio é o mesmo da seção 10. A expectativa dos outros pode contar como um fator para você considerar. Mas o custo se registra na sua conta, e não na deles. “Criar filho para a velhice” em especial precisa de uma conta à parte, porque pressupõe a capacidade econômica e a vontade de outra pessoa daqui a vinte anos",
+        "备注": "Escreva também as “consequências de não ter” e coloque ao lado das “consequências de ter”, para comparar. Escrever a conta de um lado só não é fazer conta"
+      }
+    },
+    {
+      "src": {
+        "title": "打算晚几年再生孩子的，先把女方的年龄这笔账算上：40 岁前后自然怀上的几率、试管婴儿的成功率都明显往下走",
+        "说人话": "女方年龄越大越难自然怀上，40 岁出头每个月怀上的几率只有 30 岁出头的一半左右。怀上以后流产的比例也往上走，40 到 44 岁约三分之一。做试管婴儿也补不回来，43、44 岁每移植一个胚胎只有约 5% 能生下孩子。",
+        "成本": "不花钱，花的是一次认真的谈话。难在要把生孩子和工作、买房这些安排放在一起排，不能只是往后推",
+        "收益": "自然怀孕看美国一项跟踪研究，找的是 30 到 44 岁、没有不孕病史、刚开始备孕的女性。和 30、31 岁相比，40、41 岁每个月怀上的几率低约 53%（比值 0.47，95% CI 0.28–0.78），42 到 44 岁低约 59%（0.39，0.16–0.93）。38、39 岁低约 30%（0.70，0.48–1.01），可信范围刚好碰到「没差别」。32、33 岁和 30、31 岁没有差别。从没怀过孕的女性，每个年龄怀上的几率都更低。丹麦一项同类研究里，35 到 40 岁女性的几率是 20 到 24 岁的 0.77。男方年龄的影响小得多，35 到 39 岁男性是 0.95。流产看挪威 2009 到 2013 年约 42 万次怀孕的登记数据：流产比例 25 到 29 岁最低，为 9.8%。30 到 34 岁 10.8%，35 到 39 岁 16.7%，40 到 44 岁 32.2%，45 岁以上 53.6%。胚胎的染色体看美国一家生殖中心对 15169 个试管胚胎做的检测。染色体异常从 26 岁以后随年龄稳定上升。26 到 37 岁做试管的人里，培养出的胚胎全都染色体异常的占 2% 到 6%，42 岁是 33%，44 岁是 53%。试管婴儿的成功率看英国生殖管理机构 2022 年的初步统计。用自己卵子、新鲜胚胎移植的，每移植一个胚胎生下孩子的比例：18 到 34 岁 35%，35 到 37 岁 26%，38、39 岁 18%，40 到 42 岁 10%，43、44 岁 5%。国内的规矩：卫生部 2003 年的《人类辅助生殖技术规范》写明「禁止给不符合国家人口和计划生育法规和条例规定的夫妇和单身妇女实施人类辅助生殖技术」。国务院办公厅 2024 年要求各地把适宜的辅助生殖技术项目纳入医保报销范围。国家医保局 2025 年 7 月说，全国 31 个省份和新疆兵团已经全面把辅助生殖技术纳入报销，2024 年有超过 100 万人次享受了待遇",
+        "备注": "不主张谁该早生或晚生，只把年龄这一项摆出来，和第 5 条的钱账、第 4 条的时间账放在一起看。这些都是一大群人的平均数，落到具体一个人身上差别很大，想知道自己的情况去医院生殖科问。单身女性在国内正规医院做不了辅助生殖技术。试管婴儿医保报哪些项目、报多少，各省不一样，去当地医保局问。决定要孩子之后该做什么，从第 27 节第 1 条（补叶酸）开始看"
+      },
+      "tr": {
+        "title": "Quem pretende ter filho alguns anos mais tarde deve incluir primeiro a conta da idade da mulher: perto dos 40 anos, a chance de engravidar naturalmente e a taxa de sucesso da fertilização in vitro caem nitidamente",
+        "说人话": "Quanto mais velha a mulher, mais difícil engravidar naturalmente, e no início dos 40 anos a chance por mês é só cerca de metade da do início dos 30. Depois de engravidar, a proporção de aborto também sobe, em cerca de um terço aos 40 a 44 anos. A fertilização in vitro também não recupera: aos 43 e 44 anos, só cerca de 5% de cada embrião transferido resulta em um bebê.",
+        "成本": "Não custa dinheiro, o que se gasta é uma conversa séria. O difícil é pôr o ter filho junto com os outros planos, como trabalho e comprar imóvel, para organizar, e não só ir adiando",
+        "收益": "Para a gravidez natural, veja um estudo de seguimento dos EUA com mulheres de 30 a 44 anos, sem histórico de infertilidade, que acabavam de começar a tentar. Em comparação com 30 e 31 anos, aos 40 e 41 a chance de engravidar por mês foi cerca de 53% menor (razão 0,47, IC 95% 0,28–0,78), e aos 42 a 44 anos cerca de 59% menor (0,39, 0,16–0,93). Aos 38 e 39 foi cerca de 30% menor (0,70, 0,48–1,01), com a faixa plausível encostando justo em “sem diferença”. Aos 32 e 33 não houve diferença em relação a 30 e 31. Em mulheres que nunca engravidaram, a chance em todas as idades foi menor. Num estudo semelhante dinamarquês, a chance de mulheres de 35 a 40 anos foi 0,77 a de 20 a 24 anos. O efeito da idade do homem é muito menor: em homens de 35 a 39 anos foi 0,95. Para o aborto, veja os dados de registro da Noruega de cerca de 420 mil gestações de 2009 a 2013: a proporção de aborto foi a mais baixa aos 25 a 29 anos, 9,8%. Aos 30 a 34, 10,8%, aos 35 a 39, 16,7%, aos 40 a 44, 32,2%, e aos 45 ou mais, 53,6%. Para os cromossomos do embrião, veja o teste de 15.169 embriões de fertilização in vitro num centro de reprodução dos EUA. As anomalias cromossômicas sobem de modo constante com a idade a partir dos 26 anos. Entre quem fez fertilização in vitro dos 26 aos 37 anos, os que cultivaram embriões todos com anomalia cromossômica foram de 2% a 6%, aos 42 anos 33% e aos 44 anos 53%. Para a taxa de sucesso da fertilização in vitro, veja as estatísticas preliminares de 2022 do órgão regulador britânico de reprodução. Com óvulos próprios e transferência de embrião fresco, a proporção de bebês nascidos por embrião transferido: 18 a 34 anos 35%, 35 a 37 anos 26%, 38 e 39 anos 18%, 40 a 42 anos 10%, 43 e 44 anos 5%. As regras do país: as “Normas de Tecnologia de Reprodução Humana Assistida” do Ministério da Saúde de 2003 registram “é proibido aplicar a tecnologia de reprodução humana assistida a casais e mulheres solteiras que não cumprem as leis e regulamentos nacionais de população e planejamento familiar”. O Escritório Geral do Conselho de Estado exigiu em 2024 que cada lugar inclua no reembolso do seguro de saúde os itens adequados de reprodução assistida. A Administração Nacional de Seguro de Saúde disse em julho de 2025 que as 31 províncias do país e o Corpo de Produção e Construção de Xinjiang já incluíram totalmente a reprodução assistida no reembolso, e em 2024 mais de 1 milhão de atendimentos receberam o benefício",
+        "备注": "Não se defende que alguém deva ter filho cedo ou tarde, só se coloca a idade na mesa para olhar junto com a conta de dinheiro da dica 5 e a conta de tempo da dica 4. Todos esses são médias de um grande grupo, e para uma pessoa em particular a diferença é grande, e quem quer saber do seu caso deve perguntar no setor de reprodução do hospital. Mulheres solteiras não podem fazer reprodução assistida em hospitais regulares no país. Quais itens da fertilização in vitro o seguro de saúde cobre e quanto cobre varia de província para província, e pergunte à administração local de seguro de saúde. Depois de decidir ter filho, o que fazer começa pela dica 1 da seção 27 (tomar ácido fólico)"
+      }
+    }
+  ]
+}
