@@ -75,6 +75,10 @@ tradução (`tr`), então a revisão é lado a lado. Se o livro original mudar u
 texto original deixa de bater, a tradução antiga não é mostrada e a página volta ao chinês
 até o item ser traduzido de novo.
 
+Um item com `"china": true` (ao lado de `src` e `tr`) só vale na China: depende de lei,
+programa do governo ou órgão chinês. A página mostra o selo "China" com a bandeira, e o
+botão "Ocultar só China" esconde esses itens.
+
 ```bash
 # itens ainda sem tradução na seção 2 (o texto original já vem preenchido)
 python build.py 2 --todo pt --repo /tmp/upstream

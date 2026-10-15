@@ -109,6 +109,13 @@ STR = {
     "filter.all": ("全部", "Todas", "All"),
     "filter.a": ("只看 A 级", "Evidência A", "Evidence A only"),
     "filter.plain": ("只看说人话", "Linguagem simples", "Plain talk only"),
+    # 只在中国适用的条目（中国的政策、法规、机构），见 load_translations 的 china 标记
+    "filter.cn": ("隐藏仅限中国", "Ocultar só China", "Hide China-only"),
+    "cn": ("中国", "China", "China"),
+    "cn.help": (
+        "这条只在中国适用：依赖中国的法规、政府项目或机构",
+        "Só vale na China: depende de lei, programa do governo ou órgão chinês",
+        "Only applies in China: relies on Chinese law, government programs or agencies"),
     "search.ph": ("搜索标题、说人话、收益…", "Buscar nas dicas…", "Search tips…"),
     "count": ("{0} / {1} 条", "{0} / {1}", "{0} / {1}"),
     "n.items": ("{0} 条", "{0} dicas", "{0} tips"),
@@ -237,14 +244,15 @@ def load_translations(lang):
     """translations/<lang>/*.json -> {src_key: 译文字段}。
 
     文件格式：{"section": {"src": {title, intro}, "tr": {...}},
-              "entries": [{"src": {title, 说人话, 成本, ...}, "tr": {...}}, ...]}
+              "entries": [{"src": {title, 说人话, 成本, ...}, "tr": {...}, "china": true}, ...]}
     src 是当时翻译所依据的中文原文，既用来匹配、也方便并排审校；tr 缺的字段回退到中文。
+    china（可选）：这条只在中国适用（中国的法规、政府项目、机构），页面上加「中国」标记、可一键隐藏。
     """
     out = {}
     for p in sorted((TRANSLATIONS_DIR / lang).glob("*.json")):
         data = json.loads(p.read_text(encoding="utf-8"))
         for item in ([data["section"]] if "section" in data else []) + data.get("entries", []):
-            out[src_key(item["src"])] = item["tr"]
+            out[src_key(item["src"])] = {**item["tr"], "china": item.get("china", False)}
     return out
 
 
@@ -254,7 +262,7 @@ def localize(e, trans):
     if not t:
         return e, False
     fields = {**e["fields"], **{k: t[k] for k in TRANSLATABLE if t.get(k)}}
-    return {**e, "title": t.get("title") or e["title"], "fields": fields}, True
+    return {**e, "title": t.get("title") or e["title"], "fields": fields, "china": t["china"]}, True
 
 
 def find_file(n):
@@ -372,6 +380,8 @@ CSS = r"""
   --mark:rgba(214,180,90,.3);
   --shadow-sm:0 1px 2px rgba(20,22,26,.08);--shadow-lg:0 6px 20px rgba(20,22,26,.12);
   --info:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6.5'/%3E%3Cpath d='M8 7.2v4M8 4.6v.1'/%3E%3C/svg%3E");
+  /* 中国国旗（3:2），给「仅限中国」标记用 */
+  --cn-flag:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 10'%3E%3Crect width='15' height='10' fill='%23ee1c25'/%3E%3Cpath fill='%23ffff00' d='M5 2L5.67 4.07L7.85 4.07L6.09 5.35L6.76 7.43L5 6.15L3.24 7.43L3.91 5.35L2.15 4.07L4.33 4.07ZM9.14 2.51L9.62 1.97L9.25 1.34L9.91 1.63L10.39 1.08L10.33 1.8L11 2.09L10.29 2.25L10.22 2.97L9.85 2.35ZM11.01 4.14L11.66 3.82L11.56 3.1L12.07 3.62L12.72 3.3L12.38 3.95L12.88 4.47L12.17 4.34L11.83 4.99L11.73 4.27ZM11.04 6.73L11.76 6.7L11.96 6L12.21 6.68L12.94 6.66L12.37 7.1L12.62 7.79L12.01 7.38L11.44 7.83L11.64 7.13ZM9.22 8.38L9.9 8.63L10.35 8.06L10.32 8.79L11 9.05L10.3 9.24L10.26 9.96L9.87 9.36L9.16 9.55L9.62 8.98Z'/%3E%3C/svg%3E");
   --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   /* 字号阶梯：正文 15，往下 13.5 / 12.5 / 11，往上 16（说人话）/ 18（条目标题）/ 28（节标题） */
@@ -533,6 +543,12 @@ button.gB:hover,button.gC:hover{border-color:var(--t1);color:var(--t1)}
 .ratio{line-height:1;font-size:var(--fs-xs);font-weight:var(--fw-medium);color:var(--t2)}
 .ratio i:nth-of-type(3){margin-right:7px}
 .r1 i:nth-of-type(3),.r2 i:nth-of-type(n+2){background:var(--t3);opacity:.3}
+/* 仅限中国：国旗 + 字，描边徽章，和等级徽章同高 */
+.cn{display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 6px;border:1px solid var(--divider);border-radius:4px;
+  font:var(--fw-medium) var(--fs-2xs)/1 var(--font);color:var(--t2);cursor:default}
+.cn::before,#f-cn::before{content:"";flex:none;width:15px;height:10px;border-radius:1.5px;background:var(--cn-flag) center/cover no-repeat;
+  box-shadow:0 0 0 .5px rgba(0,0,0,.12)}
+#f-cn{display:inline-flex;align-items:center;gap:7px}
 .plain{margin:0;font-size:var(--fs-lead);line-height:var(--lh-body);color:var(--t1);text-wrap:pretty}
 .facts{display:flex;flex-wrap:wrap;gap:4px 20px;margin:14px 0 0;font-size:var(--fs-xs)}
 .facts div{display:flex;gap:6px}
@@ -596,6 +612,10 @@ footer a{color:var(--t2)}
   .jump{order:2}
   #theme{order:3}
   .seg{order:4}
+  /* 「隐藏仅限中国」收成只剩国旗，和搜索同一行，顶栏不多占一行 */
+  .cn-seg{order:8;margin-top:2px}
+  #f-cn{height:30px;padding:0 9px}
+  #f-cn span{display:none}
   .count{order:7;margin-left:auto}
   .search{order:8;max-width:none;margin-top:2px}
   .search input{height:34px}
@@ -644,6 +664,8 @@ def render_entry(e, sec_no, lang):
         # 三格刻度：亮几格 = 性价比档位，CSS 按 r0/r1/r2 点亮
         sig += ('<span class="ratio r%d"><i></i><i></i><i></i>%s</span>'
                 % (RATIO_ORDER[ratio], tr(lang, "ratio." + ratio)))
+    if e.get("china"):
+        sig += '<span class="cn" title="%s">%s</span>' % (tr(lang, "cn.help"), tr(lang, "cn"))
     facts = []
     for k in ("钱", "时间", "毅力", "收益", "口径"):
         if t.get(k):
@@ -668,7 +690,7 @@ def render_entry(e, sec_no, lang):
         src_html = ('<details class="src"><summary>%s</summary><div class="sbody">%s</div></details>'
                     % (tr(lang, "src.n", n) if n else tr(lang, "src"), inline(src)))
 
-    return ('<article class="card" id="s%d-%d" data-grade="%s" data-ratio="%s">'
+    return ('<article class="card" id="s%d-%d" data-grade="%s" data-ratio="%s"' + (' data-cn' if e.get("china") else '') + '>'
             '<span class="num">%d</span><h3>%s</h3>'
             '<div class="sig">%s</div>'
             '<p class="plain">%s</p>'
@@ -702,6 +724,7 @@ const jump=document.getElementById('jump');
 const fAll=document.getElementById('f-all');
 const fA=document.getElementById('f-a');
 const fP=document.getElementById('f-plain');
+const fCn=document.getElementById('f-cn');
 const themeBtn=document.getElementById('theme');
 const topBtn=document.getElementById('top');
 const langSel=document.getElementById('lang');
@@ -710,7 +733,7 @@ const tocBtn=document.getElementById('toc-btn');
 const grps=[...document.querySelectorAll('.toc .grp')];
 const root=document.documentElement;
 const narrow=window.matchMedia('(max-width:1080px)');
-let grade=null, plainOnly=false, openGrp=null;
+let grade=null, plainOnly=false, hideCn=false, openGrp=null;
 
 /* 目录跟着阅读位置走：展开正在读的那一节、收起上一节，并把它滚进目录可视区 */
 function follow(id){
@@ -784,6 +807,7 @@ function apply(){
   cards.forEach(c=>{
     let ok=true;
     if(grade && c.dataset.grade!==grade) ok=false;
+    if(hideCn && 'cn' in c.dataset) ok=false;
     if(ok && term && !c.textContent.toLowerCase().includes(term)) ok=false;
     c.classList.toggle('hidden',!ok);
     if(ok) shown++;
@@ -809,7 +833,7 @@ function apply(){
     g.open=term?true:(g===openGrp);
   });
   // 筛选或搜索时有些节被藏起来，「下一节」可能指向空处，先收起
-  document.querySelectorAll('.next').forEach(n=>n.classList.toggle('hidden',!!(term||grade)));
+  document.querySelectorAll('.next').forEach(n=>n.classList.toggle('hidden',!!(term||grade||hideCn)));
 }
 let timer=null;
 q.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(apply,90);});
@@ -825,6 +849,19 @@ fAll.onclick=()=>setMode('all');
 fA.onclick=()=>setMode('A');
 fP.onclick=()=>setMode('plain');
 fAll.setAttribute('aria-pressed','true');
+/* 「隐藏仅限中国」和上面的筛选叠加；记住选择，非中国读者通常一直开着 */
+function setCn(on){
+  hideCn=on;
+  fCn.setAttribute('aria-pressed',String(on));
+  try{localStorage.setItem('hltb-cn',on?'hide':'show');}catch(e){}
+  apply();
+}
+if(fCn){
+  fCn.onclick=()=>setCn(!hideCn);
+  let saved=null;
+  try{saved=localStorage.getItem('hltb-cn');}catch(e){}
+  if(saved==='hide') setCn(true);
+}
 
 if(jump){
   jump.addEventListener('change',()=>{
@@ -904,6 +941,7 @@ def page_path(base, lang):
 
 def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, rev_date):
     translated = 0
+    has_cn = False
     sec_toc = []
     sec_html = []
     sec_next = []
@@ -918,6 +956,7 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
         for e in entries:
             e, hit = localize(e, trans)
             translated += hit
+            has_cn = has_cn or e.get("china", False)
             cards.append(render_entry(e, n, lang))
             r = ratio_of(parse_tags(e["tags_raw"]))
             short = toc_title(e["title"])
@@ -973,7 +1012,7 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
            '<div class="seg">'
            '<button id="f-all">%s</button>'
            '<button id="f-a">%s</button>'
-           '<button id="f-plain">%s</button></div>'
+           '<button id="f-plain">%s</button></div>%s'
            '<div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>'
            '<path d="M20 20l-3.5-3.5"/></svg>'
            '<input id="q" type="search" placeholder="%s" autocomplete="off">'
@@ -985,6 +1024,10 @@ def render_page(lang, base, parsed, trans, total, grade_cnt, link_total, rev, re
                tr(lang, "toc"), tr(lang, "toc"),
                tr(lang, "title"), scope, tr(lang, "jump.aria"), "".join(jump_opts),
                tr(lang, "filter.all"), tr(lang, "filter.a"), tr(lang, "filter.plain"),
+               # 和上面三个筛选叠加，单独一个开关；只有带「中国」标记的语言页才有
+               ('<div class="seg cn-seg"><button id="f-cn" aria-pressed="false" title="%s" aria-label="%s">'
+                '<span>%s</span></button></div>'
+                % (tr(lang, "cn.help"), tr(lang, "filter.cn"), tr(lang, "filter.cn"))) if has_cn else "",
                tr(lang, "search.ph"), tr(lang, "count", total, total), tr(lang, "theme"), tr(lang, "theme"),
                tr(lang, "lang.aria"), lang_opts))
 

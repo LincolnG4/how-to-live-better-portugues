@@ -24,7 +24,8 @@
         "成本": "Não custa dinheiro. Digitar uma vez o nome da escola na “consulta de instituições certificadas” do Centro leva poucos minutos",
         "收益": "O artigo 1 das “Medidas de Certificação de Escolaridade e Graus do Exterior (e de Fora do País)” do Centro (do Ministério da Educação) de Serviços de Estudo no Exterior da China registra que a certificação serve para “atender às necessidades do solicitante de continuar os estudos, trabalhar, fazer provas etc.”. O artigo 2 registra que a certificação é feita “a pedido do próprio solicitante”. O Centro tem uma entrada de consulta de instituições certificadas, buscando pelo nome da escola. As instruções de uso registram que a lista é das instituições estrangeiras emissoras de diplomas envolvidas em pedidos que passaram por certificação nos últimos cinco anos, “serve só de referência a quem estudou no exterior, e não como garantia ou base de nenhuma certificação”. As instruções também registram que o âmbito de aceitação “não se limita às instituições mostradas por esta função de consulta”, cada pedido é avaliado separadamente, e se a escola é legal e tem qualificação para emitir diplomas é só um dos fatores. A lista é atualizada uma vez por ano. A atualização de 2025 removeu 270 escolas que nos últimos 5 anos não tiveram certificados emitidos. Além disso, o site de informações de supervisão externa de educação do Ministério da Educação divulga também informações de supervisão de ensino em cooperação sino-estrangeira e de ensino no exterior",
         "备注": "O intermediário dizendo “reconhecido pelo Ministério da Educação” não vale, e vale o resultado que você mesmo consulta na internet. A lista muda: na matrícula a escola estava na lista, e na formatura não necessariamente continua, por isso consulte de novo uma vez por ano durante o curso. Os programas de cooperação sino-estrangeira têm outro sistema de certificação e registro. Quem entrou depois de 2008 pode, com o nome e o número do documento de identidade, consultar no site de supervisão externa o seu número de registro."
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -104,7 +105,8 @@
         "成本": "Não custa dinheiro. Veja uma vez antes de partir e, depois, uma vez por semestre",
         "收益": "O Ministério da Educação divulga alertas de estudo no exterior pelo site de informações de supervisão externa de educação. Em 2025 foram emitidos 4 números no total. O nº 1 alertou que projetos de lei de ensino superior aprovados em alguns estados dos EUA continham cláusulas negativas contra a China (2025-04-09). O nº 2 e o nº 3 alertaram duas vezes que nas Filipinas casos contra cidadãos chineses são frequentes e o ambiente de estudo é ruim (2025-07-18, 2025-08-30). O nº 4 alertou que a situação de segurança pública e o ambiente de estudo no Japão são ruins, sugerindo planejar com cautela o estudo no Japão (2025-11-16)",
         "备注": "O alerta não é proibição, nem diz que não se pode ir, e dá a você uma base oficial para avaliar o risco local. A lista de alertas muda com a situação, e esta seção não a atualiza continuamente, e vale a página do site da época. A segurança pessoal no exterior e a proteção consular estão na seção 21."
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -152,7 +154,8 @@
         "成本": "Pedido online e pagamento online. Preparar documentos mais a análise, contados em dias úteis, levam cerca de um mês",
         "收益": "A certificação de escolaridade e grau do exterior se faz no portal de serviços online do Centro (do Ministério da Educação) de Serviços de Estudo no Exterior da China. O processo tem quatro passos: cadastro e autenticação de nome real, envio online do pedido e dos documentos, pagamento online e espera da avaliação e da análise. O prazo de trabalho de certificação divulgado é de 10 a 20 dias úteis. Dias úteis não incluem fins de semana e feriados, e esse período é o tempo que o Centro usa na análise",
         "备注": "Os documentos a entregar são estes: diploma, passaporte ou salvo-conduto, cartão de residência ou carimbo de visto, foto de documento e declaração de autorização. O registro de entradas e saídas durante o período no exterior é consultado pelo próprio sistema, por isso não perca as páginas de visto do período no exterior. No site do Centro também saem avisos dizendo quais certificados ficaram sem efeito e a certificação de qual escola foi suspensa. Antes de tratar, veja se há aviso que envolva a sua escola."
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -168,7 +171,8 @@
         "成本": "Não custa dinheiro. Antes de se inscrever, busque uma vez o nome da escola nos avisos do Centro",
         "收益": "O Centro (do Ministério da Educação) de Serviços de Estudo no Exterior da China vem divulgando avisos de reforço da análise de certificação (verificar uma etapa a mais, separadamente, o diploma dessas escolas) da escolaridade e dos graus de parte das instituições estrangeiras. O mais recente é o nº 9 (2025-10-28), que aponta 4 escolas. Durante a análise reforçada, os pedidos dessas escolas levam, “em princípio, não menos de 60 dias úteis contados do dia (inclusive) do envio do pedido de certificação”. A base é o artigo 28 das “Medidas de Certificação de Escolaridade e Graus do Exterior (e de Fora do País)”: em situações como dados de certificação anormais e recebimento de pistas que reportam problemas, o Centro pode iniciar a análise reforçada, exigindo que o solicitante, a escola e outros ajudem a fornecer documentos, e ao mesmo tempo prolongar o prazo de certificação. Em maio de 2025, o Centro ainda emitiu avisos de “nova análise reforçada de certificação” para 3 escolas. O Centro também emitiu avisos de suspensão do recebimento de pedidos de certificação de algumas instituições do exterior. O alerta antifraude de agosto de 2025 registra: “qualquer instituição ou pessoa que alegue ‘certificação garantida’, ‘canal interno de certificação’, ‘complemento de registro da epidemia’, ‘certificação urgente’ etc. faz propaganda falsa.”",
         "备注": "“Análise reforçada” é verificar uma etapa a mais e alongar o prazo, e não equivale a não conseguir certificar. Quem promete “certificação garantida” ou “urgência por canal interno”, pelo alerta do Centro, faz propaganda falsa. Pagar a alguém, do outro lado da fronteira, para escrever trabalho e assistir aula online no seu lugar, se descoberto, além de anular a escolaridade, pode afetar o registro de visto."
-      }
+      },
+      "china": true
     },
     {
       "src": {

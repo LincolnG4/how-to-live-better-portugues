@@ -9,6 +9,8 @@
   --mark:rgba(214,180,90,.3);
   --shadow-sm:0 1px 2px rgba(20,22,26,.08);--shadow-lg:0 6px 20px rgba(20,22,26,.12);
   --info:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6.5'/%3E%3Cpath d='M8 7.2v4M8 4.6v.1'/%3E%3C/svg%3E");
+  /* 中国国旗（3:2），给「仅限中国」标记用 */
+  --cn-flag:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 10'%3E%3Crect width='15' height='10' fill='%23ee1c25'/%3E%3Cpath fill='%23ffff00' d='M5 2L5.67 4.07L7.85 4.07L6.09 5.35L6.76 7.43L5 6.15L3.24 7.43L3.91 5.35L2.15 4.07L4.33 4.07ZM9.14 2.51L9.62 1.97L9.25 1.34L9.91 1.63L10.39 1.08L10.33 1.8L11 2.09L10.29 2.25L10.22 2.97L9.85 2.35ZM11.01 4.14L11.66 3.82L11.56 3.1L12.07 3.62L12.72 3.3L12.38 3.95L12.88 4.47L12.17 4.34L11.83 4.99L11.73 4.27ZM11.04 6.73L11.76 6.7L11.96 6L12.21 6.68L12.94 6.66L12.37 7.1L12.62 7.79L12.01 7.38L11.44 7.83L11.64 7.13ZM9.22 8.38L9.9 8.63L10.35 8.06L10.32 8.79L11 9.05L10.3 9.24L10.26 9.96L9.87 9.36L9.16 9.55L9.62 8.98Z'/%3E%3C/svg%3E");
   --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   /* 字号阶梯：正文 15，往下 13.5 / 12.5 / 11，往上 16（说人话）/ 18（条目标题）/ 28（节标题） */
@@ -170,6 +172,12 @@ button.gB:hover,button.gC:hover{border-color:var(--t1);color:var(--t1)}
 .ratio{line-height:1;font-size:var(--fs-xs);font-weight:var(--fw-medium);color:var(--t2)}
 .ratio i:nth-of-type(3){margin-right:7px}
 .r1 i:nth-of-type(3),.r2 i:nth-of-type(n+2){background:var(--t3);opacity:.3}
+/* 仅限中国：国旗 + 字，描边徽章，和等级徽章同高 */
+.cn{display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 6px;border:1px solid var(--divider);border-radius:4px;
+  font:var(--fw-medium) var(--fs-2xs)/1 var(--font);color:var(--t2);cursor:default}
+.cn::before,#f-cn::before{content:"";flex:none;width:15px;height:10px;border-radius:1.5px;background:var(--cn-flag) center/cover no-repeat;
+  box-shadow:0 0 0 .5px rgba(0,0,0,.12)}
+#f-cn{display:inline-flex;align-items:center;gap:7px}
 .plain{margin:0;font-size:var(--fs-lead);line-height:var(--lh-body);color:var(--t1);text-wrap:pretty}
 .facts{display:flex;flex-wrap:wrap;gap:4px 20px;margin:14px 0 0;font-size:var(--fs-xs)}
 .facts div{display:flex;gap:6px}
@@ -233,6 +241,10 @@ footer a{color:var(--t2)}
   .jump{order:2}
   #theme{order:3}
   .seg{order:4}
+  /* 「隐藏仅限中国」收成只剩国旗，和搜索同一行，顶栏不多占一行 */
+  .cn-seg{order:8;margin-top:2px}
+  #f-cn{height:30px;padding:0 9px}
+  #f-cn span{display:none}
   .count{order:7;margin-left:auto}
   .search{order:8;max-width:none;margin-top:2px}
   .search input{height:34px}
@@ -281,6 +293,7 @@ const jump=document.getElementById('jump');
 const fAll=document.getElementById('f-all');
 const fA=document.getElementById('f-a');
 const fP=document.getElementById('f-plain');
+const fCn=document.getElementById('f-cn');
 const themeBtn=document.getElementById('theme');
 const topBtn=document.getElementById('top');
 const langSel=document.getElementById('lang');
@@ -289,7 +302,7 @@ const tocBtn=document.getElementById('toc-btn');
 const grps=[...document.querySelectorAll('.toc .grp')];
 const root=document.documentElement;
 const narrow=window.matchMedia('(max-width:1080px)');
-let grade=null, plainOnly=false, openGrp=null;
+let grade=null, plainOnly=false, hideCn=false, openGrp=null;
 
 /* 目录跟着阅读位置走：展开正在读的那一节、收起上一节，并把它滚进目录可视区 */
 function follow(id){
@@ -363,6 +376,7 @@ function apply(){
   cards.forEach(c=>{
     let ok=true;
     if(grade && c.dataset.grade!==grade) ok=false;
+    if(hideCn && 'cn' in c.dataset) ok=false;
     if(ok && term && !c.textContent.toLowerCase().includes(term)) ok=false;
     c.classList.toggle('hidden',!ok);
     if(ok) shown++;
@@ -388,7 +402,7 @@ function apply(){
     g.open=term?true:(g===openGrp);
   });
   // 筛选或搜索时有些节被藏起来，「下一节」可能指向空处，先收起
-  document.querySelectorAll('.next').forEach(n=>n.classList.toggle('hidden',!!(term||grade)));
+  document.querySelectorAll('.next').forEach(n=>n.classList.toggle('hidden',!!(term||grade||hideCn)));
 }
 let timer=null;
 q.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(apply,90);});
@@ -404,6 +418,19 @@ fAll.onclick=()=>setMode('all');
 fA.onclick=()=>setMode('A');
 fP.onclick=()=>setMode('plain');
 fAll.setAttribute('aria-pressed','true');
+/* 「隐藏仅限中国」和上面的筛选叠加；记住选择，非中国读者通常一直开着 */
+function setCn(on){
+  hideCn=on;
+  fCn.setAttribute('aria-pressed',String(on));
+  try{localStorage.setItem('hltb-cn',on?'hide':'show');}catch(e){}
+  apply();
+}
+if(fCn){
+  fCn.onclick=()=>setCn(!hideCn);
+  let saved=null;
+  try{saved=localStorage.getItem('hltb-cn');}catch(e){}
+  if(saved==='hide') setCn(true);
+}
 
 if(jump){
   jump.addEventListener('change',()=>{

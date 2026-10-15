@@ -40,7 +40,8 @@
         "成本": "Não custa dinheiro. Antes de viajar, faça uma vez o registro de atendimento fora da cidade no aplicativo do seguro de saúde, o que se faz pelo celular.",
         "收益": "O documento da Administração Nacional de Seguro de Saúde diz que já se chegou a este ponto. O texto original é “realizar basicamente a liquidação direta interprovincial das despesas de 5 doenças crônicas ambulatoriais especiais, como hipertensão, diabetes, quimio e radioterapia ambulatoriais de tumor maligno, diálise de uremia e tratamento antirrejeição depois de transplante de órgão, com acesso em nível de condado”. “Acesso em nível de condado” significa que se consegue fazer já no nível de condado. O documento ainda acrescenta mais 5 doenças a essas 5",
         "备注": "A condição é fazer as duas coisas: primeiro o reconhecimento de doença crônica ambulatorial especial no local do seguro, depois o registro de atendimento fora da cidade. Até onde os 5 novos tipos de doença já estão abertos varia de lugar para lugar, e vale o que o órgão local do seguro de saúde divulgar. Se o hospital não tem o remédio negociado de que se precisa, veja a dica 13 da seção 24 (farmácias de canal duplo)."
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -88,7 +89,8 @@
         "成本": "Não custa dinheiro. Basta perguntar no centro de serviços de saúde comunitário se dá para fazer prescrição de longo prazo, uma frase.",
         "收益": "Não é preciso ir todo mês ao hospital grande, enfrentar fila para pegar remédio. No mesmo local do seguro (também chamado de área de pooling), a taxa de reembolso na internação em hospital de base é, em princípio, cerca de 10 pontos percentuais maior que no hospital de nível acima",
         "备注": "“Cumprir as condições” é julgamento do médico, em geral para quem tem diagnóstico já definido e esquema de remédio estável. O remédio é o mesmo, e o que se poupa é o meio dia da ida mensal e a taxa de senha. Se a atenção básica não tem o remédio de que você precisa, pergunte se há registro de falta e entrega. O mesmo documento também exige que os hospitais de nível três reduzam aos poucos o ambulatório comum dessas doenças crônicas, e que o ambulatório comum das equipes de especialistas se estenda à comunidade. Por isso quem ainda usa hospital grande como ponto de receita terá cada vez mais dificuldade para marcar. Se a comunidade não tem o remédio, ou se é preciso especialista ajustando o remédio, dá para receber a prescrição por retorno online no hospital do diagnóstico, veja a dica 14 da seção 24 (retorno online em hospital da internet)."
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -104,7 +106,8 @@
         "成本": "Não custa dinheiro. Perguntar mais uma coisa antes de assinar leva um minuto.",
         "收益": "O pacote básico de serviços é pago pelo seguro de saúde conforme a norma. O pacote personalizado é todo por sua conta, e esse tipo de pacote também deve ser registrado no órgão de saúde de nível de condado",
         "备注": "O valor do contrato está em alguém acompanhar esta doença a longo prazo, e não em quantos itens foram empacotados. Quando alguém empurrar um “pacote melhorado”, faça primeiro três perguntas: é o pacote básico ou o personalizado, está registrado, quanto custa por ano."
-      }
+      },
+      "china": true
     },
     {
       "src": {

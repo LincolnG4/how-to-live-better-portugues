@@ -40,7 +40,8 @@
         "成本": "Não custa dinheiro, pois é um projeto nacional de serviços básicos de saúde pública. É preciso ir algumas vezes conforme as semanas de gestação",
         "收益": "A “Norma Nacional de Serviços Básicos de Saúde Pública (3ª edição)” tem o serviço de gestão da saúde de gestantes e puérperas. As gestantes e puérperas residentes na jurisdição podem fazer estas coisas. Exame de saúde do início da gestação 1 vez, do meio da gestação 2 vezes, do fim da gestação 2 vezes, visita pós-parto 1 vez e exame de saúde de 42 dias depois do parto 1 vez. Antes de 13 semanas é preciso ir abrir o registro e fazer ao mesmo tempo o primeiro pré-natal. As duas consultas do meio da gestação são nas semanas 16 a 20 e 21 a 24. As duas do fim da gestação são nas semanas 28 a 36 e 37 a 40. A lista de serviços divulgada localmente também inclui o conjunto completo de exames de laboratório da primeira consulta e a triagem de depressão pós-parto",
         "备注": "Essas 5 consultas são o piso gratuito, e não todo o pré-natal. O hospital, conforme o caso, acrescenta ultrassom, glicemia e monitoramento dos batimentos do bebê, que são por sua conta. Quanto mais cedo se abre o registro, mais cedo se faz a classificação de risco da gestação. A classificação de risco da gestação é dar à gestante uma faixa conforme o risco, e quem se descobre de alto risco pode ser transferida mais cedo a um hospital que consiga atender. Quem mora em outra região abre o registro pelo local onde mora agora, sem precisar voltar ao local de registro de residência"
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -184,7 +185,8 @@
         "成本": "Não custa dinheiro. Basta uma ligação de consulta ao órgão de seguridade social ou de seguro de saúde",
         "收益": "Artigo 54 da Lei de Seguridade Social: quando o empregador já recolheu o seguro-maternidade, o seu empregado recebe os benefícios do seguro-maternidade. O cônjuge sem trabalho do empregado recebe, conforme as normas do Estado, o benefício das despesas médicas de maternidade, com os recursos pagos pelo fundo do seguro-maternidade. Se o empregador recolheu o seguro-maternidade, o próprio empregado tem direito aos benefícios, e as despesas médicas do parto do cônjuge sem trabalho do empregado também podem sair desse fundo. Os benefícios do seguro-maternidade têm duas partes: uma são as despesas médicas de maternidade, isto é, as despesas médicas do próprio parto; a outra é o auxílio-maternidade, isto é, o dinheiro pago a você durante a licença-maternidade. O artigo 56 lista três situações em que se pode receber o auxílio-maternidade: a trabalhadora que tem a licença-maternidade, a que tem a licença por cirurgia de planejamento familiar e outras situações previstas em lei e regulamento. O auxílio-maternidade é “calculado com base no salário médio mensal dos empregados do ano anterior do empregador onde você trabalha”, isto é, o salário médio mensal dos empregados do seu empregador no ano passado, e não o seu próprio salário",
         "备注": "Há duas coisas para perguntar antes ao órgão local de seguro de saúde. Uma é se os meses de contribuição contínua bastam e se há exigência de número mínimo de meses. A outra é, para quem tem o filho fora do local de filiação, se é preciso fazer antes o registro de parto fora do local, e como se reembolsam as despesas de quem não registrou. Cada lugar regula essas duas de modo diferente, e aqui não foram conferidas lugar por lugar, e perguntar antes é experiência do autor. Os dias da licença-maternidade e como se calcula o auxílio-maternidade, veja a dica 2 da seção 18"
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -200,7 +202,8 @@
         "成本": "Não custa dinheiro. Resolve-se de passagem ao tratar dos trâmites de alta",
         "收益": "Artigo 23 da Lei de Saúde Materno-Infantil: as instituições de saúde e as pessoas que fazem partos domiciliares, conforme as normas do departamento administrativo de saúde do Conselho de Estado, emitem a certidão médica de nascimento do recém-nascido emitida de forma unificada. Este documento é pré-requisito para tudo o que vem depois: fazer o registro, filiar ao seguro, tirar o cartão de seguro de saúde, entrar na creche e na escola, tudo exige. A opinião do Escritório Geral do Conselho de Estado de 2015 sobre resolver o registro de pessoas sem registro de residência registra: quem nasceu em instituição de assistência ao parto pede a “Certidão Médica de Nascimento” a essa instituição. Quem nasceu fora de instituição de assistência ao parto deve primeiro obter o laudo de exame de paternidade de instituição de perícia qualificada e depois pedir à instituição delegada pelo departamento de saúde de nível de condado",
         "备注": "Antes de preencher, confira letra por letra o nome dos pais, o número do documento de identidade e o nome da criança. Os caracteres do nome devem poder ser digitados no sistema de registro, e caracteres raros dão muito trabalho depois. Mudar o nome e corrigir o documento exigem segunda via ou troca, e são bem mais trabalhosos do que conferir na hora. Ao receber o documento, guarde-o separado, tão importante quanto o livro de registro de residência e o documento de identidade"
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -232,7 +235,8 @@
         "成本": "Paga-se uma vez por ano a contribuição do seguro de saúde de moradores, algumas centenas de yuans",
         "收益": "A orientação do site do governo chinês de 2024: “o recém-nascido pode se filiar online só com a certidão médica de nascimento”, sem precisar primeiro fazer o registro de residência. “Depois da alta, o recém-nascido pode ter as despesas médicas reembolsadas direto.” Antes, só se podia filiar depois de registrado, e era preciso adiantar toda a despesa de internação e depois pedir reembolso. O tempo médio de trâmite da filiação e do pagamento também caiu de 28,7 dias úteis no início do ano para 6,4 dias úteis",
         "备注": "Prematuridade, fototerapia por icterícia e pneumonia do recém-nascido são causas comuns de internação neonatal, muitas vezes de mais de 10 mil yuans, e filiar ou não faz grande diferença. A regra de “em quantos dias depois do nascimento se pode filiar e receber os benefícios desde o dia do nascimento” não é exatamente igual em cada lugar. Como se aplica na prática vale o que disser o órgão local de seguro de saúde. Ligar antes da alta para o 12393 e perguntar é o mais simples"
-      }
+      },
+      "china": true
     },
     {
       "src": {
@@ -248,7 +252,8 @@
         "成本": "Não custa dinheiro. É preciso ir uma vez ao guichê de registro do posto policial",
         "收益": "Artigo 7 do Regulamento de Registro de Residência: “em até um mês depois do nascimento do bebê, o chefe da família, parentes, dependentes ou vizinhos declaram o registro de nascimento ao órgão de registro de residência do local de residência permanente do bebê.” Este é um prazo fixado por lei, e não uma sugestão. O registro é pré-requisito do que vem depois: vacinas, creche, escola e documento de identidade. Quanto mais se adia, mais documentos é preciso complementar",
         "备注": "Leve estas coisas: a certidão médica de nascimento, os documentos de identidade e o livro de registro de residência dos pais, a certidão de casamento, e a lista concreta vale pela exigência do posto policial local. A opinião do Escritório Geral do Conselho de Estado de 2015 registra o princípio de “registro com o pai ou com a mãe, por livre escolha”, e se pode escolher registrar com o pai ou com a mãe. A área escolar e o local de filiação do seguro dos dois lados podem ser diferentes, e antes de ir, pense bem, porque mudar depois dá trabalho. Criança nascida sem casamento também pode ser registrada: a mesma opinião registra que se pode pedir com a certidão médica de nascimento, o livro de registro de um dos pais e a declaração de nascimento fora do casamento. Quem registra com o pai ainda precisa entregar o laudo de exame de paternidade de instituição de perícia qualificada"
-      }
+      },
+      "china": true
     },
     {
       "src": {
