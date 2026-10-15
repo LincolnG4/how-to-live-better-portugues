@@ -1,0 +1,126 @@
+{
+  "section": {
+    "src": {
+      "title": "3. 不要浪费精力",
+      "intro": "本节只算精力和时间账。看的是四样东西：你每天能用的注意力、反应快不快、出错多不多、被打断以后要多久才回得来。多数数字是直接测出来的，来自实验，或者来自跟踪一群人做的记录（队列研究）。这些数字不换算成寿命，也不换算成死亡率。本节多数条目的证据等级是 B。这个领域本来就这样，不代表建议不成立。第 19 条讲的是和警察、医生、柜员打交道时该有的预期，引的是法规，不是实验，所以等级记 C。第 15 条（把悲观念头当症状看）和第 22 条（把「别人要求我完美」当症状看）引的是死亡率与自杀风险的数字。它们的口径和本节其他条目不一样，不放在一起比较。 本节条目按主题分成下面几块，括号里是条号。 **工作时的注意力**：关掉非必要通知（第 1 条），消息每天批量处理（第 5 条），挡住几秒钟的打断（第 6 条），一次只做一件事（第 7 条），开放式办公室用耳塞（第 12 条），每周工作时间别一味往上加（第 13 条）。 **睡觉和熬夜**：固定起床时间（第 2 条），每晚睡够 7 到 8 小时（第 3 条），下午两点以后不碰咖啡因（第 4 条），睡前一小时不看屏幕（第 8 条），到点就睡（第 9 条），深夜不做重大决定（第 10 条），下午困了就睡 10 分钟（第 11 条），长期失眠先做认知行为治疗（第 26 条），打鼾憋气、白天犯困去查睡眠呼吸暂停（第 27 条）。 **脑子里的念头**：反复回想时换个动手的活（第 14 条），把悲观念头当症状看（第 15 条），觉得出丑时把估计除以二（第 21 条），把「别人要求我完美」当症状看（第 22 条）。 **生气和情绪低落**：生气时先离场（第 17 条），情绪低落时先做的几件事（第 18 条），生气别靠打沙袋发泄（第 23 条），把心事连着几天写下来（第 24 条）。 **人际和社交媒体**：学会拒绝不想接的请求（第 16 条），把警察医生当按规则上班的人（第 19 条），给刷同龄人动态的应用设限（第 20 条）。 **身上的痛**：痛经就吃布洛芬这类止痛药（第 25 条）。"
+    },
+    "tr": {
+      "title": "3. Não desperdice energia",
+      "intro": "Esta seção só faz a conta de energia e de tempo. Olha quatro coisas: a atenção que você consegue usar por dia, a rapidez de reação, a quantidade de erros e quanto tempo leva para voltar depois de uma interrupção. A maioria dos números foi medida diretamente, em experimentos ou em registros de grupos de pessoas acompanhadas ao longo do tempo (estudos de coorte). Esses números não são convertidos em tempo de vida nem em mortalidade. Na maior parte das dicas desta seção, o nível de evidência é B. Esse campo é assim mesmo, e isso não significa que o conselho não valha. A dica 19 trata do que esperar ao lidar com policiais, médicos e atendentes de guichê, cita regulamentos e não experimentos, e por isso recebe nível C. A dica 15 (tratar os pensamentos pessimistas como sintoma) e a dica 22 (tratar o “os outros exigem que eu seja perfeito” como sintoma) citam números de mortalidade e de risco de suicídio. A base de cálculo é diferente da das outras dicas desta seção, e por isso não são comparados entre si. As dicas desta seção estão divididas nos blocos abaixo por tema, com o número da dica entre parênteses. **Atenção no trabalho**: desligar notificações não essenciais (dica 1), tratar as mensagens em lote, uma vez por dia (dica 5), bloquear interrupções de poucos segundos (dica 6), fazer uma coisa de cada vez (dica 7), usar tampões de ouvido em escritório aberto (dica 12), não aumentar as horas de trabalho semanais sem critério (dica 13). **Sono e noites viradas**: horário fixo para acordar (dica 2), dormir de 7 a 8 horas por noite (dica 3), nada de cafeína depois das 14h (dica 4), nenhuma tela na última hora antes de dormir (dica 8), ir dormir na hora (dica 9), não tomar decisões importantes de madrugada (dica 10), tirar um cochilo de 10 minutos quando bater sono à tarde (dica 11), tratar a insônia crônica primeiro com terapia cognitivo-comportamental (dica 26), investigar apneia do sono se você ronca, engasga e sente sono de dia (dica 27). **Pensamentos na cabeça**: quando ficar remoendo, trocar por uma atividade manual (dica 14), tratar os pensamentos pessimistas como sintoma (dica 15), dividir a estimativa por dois quando achar que fez papel de bobo (dica 21), tratar o “os outros exigem que eu seja perfeito” como sintoma (dica 22). **Raiva e desânimo**: sair de cena primeiro quando estiver com raiva (dica 17), o que fazer primeiro quando estiver para baixo (dica 18), não descarregar a raiva num saco de pancadas (dica 23), escrever seus assuntos íntimos por vários dias seguidos (dica 24). **Relações e redes sociais**: aprender a recusar pedidos que você não quer aceitar (dica 16), tratar policiais e médicos como pessoas que trabalham seguindo regras (dica 19), pôr limite nos aplicativos em que você fica olhando a vida de gente da sua idade (dica 20). **Dor no corpo**: tomar um analgésico como ibuprofeno para cólica menstrual (dica 25)."
+    }
+  },
+  "entries": [
+    {
+      "src": {
+        "title": "关掉非必要通知，工作时把手机放到视线之外",
+        "说人话": "手机响一下，哪怕你没看、没碰，注意力任务的成绩也会掉。掉的幅度和你真去接电话、发短信差不多。还有一种情况：手机就搁在桌上，你忍住不看，脑子能用的余量一样会变少。越离不开手机的人，掉得越多。",
+        "成本": "不花钱。花几分钟改一下设置，几乎不需要毅力。",
+        "收益": "只是收到一条通知，不看也不碰，注意力任务的成绩就明显变差。变差的幅度和真的接打电话、发短信相当。这是实验室里做的，受试者是大学生。另有两项实验显示：即便成功克制住不去看手机，自己的手机搁在旁边，也会让脑子能用的余量变少。手机依赖强的人下降最多。",
+        "备注": "这些都是实验室里的单次任务。天天这样累积下来是什么结果，没人测过。真正需要随叫随到的岗位，可以只留少数几个联系人的通知。"
+      },
+      "tr": {
+        "title": "Desligue as notificações não essenciais e, ao trabalhar, deixe o celular fora do campo de visão",
+        "说人话": "Se o celular toca uma vez, mesmo que você não olhe nem encoste, o desempenho em tarefas de atenção cai. A queda é parecida com a de quem realmente atende a ligação ou manda mensagem. Há ainda outro caso: o celular fica em cima da mesa, você se segura para não olhar, e mesmo assim a capacidade mental disponível diminui. Quanto mais dependente do celular, maior a queda.",
+        "成本": "Não custa dinheiro. Alguns minutos para mudar as configurações, e quase nenhuma força de vontade.",
+        "收益": "Só de receber uma notificação, sem olhar nem tocar, o desempenho em tarefas de atenção piora de forma nítida. A piora é equivalente à de atender uma ligação ou mandar uma mensagem de verdade. Isso foi feito em laboratório, com estudantes universitários. Outros dois experimentos mostram que, mesmo quando a pessoa consegue se segurar para não olhar, ter o próprio celular por perto reduz a capacidade mental disponível. Quem é mais dependente do celular tem a maior queda.",
+        "备注": "Tudo isso são tarefas únicas feitas em laboratório. Ninguém mediu o que acontece quando isso se acumula dia após dia. Em funções que exigem estar sempre disponível, dá para manter só as notificações de poucos contatos."
+      }
+    },
+    {
+      "src": {
+        "title": "固定起床时间，周末也一样",
+        "说人话": "作息最乱的那五分之一人，生物钟比最规律的那五分之一晚了约 2.5 小时。等于长期活在时差里。作息越规律的学生，成绩也越好。",
+        "成本": "不花钱。周末要少睡懒觉，需要一点毅力。",
+        "收益": "61 名大学生记录了 30 天。作息最不规律的五分之一，生物钟（昼夜节律）比最规律的五分之一晚约 2.5 小时。具体是褪黑素开始分泌的时刻 00:08 对 21:32。最困、最想睡的时段也晚约 1.8 小时。作息越规律，学业成绩越好（相关系数 r = 0.37）。",
+        "备注": "只有这一项研究，人数少，也没有分组对照。研究者用模型推算，生物钟的差别主要来自每天见到的光不一样。他们建议可以试试用光来调，但没有做试验验证。所以固定起床时间之外，白天多出门见光，这是从他们的推算推出来的。偶尔熬夜之后怎么补，见第 2 节第 38 条（熬夜之后第二天晚上就补觉）：办法是当晚早点上床，不是第二天睡到中午。"
+      },
+      "tr": {
+        "title": "Acorde sempre no mesmo horário, inclusive no fim de semana",
+        "说人话": "O quinto da amostra com a rotina mais bagunçada tem o relógio biológico cerca de 2,5 horas mais atrasado do que o quinto mais regular. É como viver em jet lag constante. Entre os estudantes, quanto mais regular a rotina, melhores as notas.",
+        "成本": "Não custa dinheiro. Dormir menos até tarde no fim de semana exige um pouco de força de vontade.",
+        "收益": "61 estudantes universitários fizeram registros por 30 dias. O quinto com a rotina mais irregular tinha o relógio biológico (ritmo circadiano) cerca de 2,5 horas mais tarde do que o quinto mais regular. Concretamente, o momento em que a melatonina começa a ser secretada foi 00:08 contra 21:32. A faixa do dia em que a pessoa mais sente sono e vontade de dormir também era cerca de 1,8 hora mais tarde. Quanto mais regular a rotina, melhor o desempenho acadêmico (coeficiente de correlação r = 0,37).",
+        "备注": "Há só este estudo, com pouca gente e sem grupos de comparação. Os pesquisadores usaram um modelo para estimar que a diferença no relógio biológico vem principalmente da diferença na luz que se recebe a cada dia. Eles sugerem que se pode tentar ajustar com luz, mas isso não foi testado em experimento. Por isso, além de fixar o horário de acordar, sair de casa e pegar luz durante o dia é uma conclusão tirada das estimativas deles. Para recuperar depois de uma noite virada de vez em quando, veja a dica 38 da seção 2 (compense a noite mal dormida na noite seguinte): o jeito é ir para a cama mais cedo naquela noite, e não dormir até o meio-dia do dia seguinte."
+      }
+    },
+    {
+      "src": {
+        "title": "每晚睡够 7 到 8 小时，别把 6 小时当作够用",
+        "说人话": "连着两周每晚只睡 6 小时，脑子的表现会掉到相当于两天两夜没合眼的水平。麻烦的是自己感觉不到。自己打分的困倦头几天涨完就不再涨，睡 6 小时的人和睡 4 小时的人打分一样困。所以「我睡 6 小时够用」这种感觉靠不住。",
+        "成本": "不花钱。每天要多留 1 到 2 小时给睡眠。早一点上床，需要一点毅力。",
+        "收益": "48 名 21 到 38 岁的健康成人，连续 14 天每晚只睡 6 小时。他们的脑力表现累计下降，掉到相当于连续 2 晚完全不睡的水平。而自己打分的困倦程度只在头几天上升，之后几乎不再增加。6 小时组和 4 小时组的自评困倦没有差别。这是把人随机分成两组做的对照试验（RCT）。另外，短时间不睡（急性睡眠剥夺，不超过 48 小时）对简单注意力走神的效果大小 g = -0.776，对推理准确率 g = -0.125。这部分是把 70 项研究合起来算的。",
+        "备注": "最重要的一点是，「自己觉得不困」不是睡够了的证据。长期睡 6 小时的人只是感觉上习惯了，表现并没有跟上。汇总多项研究的那部分说的是整夜不睡。「长期少睡」只有一项随机对照试验支持。睡多久和死亡风险的关系另算，见第 2 节第 13 条（每晚睡 7 小时左右）：那边按死亡率算，7 小时那档风险最低。"
+      },
+      "tr": {
+        "title": "Durma de 7 a 8 horas por noite e não ache que 6 horas bastam",
+        "说人话": "Depois de duas semanas dormindo só 6 horas por noite, o desempenho do cérebro cai ao nível de quem ficou dois dias e duas noites sem pregar o olho. O problema é que você mesmo não percebe. A sonolência que a pessoa avalia sobe nos primeiros dias e depois para de subir, e quem dorme 6 horas dá a mesma nota de sono que quem dorme 4. Por isso a sensação de “6 horas me bastam” não é confiável.",
+        "成本": "Não custa dinheiro. É preciso reservar de 1 a 2 horas a mais por dia para o sono. Ir para a cama mais cedo exige um pouco de força de vontade.",
+        "收益": "48 adultos saudáveis de 21 a 38 anos dormiram só 6 horas por noite durante 14 noites seguidas. O desempenho mental deles caiu de forma acumulada até o nível de quem passa 2 noites seguidas sem dormir nada. Já a sonolência que eles mesmos avaliaram só subiu nos primeiros dias e depois quase não aumentou mais. O grupo de 6 horas e o grupo de 4 horas não tiveram diferença na sonolência autoavaliada. Foi um ensaio controlado em que as pessoas foram divididas aleatoriamente em grupos (ECR). Além disso, o efeito de ficar pouco tempo sem dormir (privação aguda de sono, até 48 horas) sobre lapsos simples de atenção foi de tamanho g = -0,776, e sobre a precisão do raciocínio, g = -0,125. Essa parte vem da combinação de 70 estudos.",
+        "备注": "O ponto mais importante é que “não me sinto com sono” não prova que você dormiu o suficiente. Quem dorme 6 horas por muito tempo só se acostuma na sensação, e o desempenho não acompanha. A parte que combina vários estudos fala de noites inteiras sem dormir. O “dormir pouco por muito tempo” tem apoio de um só ensaio randomizado. A relação entre quanto se dorme e o risco de morte é outra conta, veja a dica 13 da seção 2 (durma cerca de 7 horas por noite): lá o cálculo é por mortalidade, e a faixa de 7 horas tem o menor risco."
+      }
+    },
+    {
+      "src": {
+        "title": "下午两点以后不碰咖啡因",
+        "说人话": "睡前 6 小时吃下 400 mg 咖啡因，差不多是三四杯咖啡，当晚用仪器测出来少睡 1 小时以上。可自己写的睡眠日记根本看不出差别。一杯 250 mL 的咖啡（107 mg）要在睡前 8.8 小时以上喝完，才不影响睡眠。十一点睡的人，下午两点就是界线。",
+        "成本": "不花钱。习惯下午喝咖啡的人，要忍住不喝，需要一点毅力。",
+        "收益": "睡前 6 小时吃下含 400 mg 咖啡因的药片，仪器测到的总睡眠时间比吃安慰剂片少 1.1 到 1.2 小时。按一杯 250 mL 的咖啡含 107 mg 算，400 mg 约是三四杯咖啡的量。安慰剂片外观一样，但不含咖啡因。可是受试者自己写的睡眠日记没有报出差别，自己察觉不到。把多项研究合起来算（荟萃分析）：咖啡因平均让总睡眠时间减少 45 分钟。躺在床上真正睡着的比例（睡眠效率）下降 7%。一杯 250 mL 的咖啡（107 mg）要在睡前 8.8 小时以上喝完，才不影响睡眠。",
+        "备注": "Drake 那项只有一个实验室做过，用的 400 mg 偏大，等于一次喝掉一天的上限，上限见第 2 节第 26 条（三到四杯咖啡）。咖啡因代谢慢的人，截止时间还要更早。少喝咖啡因换回来的是睡眠时长，和第 3 条（每晚睡够 7 到 8 小时）叠加。"
+      },
+      "tr": {
+        "title": "Não consuma cafeína depois das 14h",
+        "说人话": "Tomar 400 mg de cafeína 6 horas antes de dormir, o que dá mais ou menos três ou quatro xícaras de café, fez a pessoa dormir mais de 1 hora a menos naquela noite, medida por aparelho. Mas no diário de sono que ela mesma escreveu, não aparece diferença. Uma xícara de 250 mL de café (107 mg) precisa ser tomada com mais de 8,8 horas de antecedência para não atrapalhar o sono. Para quem dorme às 23h, o limite é 14h.",
+        "成本": "Não custa dinheiro. Quem tem o hábito de tomar café à tarde precisa se segurar para não tomar, o que exige um pouco de força de vontade.",
+        "收益": "Quem tomou, 6 horas antes de dormir, um comprimido com 400 mg de cafeína teve, medido por aparelho, de 1,1 a 1,2 hora a menos de sono total do que quem tomou um comprimido de placebo. Considerando que uma xícara de 250 mL de café tem 107 mg, 400 mg equivalem a cerca de três ou quatro xícaras. O comprimido de placebo tinha a mesma aparência, mas sem cafeína. Porém, os diários de sono que os participantes escreveram não registraram diferença, ou seja, eles mesmos não percebem. Combinando vários estudos (meta-análise): a cafeína reduz o tempo total de sono em 45 minutos, em média. A proporção do tempo na cama em que a pessoa realmente dorme (eficiência do sono) cai 7%. Uma xícara de 250 mL de café (107 mg) precisa ser tomada com mais de 8,8 horas de antecedência para não afetar o sono.",
+        "备注": "O estudo de Drake foi feito por um único laboratório, e os 400 mg são uma dose alta, equivalente a todo o limite diário de uma vez só. Para o limite, veja a dica 26 da seção 2 (três a quatro xícaras de café). Quem metaboliza a cafeína devagar precisa parar ainda mais cedo. O que se ganha ao reduzir a cafeína é tempo de sono, e isso se soma à dica 3 (durma de 7 a 8 horas por noite)."
+      }
+    },
+    {
+      "src": {
+        "title": "把邮件和消息改成每天固定几次批量处理",
+        "说人话": "同一批人对比了两周。把邮件限制成每天只查 3 次的那一周，日常压力明显更低，而收发的邮件数量一样多。不加限制的时候，人平均每天要查 15.5 次。",
+        "成本": "不花钱。要花点时间跟同事说清楚你多久回一次。忍住不随时翻邮件，需要一点毅力。",
+        "收益": "124 名成年人，两周里同一批人前后对比（自身对照）。限制为每天查 3 次邮件的那周，日常压力明显低于不限次数那周（效果大小 Cohen's d = 0.37）。两周收到和回复的邮件数量并没有差别。一开始不加限制时，人们平均每天查邮件 15.5 次。",
+        "备注": "只有一项研究，效果中等偏小，量的是压力，不是干出来的活。即时消息没人直接研究过，这里只是照着推的。"
+      },
+      "tr": {
+        "title": "Trate e-mails e mensagens em lote, em alguns horários fixos por dia",
+        "说人话": "Compararam as mesmas pessoas durante duas semanas. Na semana em que o e-mail foi limitado a 3 consultas por dia, o estresse do dia a dia foi nitidamente menor, e a quantidade de e-mails enviados e recebidos foi a mesma. Sem limite, a pessoa consulta em média 15,5 vezes por dia.",
+        "成本": "Não custa dinheiro. É preciso gastar um tempo explicando aos colegas de quanto em quanto tempo você responde. Segurar a vontade de abrir o e-mail a toda hora exige um pouco de força de vontade.",
+        "收益": "124 adultos, comparação das mesmas pessoas antes e depois ao longo de duas semanas (cada um como seu próprio controle). Na semana em que consultaram o e-mail no máximo 3 vezes por dia, o estresse do dia a dia foi nitidamente menor do que na semana sem limite (tamanho do efeito d de Cohen = 0,37). A quantidade de e-mails recebidos e respondidos nas duas semanas não teve diferença. No começo, sem limite, as pessoas consultavam o e-mail em média 15,5 vezes por dia.",
+        "备注": "É um estudo só, de efeito de médio para pequeno, e mediu estresse, não o trabalho entregue. Mensagens instantâneas ninguém estudou diretamente, aqui foi só extrapolado."
+      }
+    },
+    {
+      "src": {
+        "title": "做需要连续思考的工作时，把哪怕几秒钟的打断也挡在外面",
+        "说人话": "一次平均 2.8 秒的打断，就让接下来的操作出错概率翻倍。4.4 秒的打断翻三倍。现场跟踪还发现，被打断的那件事平均要 25 分钟才回得来，中间还插进两件别的事。被打断的人干得更快，但压力、挫败感和费劲程度全都更高。",
+        "成本": "不花钱。关上门，戴上耳机，或者挂一个「勿扰」牌。",
+        "收益": "平均 2.8 秒的打断，会让按顺序一步步做的任务（序列任务）步骤出错率翻倍。4.4 秒的打断让它翻三倍。这是实验室里做的。另一项是对 24 名办公室白领（信息工作者）的现场观察。他们平均每 11 分钟切换一次工作主题。57% 的工作主题被打断。当天回到被打断的那件事上，平均要 25 分 26 秒。中间还插了 2.26 件别的事。还有一项 48 人的实验：被打断的人做得更快，但报告的压力、挫败感、时间压力和费劲程度都更高。",
+        "备注": "那项现场研究把打断分成两类：一类是别人来找你的，一类是自己点开的。关门只挡得住前一类。后一类要配合第 1 条（关掉非必要通知）和第 5 条（批量处理消息）一起用。"
+      },
+      "tr": {
+        "title": "Ao fazer um trabalho que exige pensar sem parar, bloqueie até as interrupções de poucos segundos",
+        "说人话": "Uma interrupção de 2,8 segundos em média já dobra a chance de erro nas operações seguintes. Uma de 4,4 segundos triplica. O acompanhamento no local também mostrou que, para voltar àquilo que foi interrompido, leva em média 25 minutos, com duas outras coisas no meio. Quem é interrompido faz mais rápido, mas o estresse, a frustração e o esforço são todos maiores.",
+        "成本": "Não custa dinheiro. Feche a porta, ponha fones de ouvido ou pendure uma placa de “não perturbe”.",
+        "收益": "Uma interrupção de 2,8 segundos em média dobra a taxa de erros nos passos de tarefas feitas em sequência, uma etapa depois da outra (tarefas sequenciais). Uma interrupção de 4,4 segundos triplica. Isso foi feito em laboratório. Outro estudo foi uma observação no local com 24 trabalhadores de escritório (trabalhadores da informação). Eles trocavam de tema de trabalho em média a cada 11 minutos. 57% dos temas de trabalho eram interrompidos. Voltar naquele dia ao que foi interrompido levava em média 25 minutos e 26 segundos. No meio, entravam 2,26 outras coisas. Há ainda um experimento com 48 pessoas: quem foi interrompido fez mais rápido, mas relatou mais estresse, frustração, pressão de tempo e esforço.",
+        "备注": "O estudo no local dividiu as interrupções em dois tipos: as de gente que vem falar com você e as que você mesmo abre. Fechar a porta só barra o primeiro tipo. O segundo precisa ser combinado com a dica 1 (desligue as notificações não essenciais) e a dica 5 (trate as mensagens em lote)."
+      }
+    },
+    {
+      "src": {
+        "title": "一次只做一件事，不要边开会边回消息",
+        "说人话": "任务一切换，反应就更慢，也更容易出错。经常同时用好几种媒体的人，并没有练出同时做几件事的本事，反而在任务切换测试上表现更差。",
+        "成本": "不花钱。开会时忍住不回消息，需要一点毅力。",
+        "收益": "任务切换以后，反应明显更慢，也更容易出错。这部分来自多项研究的综述。另一项实验室研究的受试者是大学生。经常同时用好几种媒体的人（重度媒体多任务者）更容易被不相干的东西和不相干的记忆带跑。他们在任务切换测试上反而表现更差。",
+        "备注": "来回切换要多费多少，随干的活差别很大，这里不给统一数字。Ophir 那项是同一时间点的比较，分不清是「多任务让注意力变差」，还是「注意力差的人更爱多任务」。"
+      },
+      "tr": {
+        "title": "Faça uma coisa de cada vez, não responda mensagens durante a reunião",
+        "说人话": "Quando a tarefa muda, a reação fica mais lenta e há mais erros. Quem costuma usar várias mídias ao mesmo tempo não treinou a capacidade de fazer várias coisas juntas e, ao contrário, vai pior nos testes de troca de tarefa.",
+        "成本": "Não custa dinheiro. Segurar a vontade de responder mensagens na reunião exige um pouco de força de vontade.",
+        "收益": "Depois de trocar de tarefa, a reação é nitidamente mais lenta e há mais erros. Essa parte vem de uma revisão de vários estudos. Outro estudo de laboratório teve estudantes universitários como participantes. Quem costuma usar várias mídias ao mesmo tempo (multitarefa pesada de mídia) se deixa levar mais facilmente por coisas irrelevantes e por lembranças irrelevantes. Eles, ao contrário, foram pior no teste de troca de tarefa.",
+        "备注": "Quanto custa a mais ficar alternando varia muito conforme a tarefa, e por isso aqui não se dá um número único. O estudo de Ophir é uma comparação num único momento e não distingue entre “a multitarefa piora a atenção” e “quem tem atenção pior faz mais multitarefa”."
+      }
+    }
+  ]
+}
